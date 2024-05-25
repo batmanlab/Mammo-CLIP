@@ -1,0 +1,14 @@
+name: "finetune_classification"
+load_backbone_weights: null
+freeze_backbone_weights: true
+
+image_encoder:
+  source: "cnn" # one of { "huggingface"}
+  name: "tf_efficientnet_b5_ns"
+  pretrained: true
+  model_type: "cnn"
+
+classifier:
+  config:
+    name: "linear"
+    n_class: 1

@@ -1,0 +1,14 @@
+rsna:
+  name: "rsna"
+  data_type: "image_classification"
+  data_dir: "/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset"
+  img_dir: "RSNA_Cancer_Detection/train_images_png"
+  data_path: "RSNA_Cancer_Detection/rsna_w_upmc_concepts_breast_clip.csv"
+  text_max_length: ${base.text_max_length}
+  label_col: "cancer"
+  label_text:
+    cancer:
+#      - "No evidence of malignancy is identified"
+#      - "Evidence of malignancy is identified"
+      - "No Cancer"
+      - "Cancer"

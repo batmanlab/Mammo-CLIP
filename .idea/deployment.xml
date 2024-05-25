@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="shg121@localhost:8887 password" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="shg121@localhost:8887 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

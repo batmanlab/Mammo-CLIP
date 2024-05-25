@@ -1,0 +1,7 @@
+vindr:
+  name: "upmc_vindr-w-upmc-concepts"
+  data_type: "imagetext"
+  data_dir: "/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset"
+  img_dir: "External/Vindr/upmc_vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png"
+  data_path: "External/Vindr/vindr_w_upmc_concepts_breast_clip.csv"
+  text_max_length: ${base.text_max_length}

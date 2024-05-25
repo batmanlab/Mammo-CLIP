@@ -1,0 +1,21 @@
+train:
+  Resize:
+    size_h: ${base.image_size_h}
+    size_w: ${base.image_size_w}
+  transform:
+    affine_transform_degree: 20
+    affine_translate_percent: 0.1
+    affine_scale: [ 0.8, 1.2 ]
+    affine_shear: 20
+    elastic_transform_alpha: 10
+    elastic_transform_sigma: 15
+    p: 1.0
+valid:
+  Resize:
+    size_h: ${base.image_size_h}
+    size_w: ${base.image_size_w}
+test:
+  Resize:
+    size_h: ${base.image_size_h}
+    size_w: ${base.image_size_w}
+

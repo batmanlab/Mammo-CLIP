@@ -1,0 +1,8 @@
+upmc_period:
+  name: "upmc"
+  data_type: "imagetext"
+  data_dir: "/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset"
+  img_dir: "External/UPMC/DICOM/images_png_CC_MLO"
+  data_path: "External/UPMC/upmc_breast_clip_with_period_lower_case.csv"
+  text_max_length: ${base.text_max_length}
+  data_frac: 1.0
