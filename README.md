@@ -25,6 +25,9 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/preprocessing/prepro
 
 ## Back translation image-text dataset (UPMC)
 ```bash
+# input: upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
+# output: upmc_breast_clip_without_period_lower_case.csv
+
 python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/augment_text.py \
   --dataset-path="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/data_csv" \
   --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
