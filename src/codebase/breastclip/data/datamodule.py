@@ -121,6 +121,7 @@ class DataModule:
                 )
 
             self.train_sampler = DistributedSampler(dataset=dataset, shuffle=shuffle) if distributed else None
+            print(self.train_sampler)
             self.train_loader = DataLoader(
                 dataset,
                 collate_fn=getattr(self.datasets["train"][0], "collate_fn", None),

@@ -63,7 +63,7 @@ class ImageTextDataset_Retrieval(Dataset):
         return len(self.df)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == 'in_house':
+        if self.dataset.lower() == 'upmc':
             return self.root_dir / self.img_dir / f'Patient_{study_id}' / image_id
         else:
             return self.root_dir / self.img_dir / f'{str(study_id)}' / image_id

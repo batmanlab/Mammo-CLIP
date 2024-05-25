@@ -3,7 +3,6 @@ train:
   shuffle: True
   drop_last: True
   num_workers: 0
-  prefetch_factor: 2
   batch_size: 4
 
 valid:
@@ -11,7 +10,6 @@ valid:
   shuffle: False
   drop_last: False
   num_workers: 0
-  prefetch_factor: 2
   batch_size: 4
 
 test:

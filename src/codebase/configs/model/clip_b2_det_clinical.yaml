@@ -13,7 +13,7 @@ text_encoder:
   pretrained: true
   gradient_checkpointing: false
   pooling: "eos" # one of { "eos" | "bos" | "mean" }
-  cache_dir: "/ocean/projects/asc170022p/shg121/PhD/Breast-CLIP/src/codebase/outputs/huggingface/"
+  cache_dir: "${base.data_dir}/Mammo-CLIP/src/codebase/outputs/huggingface/"
   trust_remote_code: true
   mlm_head: true
 

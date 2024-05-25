@@ -1,9 +1,9 @@
 patient_id,GENDER,AGE,NOTE_CSN_STUDY_ID,BIRADS_CATEGORY,HISTORY,FINDINGS,IMPRESSION,ASSESMENT,RECOMENDATION,CONCLUSION,CLIP,image_id,fold,view,laterality,img_size_row,img_size_column,BIRADS_numeric
-40421851,FEMALE,47,884708601,BIRADS 0,,The examination shows diffuse skin thickening. Further examination may be needed.,The examination shows no significant abnormality detected. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.250833044448633383274960889440423295485.png,2,CC,R,2456,1995,0
-40421851,FEMALE,47,884708601,BIRADS 0,,The examination shows diffuse skin thickening. Further examination may be needed.,The examination shows no significant abnormality detected. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.218018924783571581641971247871200972675.png,2,CC,R,2456,1995,0
+40421851,FEMALE,47,884708601,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.250833044448633383274960889440423295485.png,2,CC,R,2456,1995,0
+40421851,FEMALE,47,884708601,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.218018924783571581641971247871200972675.png,2,CC,R,2456,1995,0
 936277906,FEMALE,78,831725898,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
-",The examination shows diffuse skin thickening. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -17,7 +17,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.15916085863391167576496243066479929300.png,2,CC,R,4096,3328,2
 936277906,FEMALE,78,831725898,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
-",The examination shows diffuse skin thickening. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -31,7 +31,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.104389345981935981355845957979651015077.png,2,MLO,R,4096,3328,2
 936277906,FEMALE,78,831725898,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -45,7 +45,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.239577423760362698062104766745244257383.png,2,CC,L,4096,3328,2
 936277906,FEMALE,78,831725898,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
-",The examination shows diffuse skin thickening. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -59,7 +59,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.251214987475513478978273881893566675845.png,2,CC,R,4096,3328,2
 936277906,FEMALE,78,831725898,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -73,7 +73,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.313778401526557888239855475718434265360.png,2,MLO,L,4096,3328,2
 936050982,FEMALE,54,831774020,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -87,7 +87,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.86654939575627976900666580629311592355.png,0,MLO,R,4096,3328,2
 936050982,FEMALE,54,831774020,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows normal axillary appearance. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -101,7 +101,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.29659868489473312982324835190964813602.png,0,CC,L,4096,3328,2
 936050982,FEMALE,54,831774020,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows normal axillary appearance. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -115,7 +115,7 @@ target due date for the next exam.
 ",,0,1.2.840.113654.2.70.1.69003731047785300854128009343626278944.png,0,MLO,L,4096,3328,2
 936050982,FEMALE,54,831774020,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -127,13 +127,13 @@ The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
 ",,0,1.2.840.113654.2.70.1.187647744170620796557226638492400303819.png,0,CC,R,4096,3328,2
-936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.118227159593347317833423033201637809316.png,0,CC,L,2457,1890,2
-936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.36004613130204259137740602032805821758.png,0,MLO,L,2457,1890,2
-936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows post-surgical changes evident. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.305944197127775504789560886500592102820.png,0,CC,R,2457,1890,2
-936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows post-surgical changes evident. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.318780599333165140583795437509747032288.png,0,MLO,R,2457,1890,2
+936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.118227159593347317833423033201637809316.png,0,CC,L,2457,1890,2
+936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.36004613130204259137740602032805821758.png,0,MLO,L,2457,1890,2
+936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.305944197127775504789560886500592102820.png,0,CC,R,2457,1890,2
+936500893,FEMALE,55,838533436,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.318780599333165140583795437509747032288.png,0,MLO,R,2457,1890,2
 936056267,FEMALE,63,826357872,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,"Birads: 4, Patient is: 44 years old, and routine mammographic screening recommended","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 "," 
@@ -146,7 +146,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.248289051180748045914343021144632900752.png,2,CC,R,3328,2560,1
 936056267,FEMALE,63,826357872,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,The examination shows possible intramammary lymph node. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows post-surgical changes evident. Further examination may be needed.,"Birads: 6, Patient is: 89 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 "," 
@@ -159,7 +159,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.8000470530175289117121056447152500034.png,2,MLO,L,3328,2560,1
 936056267,FEMALE,63,826357872,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,"Birads: 4, Patient is: 44 years old, and routine mammographic screening recommended","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 "," 
@@ -172,7 +172,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.62362651009188685983353221624517734212.png,2,MLO,R,3328,2560,1
 936056267,FEMALE,63,826357872,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,The examination shows possible intramammary lymph node. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows post-surgical changes evident. Further examination may be needed.,"Birads: 6, Patient is: 89 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 "," 
@@ -185,7 +185,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.4273206118501428877021174364288391548.png,2,CC,L,3328,2560,1
 935281061,FEMALE,63,845418062,BIRADS 1,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 2, Patient is: 47 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -196,7 +196,7 @@ informing them of the results of their breast imaging exam(s).
 ",,0,1.2.840.113654.2.70.1.30461139904316175322495405241180479525.png,2,MLO,L,4096,3328,1
 935281061,FEMALE,63,845418062,BIRADS 1,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 2, Patient is: 47 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -207,7 +207,7 @@ informing them of the results of their breast imaging exam(s).
 ",,0,1.2.840.113654.2.70.1.80499658713815492789618602240287718252.png,2,CC,L,4096,3328,1
 935281061,FEMALE,63,845418062,BIRADS 1,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 6, Patient is: 44 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -218,7 +218,7 @@ informing them of the results of their breast imaging exam(s).
 ",,0,1.2.840.113654.2.70.1.29055110789117656876759718311979007081.png,2,CC,R,4096,3328,1
 935281061,FEMALE,63,845418062,BIRADS 1,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 6, Patient is: 44 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -229,7 +229,7 @@ informing them of the results of their breast imaging exam(s).
 ",,0,1.2.840.113654.2.70.1.245260619906576466514804774944654688767.png,2,MLO,R,4096,3328,1
 936387648,FEMALE,63,859984079,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 5, Patient is: 28 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -240,7 +240,7 @@ patient with these findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.11788541260436204059728360192187887522.png,2,MLO,R,2457,1996,1
 936387648,FEMALE,63,859984079,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 4, Patient is: 63 years old, and further imaging evaluation is suggested","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -251,7 +251,7 @@ patient with these findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.97534903045762856089145634330175843351.png,2,MLO,L,2457,1996,1
 936387648,FEMALE,63,859984079,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 5, Patient is: 28 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -262,7 +262,7 @@ patient with these findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.300212880956424933494522571112003915930.png,2,CC,R,2457,1996,1
 936387648,FEMALE,63,859984079,BIRADS 1,"   The patient is 63 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 4, Patient is: 63 years old, and further imaging evaluation is suggested","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 
@@ -271,13 +271,13 @@ year, unless otherwise clinically indicated. We will provide the
 patient with these findings and recommendations.
 
 ",,0,1.2.840.113654.2.70.1.111092341830953724645882188053430413414.png,2,CC,L,2457,1996,1
-701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows normal axillary appearance. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,,,,1,1.2.840.113654.2.70.1.73321787140550702507287242433011993686.png,1,CC,L,2457,1996,2
-701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows normal axillary appearance. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,,,,1,1.2.840.113654.2.70.1.31900044492614548033825577715035382706.png,1,MLO,L,2457,1996,2
-701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows benign calcifications present. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,,,,1,1.2.840.113654.2.70.1.333346985922821271411339652188858929177.png,1,CC,R,2457,1996,2
-701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows benign calcifications present. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,,,,1,1.2.840.113654.2.70.1.328394203062745101003141926349349329437.png,1,MLO,R,2457,1996,2
+701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and further imaging evaluation is suggested",,,,1,1.2.840.113654.2.70.1.73321787140550702507287242433011993686.png,1,CC,L,2457,1996,2
+701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and further imaging evaluation is suggested",,,,1,1.2.840.113654.2.70.1.31900044492614548033825577715035382706.png,1,MLO,L,2457,1996,2
+701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 2, Patient is: 75 years old, and no additional imaging required at this time",,,,1,1.2.840.113654.2.70.1.333346985922821271411339652188858929177.png,1,CC,R,2457,1996,2
+701722701,FEMALE,74,834630754,BIRADS 2,,The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 2, Patient is: 75 years old, and no additional imaging required at this time",,,,1,1.2.840.113654.2.70.1.328394203062745101003141926349349329437.png,1,MLO,R,2457,1996,2
 936354676,FEMALE,63,887780306,BIRADS 0,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
+",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 6, Patient is: 69 years old, and no additional imaging required at this time","  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
 EVALUATION
 
 RIS CODE: 2ADDLT
@@ -288,7 +288,7 @@ the patient and ask the patient to return for further evaluation.
 ",,0,1.2.840.113654.2.70.1.11873459318651853187546872666491310331.png,3,MLO,L,2456,1995,0
 936354676,FEMALE,63,887780306,BIRADS 0,"   The patient is 63 years old and presents for routine screening. She
 has no family history of breast cancer.
-",The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
+",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 6, Patient is: 69 years old, and no additional imaging required at this time","  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
 EVALUATION
 
 RIS CODE: 2ADDLT
@@ -297,15 +297,15 @@ Additional imaging is necessary of the left breast. We will contact
 the patient and ask the patient to return for further evaluation.
 
 ",,0,1.2.840.113654.2.70.1.110375202246780195070766191820875330713.png,3,CC,L,2456,1995,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.94711081460307663697730135911187190267.png,0,CC,L,2457,1890,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.212055319224463099977810923905328864492.png,0,MLO,L,2457,1890,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.274279641178246587055981880042195121812.png,0,MLO,R,2457,1890,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.187226903663996787331385201081640334183.png,0,CC,L,2456,1889,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.214609927805595895311730841860593282317.png,0,CC,R,2456,1889,0
-40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.97156114959524653757798954288210724822.png,0,CC,R,2457,1890,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows benign calcifications present. Further examination may be needed.,"Birads: 6, Patient is: 47 years old, and patient should consider clinical follow-up",,,,0,1.2.840.113654.2.70.1.94711081460307663697730135911187190267.png,0,CC,L,2457,1890,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows benign calcifications present. Further examination may be needed.,"Birads: 6, Patient is: 47 years old, and patient should consider clinical follow-up",,,,0,1.2.840.113654.2.70.1.212055319224463099977810923905328864492.png,0,MLO,L,2457,1890,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 3, Patient is: 72 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.274279641178246587055981880042195121812.png,0,MLO,R,2457,1890,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows benign calcifications present. Further examination may be needed.,"Birads: 6, Patient is: 47 years old, and patient should consider clinical follow-up",,,,0,1.2.840.113654.2.70.1.187226903663996787331385201081640334183.png,0,CC,L,2456,1889,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 3, Patient is: 72 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.214609927805595895311730841860593282317.png,0,CC,R,2456,1889,0
+40409490,FEMALE,59,825334794,BIRADS 0,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 3, Patient is: 72 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.97156114959524653757798954288210724822.png,0,CC,R,2457,1890,0
 40408552,FEMALE,54,870699254,BIRADS 0,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,"  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
+",The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 4, Patient is: 69 years old, and no additional imaging required at this time","  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
 EVALUATION
 
 RIS CODE: 2ADDRTNP
@@ -315,7 +315,7 @@ the patient and ask the patient to return for further evaluation.
 ",,0,1.2.840.113654.2.70.1.140727982342161726539030363045560284065.png,0,MLO,R,2456,1995,0
 40408552,FEMALE,54,870699254,BIRADS 0,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows possible intramammary lymph node. Further examination may be needed.,The examination shows benign calcifications present. Further examination may be needed.,"  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
+",The examination shows benign lymph node enlargement. Further examination may be needed.,"Birads: 4, Patient is: 69 years old, and no additional imaging required at this time","  BI-RADS: 0 - INCOMPLETE: NEED ADDITIONAL IMAGING
 EVALUATION
 
 RIS CODE: 2ADDRTNP
@@ -323,29 +323,29 @@ RIS CODE: 2ADDRTNP
 the patient and ask the patient to return for further evaluation.
 
 ",,0,1.2.840.113654.2.70.1.86771709091647379706835669044652731860.png,0,CC,R,2456,1995,0
-935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 0, Patient is: 49 years old, and routine mammographic screening recommended","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.98466613239172134699699588124640497300.png,0,MLO,L,2457,1996,1
-935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows post-surgical changes evident. Further examination may be needed.,"Birads: 3, Patient is: 55 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.201071053258845950682839901246154043528.png,0,CC,R,2457,1996,1
-935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows benign lymph node enlargement. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows post-surgical changes evident. Further examination may be needed.,"Birads: 3, Patient is: 55 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.291151077463102872724007541589745898930.png,0,MLO,R,2457,1996,1
-935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935150597,FEMALE,62,840935116,BIRADS 1,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 0, Patient is: 49 years old, and routine mammographic screening recommended","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 3NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.174982854052051064066257769508046743993.png,0,CC,L,2457,1996,1
-40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.155657808245604928344006384524766412188.png,3,MLO,R,2457,1890,1
-40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows suspicious mass identified requiring further evaluation. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.192210421714078230054777336310744108840.png,3,CC,R,2457,1890,1
-40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.44970591714888596367682986187239775549.png,3,MLO,L,2457,1890,1
-40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.272613250352430016292802921357591403952.png,3,CC,L,2457,1890,1
+40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"Birads: 0, Patient is: 61 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.155657808245604928344006384524766412188.png,3,MLO,R,2457,1890,1
+40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"Birads: 0, Patient is: 61 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.192210421714078230054777336310744108840.png,3,CC,R,2457,1890,1
+40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.44970591714888596367682986187239775549.png,3,MLO,L,2457,1890,1
+40496778,FEMALE,70,840295393,BIRADS 1,,The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.272613250352430016292802921357591403952.png,3,CC,L,2457,1890,1
 936959987,FEMALE,54,883318831,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows scattered fibroglandular tissue. Further examination may be needed.,The examination shows post-surgical changes evident. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 6, Patient is: 69 years old, and further imaging evaluation is suggested","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -359,7 +359,7 @@ target due date for the next exam.
 ",,1,1.2.840.113654.2.70.1.13924412661193821629729657161648204311.png,3,CC,R,4096,3328,2
 936959987,FEMALE,54,883318831,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,The examination shows diffuse skin thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"Birads: 0, Patient is: 31 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -373,7 +373,7 @@ target due date for the next exam.
 ",,1,1.2.840.113654.2.70.1.37095035785179947616780266633404251429.png,3,MLO,L,4096,3328,2
 936959987,FEMALE,54,883318831,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows scattered fibroglandular tissue. Further examination may be needed.,The examination shows post-surgical changes evident. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 6, Patient is: 69 years old, and further imaging evaluation is suggested","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -387,7 +387,7 @@ target due date for the next exam.
 ",,1,1.2.840.113654.2.70.1.194053926876828061569918662589241714875.png,3,MLO,R,4096,3328,2
 936959987,FEMALE,54,883318831,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
-",The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,The examination shows diffuse skin thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"Birads: 0, Patient is: 31 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -401,7 +401,7 @@ target due date for the next exam.
 ",,1,1.2.840.113654.2.70.1.294053619206737760898445317905079321339.png,3,CC,L,4096,3328,2
 935689556,FEMALE,55,830853710,BIRADS 2,"   The patient is 55 years old and presents for routine screening.
 
-",The examination shows benign lymph node enlargement. Further examination may be needed.,The examination shows normal axillary appearance. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 1, Patient is: 57 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -414,7 +414,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.262887433423926551764234093144863369629.png,2,CC,L,4096,3328,2
 935689556,FEMALE,55,830853710,BIRADS 2,"   The patient is 55 years old and presents for routine screening.
 
-",The examination shows benign lymph node enlargement. Further examination may be needed.,The examination shows normal axillary appearance. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 1, Patient is: 57 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -427,7 +427,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.118762804371850773033756416111255392171.png,2,MLO,L,4096,3328,2
 935689556,FEMALE,55,830853710,BIRADS 2,"   The patient is 55 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 0, Patient is: 55 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -440,7 +440,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.169020424226282218963186245941140021008.png,2,CC,R,4096,3328,2
 935689556,FEMALE,55,830853710,BIRADS 2,"   The patient is 55 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows lymph node with cortical thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 0, Patient is: 55 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -451,13 +451,13 @@ patient.
 The patient has been entered into a reminder system with a target due
 date for the next exam.
 ",,0,1.2.840.113654.2.70.1.229944254531201792325244608316881425031.png,2,MLO,R,4096,3328,2
-40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows normal axillary appearance. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.78532632741010298853753198258883182447.png,3,MLO,L,2457,1996,2
-40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows normal axillary appearance. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.227880237554509113482052473143570742706.png,3,CC,L,2457,1996,2
-40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.26245162737928959532489633942055121923.png,3,MLO,R,2457,1996,2
-40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.171113232104388012201421816754386633881.png,3,CC,R,2457,1890,2
+40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 6, Patient is: 77 years old, and no additional imaging required at this time",,,,0,1.2.840.113654.2.70.1.78532632741010298853753198258883182447.png,3,MLO,L,2457,1996,2
+40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 6, Patient is: 77 years old, and no additional imaging required at this time",,,,0,1.2.840.113654.2.70.1.227880237554509113482052473143570742706.png,3,CC,L,2457,1996,2
+40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows diffuse skin thickening. Further examination may be needed.,"Birads: 6, Patient is: 56 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.26245162737928959532489633942055121923.png,3,MLO,R,2457,1996,2
+40494117,FEMALE,59,848189046,BIRADS 2,,The examination shows diffuse skin thickening. Further examination may be needed.,"Birads: 6, Patient is: 56 years old, and routine mammographic screening recommended",,,,0,1.2.840.113654.2.70.1.171113232104388012201421816754386633881.png,3,CC,R,2457,1890,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 3, Patient is: 46 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -470,7 +470,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.127487746673223098623997008867234593341.png,3,MLO,R,3328,2560,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 3, Patient is: 46 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -483,7 +483,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.154170085106182183146145887088723887235.png,3,CC,R,2457,1890,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 78 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -496,7 +496,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.25371782976994615173893609426839995794.png,3,MLO,L,2457,1890,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 3, Patient is: 46 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -509,7 +509,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.262049836875329942628564160542610752672.png,3,MLO,R,2457,1890,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows asymmetrical breast density observed. Further examination may be needed.,"Birads: 3, Patient is: 46 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -522,7 +522,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.221180299950712175329954950592817962408.png,3,CC,R,3328,2560,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 78 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -535,7 +535,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.329097297712172895713951803770745433312.png,3,MLO,L,3328,2560,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 78 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -548,7 +548,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.52553234499254706875069881716988490128.png,3,CC,L,3328,2560,2
 934754925,FEMALE,61,840944596,BIRADS 2,"   The patient is 61 years old and presents for routine screening.
 
-",The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 78 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 3BENIGN
 "," 
@@ -559,25 +559,25 @@ patient.
 The patient has been entered into a reminder system with a target due
 date for the next exam.
 ",,0,1.2.840.113654.2.70.1.33082056187560460332538468647515876198.png,3,CC,L,2457,1890,2
-935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows lymph node with cortical thickening. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 6, Patient is: 58 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.130872869413961864774509658543807829150.png,2,MLO,L,2457,1996,1
-935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows benign calcifications present. Further examination may be needed.,"Birads: 4, Patient is: 84 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.337695452563721560261360761863834583304.png,2,CC,R,2457,1996,1
-935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows asymmetrical breast density observed. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows benign calcifications present. Further examination may be needed.,"Birads: 4, Patient is: 84 years old, and follow-up and possible biopsy necessary","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.118373347725620517681711146141194858136.png,2,MLO,R,2457,1996,1
-935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows lymph node with cortical thickening. Further examination may be needed.,The examination shows previous excisional biopsy site noted. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+935760853,FEMALE,67,849662835,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 6, Patient is: 58 years old, and recommend MRI for better evaluation","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.196834374715281001155674301904325196724.png,2,CC,L,2457,1996,1
 936993559,FEMALE,64,840579859,BIRADS 2,"   The patient is 64 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows diffuse skin thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 3, Patient is: 51 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 1BENIGN
 "," 
@@ -590,7 +590,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.139695021852048191326277575617414489848.png,0,CC,L,4096,3328,2
 936993559,FEMALE,64,840579859,BIRADS 2,"   The patient is 64 years old and presents for routine screening.
 
-",The examination shows benign lymph node enlargement. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 83 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 1BENIGN
 "," 
@@ -603,7 +603,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.118001323106668705753546905534432893848.png,0,MLO,R,4096,3328,2
 936993559,FEMALE,64,840579859,BIRADS 2,"   The patient is 64 years old and presents for routine screening.
 
-",The examination shows benign lymph node enlargement. Further examination may be needed.,The examination shows solitary dilated duct visible. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 2, Patient is: 83 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 1BENIGN
 "," 
@@ -616,7 +616,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.95226630350216772840085233571161122436.png,0,CC,R,4096,3328,2
 936993559,FEMALE,64,840579859,BIRADS 2,"   The patient is 64 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows diffuse skin thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 3, Patient is: 51 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 1BENIGN
 "," 
@@ -629,7 +629,7 @@ date for the next exam.
 ",,0,1.2.840.113654.2.70.1.281901192264124149574278474370089571592.png,0,MLO,L,4096,3328,2
 936993559,FEMALE,64,840579859,BIRADS 2,"   The patient is 64 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows diffuse skin thickening. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 3, Patient is: 51 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 1BENIGN
 "," 
@@ -640,18 +640,18 @@ patient.
 The patient has been entered into a reminder system with a target due
 date for the next exam.
 ",,0,1.2.840.113654.2.70.1.247091755795422431317557513587457575167.png,0,MLO,L,4096,3328,2
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.166860469752855375730513579385401167300.png,2,MLO,L,2457,1996,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.74647468306011258799540003579319924945.png,2,MLO,L,2456,1995,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.243385832092984725560434828492415780888.png,2,CC,L,2457,1996,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.184647674229577738865395538966827957355.png,2,CC,L,2456,1995,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.260604129054477640215305018545333058294.png,2,CC,L,2456,1995,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.52427415012113518888323302954548564900.png,2,CC,R,2457,1996,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.4140346124123103772414250813443417015.png,2,CC,L,2456,1995,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows fibroglandular densities noted. Further examination may be needed.,The examination shows fibroglandular densities noted. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.199110381295614541783295103611427116892.png,2,MLO,L,2456,1995,0
-935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,The examination shows asymmetrical breast density observed. Further examination may be needed.,,,,0,1.2.840.113654.2.70.1.291731566366806477168070839651627048366.png,2,MLO,R,2457,1996,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.166860469752855375730513579385401167300.png,2,MLO,L,2457,1996,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.74647468306011258799540003579319924945.png,2,MLO,L,2456,1995,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.243385832092984725560434828492415780888.png,2,CC,L,2457,1996,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.184647674229577738865395538966827957355.png,2,CC,L,2456,1995,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.260604129054477640215305018545333058294.png,2,CC,L,2456,1995,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 0, Patient is: 30 years old, and follow-up and possible biopsy necessary",,,,0,1.2.840.113654.2.70.1.52427415012113518888323302954548564900.png,2,CC,R,2457,1996,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.4140346124123103772414250813443417015.png,2,CC,L,2456,1995,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 4, Patient is: 43 years old, and further imaging evaluation is suggested",,,,0,1.2.840.113654.2.70.1.199110381295614541783295103611427116892.png,2,MLO,L,2456,1995,0
+935792466,FEMALE,62,847520525,BIRADS 0,,The examination shows lymph node with cortical thickening. Further examination may be needed.,"Birads: 0, Patient is: 30 years old, and follow-up and possible biopsy necessary",,,,0,1.2.840.113654.2.70.1.291731566366806477168070839651627048366.png,2,MLO,R,2457,1996,0
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows fibroglandular densities noted. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -662,7 +662,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.187948151690861326073197994387294092805.png,3,MLO,R,2457,1996,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows fibroglandular densities noted. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -673,7 +673,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.117770448764160978182700938624774126043.png,3,MLO,R,425,266,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows no significant abnormality detected. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 5, Patient is: 30 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -684,7 +684,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.128323741900129564578957985105964225727.png,3,MLO,L,425,266,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows fibroglandular densities noted. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -695,7 +695,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.222477287535791026723048185534427385871.png,3,CC,R,425,266,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows no significant abnormality detected. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 5, Patient is: 30 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -706,7 +706,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.163822605701193649824890583454684768651.png,3,CC,L,425,266,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows benign calcifications present. Further examination may be needed.,The examination shows microcalcifications detected in the upper quadrant. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows fibroglandular densities noted. Further examination may be needed.,"Birads: 1, Patient is: 85 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -717,7 +717,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.262358655609624635157295601091866054912.png,3,CC,R,2457,1996,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows no significant abnormality detected. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 5, Patient is: 30 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -728,7 +728,7 @@ findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.293927014367829839135958043638434982094.png,3,MLO,L,2457,1996,2
 936161127,FEMALE,53,825932678,BIRADS 2,"   The patient is 53 years old and presents for routine screening.
 History of bilateral reduction mammoplasty.
-",The examination shows no significant abnormality detected. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 2 - BENIGN FINDING(S)
+",The examination shows normal axillary appearance. Further examination may be needed.,"Birads: 5, Patient is: 30 years old, and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -737,25 +737,25 @@ and tomosynthesis is recommended in one year, unless otherwise
 clinically indicated.  We will provide the patient with these
 findings and recommendations.
 ",,0,1.2.840.113654.2.70.1.81266922041336899693156048771796498138.png,3,CC,L,2457,1996,2
-40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows diffuse skin thickening. Further examination may be needed.,"Birads: 5, Patient is: 86 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.225416017428424459803050045103670657238.png,2,CC,L,2457,1996,1
-40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 5, Patient is: 28 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.175010212751333265973867951308456217531.png,2,CC,R,2457,1996,1
-40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows previous excisional biopsy site noted. Further examination may be needed.,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,"Birads: 5, Patient is: 28 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.199035556945135657403747400737383468727.png,2,MLO,R,2457,1996,1
-40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows architectural distortion with no associated mass. Further examination may be needed.,The examination shows fibrocystic changes with multiple cysts. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+40487189,FEMALE,89,825133346,BIRADS 1,,The examination shows diffuse skin thickening. Further examination may be needed.,"Birads: 5, Patient is: 86 years old, and patient should consider clinical follow-up","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 ",,,0,1.2.840.113654.2.70.1.225334922081844040972632823458125148532.png,2,MLO,L,2457,1996,1
 936195341,FEMALE,49,846903849,BIRADS 1,"   The patient is 49 years old and presents for routine screening.
 
-",The examination shows scattered fibroglandular tissue. Further examination may be needed.,The examination shows normal axillary appearance. Further examination may be needed.,"  BI-RADS: 1 - NEGATIVE
+",The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 4, Patient is: 70 years old, and no additional imaging required at this time","  BI-RADS: 1 - NEGATIVE
 
 RIS CODE: 2NEGATIVE
 "," 

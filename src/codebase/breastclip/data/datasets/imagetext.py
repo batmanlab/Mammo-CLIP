@@ -50,8 +50,8 @@ class ImageTextDataset(Dataset):
         self.image_aug_other_image = True
         self.image_view_aug = True
         self.has_backtranslated = hasattr(self.df, "text_augment")
-        with open(
-                "/Mammo-CLIP/src/codebase/breastclip/data/datasets/prompts_all.json") as f:
+        print(kwargs)
+        with open(self.root_dir / "Mammo-CLIP/src/codebase/breastclip/data/datasets/prompts_all.json") as f:
             self.prompt_json = json.load(f)
 
         log.info(f"split: {split} transform")
@@ -61,7 +61,7 @@ class ImageTextDataset(Dataset):
         return len(self.df)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == 'in_house':
+        if self.dataset.lower() == 'upmc':
             return self.root_dir / self.img_dir / f'Patient_{study_id}' / image_id
         else:
             return self.root_dir / self.img_dir / f'{str(study_id)}' / image_id

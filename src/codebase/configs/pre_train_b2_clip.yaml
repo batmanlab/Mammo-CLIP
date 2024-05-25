@@ -7,12 +7,13 @@ defaults:
   - dataloader: dataloader_b5
   - tokenizer: clinical_bert
   - transform: clahe
-  - model: clip_b5_det_clinical
+  - model: clip_b2_det_clinical
   - optimizer: adamw
   - scheduler: cosine_epoch15_warmup1
   - loss: breast_clip
 
 base:
+  data_dir: "/ocean/projects/asc170022p/shg121/PhD"
   period: "n"
   resume_training: False
   epoch_to_start: 0
@@ -43,4 +44,4 @@ base:
 
 hydra:
   run:
-    dir: /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_${base.period}
+    dir: /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_${base.period}

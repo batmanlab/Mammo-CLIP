@@ -30,10 +30,7 @@ def main(cfg: DictConfig):
     torch.backends.cudnn.benchmark = True
 
     cfg = convert_dictconfig_to_dict(cfg)
-    if cfg["base"]["train_fast"]:
-        run_fast(local_rank, cfg)
-    else:
-        run(local_rank, cfg)
+    run(local_rank, cfg)
 
 
 if __name__ == "__main__":

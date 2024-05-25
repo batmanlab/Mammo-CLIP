@@ -13,6 +13,7 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
 from transformers.models.marian import MarianMTModel
+from sklearn.model_selection import GroupKFold
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
@@ -105,6 +106,18 @@ class TextDataset(Dataset):
     def collate_fn(self, instances):
         tokens = self.tokenizer(instances, return_tensors="pt", padding=True)
         return tokens
+
+
+def convert_df_to_folds(out_data_path, csv_path):
+    new_df = pd.read_csv(out_data_path / csv_path)
+    gkf = GroupKFold(n_splits=4)
+    new_df['group'] = new_df['patient_id'].astype(str)
+    new_df['fold'] = -1
+    for fold_number, (train_index, test_index) in enumerate(gkf.split(new_df, groups=new_df['group'])):
+        new_df.loc[test_index, 'fold'] = fold_number
+
+    new_df.drop(columns=['group'], inplace=True)
+    new_df.to_csv(out_data_path / csv_path, index=False)
 
 
 class BackTranslation:
@@ -248,7 +261,7 @@ def process_df(df, csv_path):
         'impressions': impression_arr,
     })
 
-    new_df.to_csv(csv_path,index=False)
+    new_df.to_csv(csv_path, index=False)
 
 
 if __name__ == "__main__":
@@ -275,7 +288,7 @@ if __name__ == "__main__":
     print(df.shape)
     print(df.head(10))
 
-    output_csv = "upmc_breast_clip_without_period_lower_case.csv"
+    output_csv = "clip_pretrain_100.csv"
     process_df(df, dataset_path / output_csv)
     df = pd.read_csv(dataset_path / output_csv)
     print(df.shape)
@@ -289,4 +302,7 @@ if __name__ == "__main__":
         temperature=args.temperature,
         do_sample=True
     )
+    convert_df_to_folds(Path(out_data_path), output_csv)
     print(args.dataset_path)
+
+

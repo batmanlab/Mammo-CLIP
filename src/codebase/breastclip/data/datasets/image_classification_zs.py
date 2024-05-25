@@ -48,7 +48,7 @@ class ImageClassificationZSDataset(Dataset):
         return len(self.df)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == 'in_house':
+        if self.dataset.lower() == 'upmc':
             return self.root_dir / self.img_dir / f'Patient_{study_id}' / image_id
         else:
             return self.root_dir / self.img_dir / f'{str(study_id)}' / image_id
@@ -82,7 +82,7 @@ class ImageClassificationZSDataset(Dataset):
         img /= img.max()
         img = torch.tensor((img - self.mean) / self.std, dtype=torch.float32)
         img = img.unsqueeze(0)
-        if self.dataset.lower() == 'in_house_vindr':
+        if self.dataset.lower() == 'upmc_vindr':
             mass = torch.tensor(data["Mass"], dtype=torch.long)
             calc = torch.tensor(data["Suspicious_Calcification"], dtype=torch.long)
             density = torch.tensor(data["density"], dtype=torch.long)

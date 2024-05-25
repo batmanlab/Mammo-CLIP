@@ -403,7 +403,7 @@ def evaluate_clip_zs(model, device, loss_func, dataloader_dict, epoch, total_epo
 
             similarities = softmax(metrics.pairwise.cosine_similarity(image_embeddings, text_emb), axis=1)
 
-            if data_name.lower() == "in_house":
+            if data_name.lower() == "upmc":
                 predictions = np.argmax(similarities, axis=1)
                 accuracy = accuracy_score(labels, predictions)
                 f1 = f1_score(labels, predictions,
@@ -413,8 +413,8 @@ def evaluate_clip_zs(model, device, loss_func, dataloader_dict, epoch, total_epo
                 f1_scores.append(f1)
                 aurocs.append(0)
 
-                log.info(f"Zero shot Accuracy [in_house]: {accuracy}")
-                log.info(f"Zero shot F1 [in_house]: {f1}")
+                log.info(f"Zero shot Accuracy [upmc]: {accuracy}")
+                log.info(f"Zero shot F1 [upmc]: {f1}")
             elif data_name.lower() == "rsna":
                 fpr, tpr, thresholds = metrics.roc_curve(labels, similarities[:, 1])
                 auroc = metrics.auc(fpr, tpr)
