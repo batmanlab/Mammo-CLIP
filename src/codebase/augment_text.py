@@ -41,7 +41,7 @@ def _split_report_into_segment_concat(report):
     if pd.isnull(report):
         return
     else:
-        report = report.replace('\n', ' ')
+        report = report.replace('\n', ' ').replace('. ', '.').replace('.', '. ')
         reports = report.split(". ")
         study_sent = []
         for sent in reports:
@@ -271,13 +271,13 @@ if __name__ == "__main__":
     args.temperature = [args.temperature]
 
     dataset_path = Path(args.dataset_path)
-    df = pd.read_csv(dataset_path / args.csv_path).head(100)
+    df = pd.read_csv(dataset_path / args.csv_path)
     print(df.shape)
     print(df.head(10))
 
     output_csv = "upmc_breast_clip_without_period_lower_case.csv"
     process_df(df, dataset_path / output_csv)
-    df = pd.read_csv(dataset_path / output_csv).head(100)
+    df = pd.read_csv(dataset_path / output_csv)
     print(df.shape)
     print(df.head(10))
 
