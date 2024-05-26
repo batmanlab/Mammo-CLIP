@@ -38,6 +38,7 @@ class ImageClassificationZSDataset(Dataset):
         self.transform = load_transform(split=split, transform_config=transform_config)
 
         log.info(f"split: {split} transform")
+        log.info(f"dataset: {self.dataset}")
         log.info(self.transform)
 
         self.mean = mean
@@ -82,7 +83,7 @@ class ImageClassificationZSDataset(Dataset):
         img /= img.max()
         img = torch.tensor((img - self.mean) / self.std, dtype=torch.float32)
         img = img.unsqueeze(0)
-        if self.dataset.lower() == 'upmc_vindr':
+        if self.dataset.lower() == 'vindr':
             mass = torch.tensor(data["Mass"], dtype=torch.long)
             calc = torch.tensor(data["Suspicious_Calcification"], dtype=torch.long)
             density = torch.tensor(data["density"], dtype=torch.long)

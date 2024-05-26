@@ -66,7 +66,6 @@ class Evaluator:
         self.model.load_state_dict(ckpt["model"], strict=False)
         self.model.eval()
         dataloader = self.test_dataloader_dict[test_dataset_name]
-
         idx = 0
         image_embeddings = []
         text_embeddings = []

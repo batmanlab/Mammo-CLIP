@@ -1,0 +1,66 @@
+defaults:
+  - _self_
+  - data_test:
+      - vindr_zs
+      - rsna_zs
+
+  - dataloader: dataloader_4
+  - transform: clahe
+  - tokenizer: clinical_bert
+
+model:
+  clip_check_point: ????
+
+base:
+  data_dir: "/ocean/projects/asc170022p/shg121/PhD"
+  period: "n"
+  fold: 0
+  seed: 10
+  amp: True
+  mean: 0.3089279
+  std: 0.25053555408335154
+  image_size_h: 1520
+  image_size_w: 912
+  text_max_length: 256
+  loss_best: classification
+  data_frac: 1.0
+  output:
+    save_path: ${hydra:run.dir}/zero_shot_results/
+  zs_prompts:
+    vindr:
+      mass:
+        - "no mass"
+        - "mass"
+      suspicious_calcification:
+        - "no suspicious calcification"
+        - "suspicious calcification"
+    rsna:
+      malignancy:
+          - "no malignancy"
+          - "malignancy"
+      cancer:
+          - "no cancer"
+          - "cancer"
+
+
+hydra:
+  run:
+    dir: ????
+  job_logging:
+    version: 1
+    formatters:
+      simple:
+        format: "%(message)s"
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+      file:
+        class: logging.FileHandler
+        filename: ${hydra.run.dir}/evaluate.log
+        formatter: simple
+    root:
+      level: INFO
+      handlers: [ file, console ]
+    disable_existing_loggers: false
