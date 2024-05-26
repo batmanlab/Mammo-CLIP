@@ -23,8 +23,10 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/preprocessing/prepro
   --base_folder="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0"
 ```
 
-## Back translation image-text dataset (UPMC)
 
+## Back translation image-text dataset (UPMC)
+### convert to specific format of mammo-clip
+### add fold
 #### Data annonymized but have similar format
 
 #### input: upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
@@ -39,6 +41,12 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/augment_tex
   --dataset-path="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/data_csv" \
   --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
   --dataset="upmc" 
+```
+
+## Change to Vindr to Mammo-Clip format
+
+```bash
+./notebooks/preprocess-clip/VinDr.ipynb
 ```
 
 ## Pretrain b5
@@ -68,4 +76,5 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/eval_zero_s
 
 ## Checkpoint
 [B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing)
+
 [B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing)

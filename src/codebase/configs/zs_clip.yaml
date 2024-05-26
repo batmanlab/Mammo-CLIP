@@ -38,10 +38,6 @@ base:
       malignancy:
           - "no malignancy"
           - "malignancy"
-      cancer:
-          - "no cancer"
-          - "cancer"
-
 
 hydra:
   run:
