@@ -78,3 +78,24 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/eval_zero_s
 [B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing)
 
 [B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing)
+
+
+## Citation
+```bibtex
+@article{ghosh2024mammo,
+  title={Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography},
+  author={Ghosh, Shantanu and Poynton, Clare B and Visweswaran, Shyam and Batmanghelich, Kayhan},
+  journal={arXiv preprint arXiv:2405.12255},
+  year={2024}
+}
+```
+
+## License and copyright
+
+Licensed under the [MIT License](LICENSE)
+
+Copyright © [Batman Lab](https://www.batman-lab.com/), 2024
+
+## Contact
+
+For any queries, contact: **shawn24@bu.edu**

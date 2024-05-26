@@ -34,11 +34,12 @@ def config():
     parser.add_argument("--clip_chk_pt_path", default=None, type=str, help="Path to Mammo-CLIP")
     parser.add_argument("--csv-file", default="RSNA_Cancer_Detection/final_rsna.csv", type=str,
                         help="data csv file")
-    parser.add_argument("--dataset", default="RSNA_breast", type=str, help="Dataset name")
+    parser.add_argument("--dataset", default="RSNA", type=str, help="Dataset name? (RSNA or VinDr)")
     parser.add_argument("--data_frac", default=1.0, type=float, help="Fraction of data to be used for training")
-    parser.add_argument("--arch", default="upmc_breast_clip_det_b5_period_n_ft", type=str,
-                        help="For b5, [upmc_breast_clip_det_b5_period_n_lp for linear probe and  upmc_breast_clip_det_b5_period_n_ft for finetuning]. "
-                             "For b2, [upmc_breast_clip_det_b2_period_n_lp for linear probe and  upmc_breast_clip_det_b2_period_n_ft for finetuning].")
+    parser.add_argument(
+        "--arch", default="upmc_breast_clip_det_b5_period_n_ft", type=str,
+        help="For b5 classification, [upmc_breast_clip_det_b5_period_n_lp for linear probe and  upmc_breast_clip_det_b5_period_n_ft for finetuning]. "
+             "For b2 classification, [upmc_breast_clip_det_b2_period_n_lp for linear probe and  upmc_breast_clip_det_b2_period_n_ft for finetuning].")
     parser.add_argument("--detector-threshold", default=0.1, type=float)
     parser.add_argument("--swin_encoder", default="microsoft/swin-tiny-patch4-window7-224", type=str)
     parser.add_argument("--pretrained_swin_encoder", default="y", type=str)

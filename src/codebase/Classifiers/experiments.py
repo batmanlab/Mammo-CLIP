@@ -97,8 +97,8 @@ def train_loop(args, device):
         ckpt = None
     if args.running_interactive:
         # test on small subsets of data on interactive mode
-        args.train_folds = args.train_folds.sample(100)
-        args.valid_folds = args.valid_folds.sample(n=100)
+        args.train_folds = args.train_folds.sample(1000)
+        args.valid_folds = args.valid_folds.sample(n=1000)
 
     train_loader, valid_loader = get_dataloader_RSNA(args)
     print(f'train_loader: {len(train_loader)}, valid_loader: {len(valid_loader)}')
