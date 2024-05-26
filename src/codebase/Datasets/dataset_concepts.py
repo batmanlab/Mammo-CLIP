@@ -2,7 +2,6 @@ from collections import defaultdict
 
 import cv2
 import matplotlib.patches as patches
-# Display one image with bounding boxes
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -90,12 +89,6 @@ class MammoDataset(Dataset):
         return {
             'x': img.unsqueeze(0),
             'y': torch.tensor(data[self.label], dtype=torch.long),
-            # 'biopsy_clip': biopsy_clip,
-            # 'mass': mass,
-            # 'calc': calc,
-            # 'age': age,
-            # 'view': str(view),
-            # 'laterality': str(laterality),
             'img_path': str(img_path)
         }
 
@@ -104,12 +97,6 @@ def collator_mammo_dataset_w_concepts(batch):
     return {
         'x': torch.stack([item['x'] for item in batch]),
         'y': torch.from_numpy(np.array([item["y"] for item in batch], dtype=np.float32)),
-        # 'biopsy_clip': torch.from_numpy(np.array([item["biopsy_clip"] for item in batch], dtype=np.float32)),
-        # 'mass': torch.from_numpy(np.array([item["mass"] for item in batch], dtype=np.float32)),
-        # 'calc': torch.from_numpy(np.array([item["calc"] for item in batch], dtype=np.float32)),
-        # 'age': torch.from_numpy(np.array([item["age"] for item in batch], dtype=np.float32)),
-        # 'view': [item['view'] for item in batch],
-        # 'laterality': [item['laterality'] for item in batch],
         'img_path': [item['img_path'] for item in batch]
     }
 
@@ -142,8 +129,7 @@ class MammoDataset_concept_detection(Dataset):
         self.transform = transform
         self.mean = args.mean
         self.std = args.std
-        if self.args.target_dataset.lower() != 'rsna':
-            self.image_dict = self._generate_image_dict()
+        self.image_dict = self._generate_image_dict()
 
     def _generate_image_dict(self):
         image_dict = defaultdict(lambda: {"boxes": [], "labels": []})
@@ -170,63 +156,25 @@ class MammoDataset_concept_detection(Dataset):
         return image_dict
 
     def __len__(self):
-        if self.args.target_dataset.lower() == 'rsna':
-            return len(self.annotations)
-        else:
-            return len(self.image_dict)
+        return len(self.image_dict)
 
     def __getitem__(self, idx):
-        if self.args.target_dataset.lower() != 'rsna':
-            return self.get_items_for_vindr(idx)
-        else:
-            return self.get_items_for_rsna(idx)
-
-    def get_items_for_rsna(self, idx):
-        y = torch.tensor(self.annotations.iloc[idx]['cancer'], dtype=torch.long)
-        path = self.dir_path / str(self.annotations.iloc[idx]['patient_id']) / str(
-            self.annotations.iloc[idx]['image_id'])
-
-        image = cv2.imread(f'{path}.png', cv2.IMREAD_GRAYSCALE)
-        # if self.args.arch.lower() != "clip_b5_upmc" and self.args.arch.lower() != "clip_b5_upmc_rsna":
-        image = Image.fromarray(image).convert('RGB')
-        image = np.array(image)
-
-        if self.iaa_transform:
-            image = self.iaa_transform(image=image)
-
-        if self.transform:
-            image = self.transform(image)
-
-        image = image.to(torch.float32)
-        image -= image.min()
-        image /= image.max()
-        image = torch.tensor((image - self.mean) / self.std, dtype=torch.float32)
-
-        return {
-            "x": image,
-            "y": y,
-            "img_path": str(path)
-        }
+        return self.get_items_for_vindr(idx)
 
     def get_items_for_vindr(self, idx):
         study_id, image_id = list(self.image_dict.keys())[idx]
         boxes = self.image_dict[(study_id, image_id)]["boxes"]
         labels = self.image_dict[(study_id, image_id)]["labels"]
+
         path = None
-        if self.dataset.lower() == 'upmc':
-            pass
-        elif self.dataset.lower() == 'rsna':
-            pass
-        elif self.dataset.lower() == 'vindr' and not image_id.endswith(".png"):
+        if self.dataset.lower() == 'vindr' and not image_id.endswith(".png"):
             path = f"{self.dir_path}/{study_id}/{image_id}.png"
         elif self.dataset.lower() == 'vindr' and image_id.endswith(".png"):
             path = f"{self.dir_path}/{study_id}/{image_id}"
+
         image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-        # if self.args.arch.lower() != "clip_b5_upmc" and self.args.arch.lower() != "clip_b5_upmc_rsna":
         image = Image.fromarray(image).convert('RGB')
         image = np.array(image)
-        # print("Original box")
-        # plot_image_with_boxes(torch.tensor(image).unsqueeze(0), boxes)
         if self.iaa_transform:
             bb_box = []
             for bb in boxes:
@@ -239,15 +187,14 @@ class MammoDataset_concept_detection(Dataset):
         if self.transform:
             image = self.transform(image)
         image = image.to(torch.float32)
-        if not self.args.image_net_transform:
-            image -= image.min()
-            image /= image.max()
-            image = torch.tensor((image - self.mean) / self.std, dtype=torch.float32)
+
+        image -= image.min()
+        image /= image.max()
+        image = torch.tensor((image - self.mean) / self.std, dtype=torch.float32)
         bb_final = []
         for idx, bb in enumerate(boxes[0]):
             bb_final.append([bb.x1, bb.y1, bb.x2, bb.y2, labels[idx]])
-        # print("Augmented box")
-        # plot_image_with_boxes(image, bb_final)
+
         target = {
             "boxes": torch.tensor(bb_final),
             "labels": labels,
@@ -264,7 +211,6 @@ class MammoDataset_concept_detection(Dataset):
 def collater_for_concept_detection(data):
     image = [s["image"] for s in data]
     res_bbox_tensor = [s["target"]["boxes"] for s in data]
-    # concepts = np.array([s["target"]["labels"] for s in data])
     image_path = [s['img_path'] for s in data]
 
     max_num_annots = max(annot.shape[0] for annot in res_bbox_tensor)
@@ -273,7 +219,6 @@ def collater_for_concept_detection(data):
 
         if max_num_annots > 0:
             for idx, annot in enumerate(res_bbox_tensor):
-                # print(annot.shape)
                 if annot.shape[0] > 0:
                     annot_padded[idx, :annot.shape[0], :] = annot
     else:
@@ -282,7 +227,6 @@ def collater_for_concept_detection(data):
     return {
         "image": torch.stack(image),
         "res_bbox_tensor": annot_padded,
-        # "concepts": torch.from_numpy(concepts),
         "image_path": image_path
     }
 
@@ -391,7 +335,6 @@ def plot_image_with_boxes(image, boxes):
     fig, ax = plt.subplots(1)
     image = image[0].numpy()
     ax.imshow(image, cmap=plt.cm.bone)
-    #     print(boxes)
     for box in boxes:
         xmin, ymin, xmax, ymax, _ = box
         rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r', facecolor='none')

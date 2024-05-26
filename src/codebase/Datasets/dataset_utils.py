@@ -51,19 +51,10 @@ def get_transforms(args):
                 ElasticTransform(alpha=args.alpha, sigma=args.sigma)
             ], p=args.p
             )
-    elif (args.dataset.lower() == "vindr") and (args.model_type.lower() == "concept-detector"):
-        if args.image_net_transform:
-            transform = torchvision.transforms.Compose([
-                torchvision.transforms.ToTensor(),
-                torchvision.transforms.Normalize(
-                    mean=[0.485, 0.456, 0.406],
-                    std=[0.229, 0.224, 0.225]
-                )
-            ])
-        else:
-            transform = torchvision.transforms.Compose([
-                torchvision.transforms.ToTensor(),
-            ])
+    elif args.dataset.lower() == "vindr" and args.model_type.lower() == "concept-detector":
+        transform = torchvision.transforms.Compose([
+            torchvision.transforms.ToTensor(),
+        ])
 
         train_affine_trans = iaa.Sequential([
             iaa.Resize({'height': args.resize, 'width': args.resize}),

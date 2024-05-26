@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --output=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_%j.out
+#SBATCH --output=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/b5_cls_ft_%j.out
 
 pwd
 hostname
@@ -8,10 +8,10 @@ date
 CURRENT=$(date +"%Y-%m-%d_%T")
 echo $CURRENT
 
-slurm_output_train_mass=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_mass_$CURRENT.out
-slurm_output_train_calc=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_calc_$CURRENT.out
-slurm_output_train_density=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_density_$CURRENT.out
-slurm_output_train_cancer=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_cancer_$CURRENT.out
+slurm_output_train_mass=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_cls_ft_mass_$CURRENT.out
+slurm_output_train_calc=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_cls_ft_calc_$CURRENT.out
+slurm_output_train_density=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_cls_ft_density_$CURRENT.out
+slurm_output_train_cancer=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_cls_ft_cancer_$CURRENT.out
 
 echo "Mammo-clip b5"
 source /ocean/projects/asc170022p/shg121/anaconda3/etc/profile.d/conda.sh

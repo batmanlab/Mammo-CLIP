@@ -31,7 +31,7 @@ def config():
         "--img-dir", default="RSNA_Cancer_Detection/train_images_png", type=str, help="Path to image file"
     )
 
-    parser.add_argument("--clip_chk_pt_path", default=None, type=str, help="Path to Mammo-CLIP")
+    parser.add_argument("--clip_chk_pt_path", default=None, type=str, help="Path to Mammo-CLIP chkpt")
     parser.add_argument("--csv-file", default="RSNA_Cancer_Detection/final_rsna.csv", type=str,
                         help="data csv file")
     parser.add_argument("--dataset", default="RSNA", type=str, help="Dataset name? (RSNA or VinDr)")
