@@ -19,7 +19,7 @@ source /ocean/projects/asc170022p/shg121/anaconda3/etc/profile.d/conda.sh
 conda activate breast_clip_rtx_6000
 
 # Mass (VinDr)
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
@@ -40,7 +40,7 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
 
 
 # Suspicious_Calcification (VinDr)
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
@@ -61,7 +61,7 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
 
 
 # Density (VinDr)
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
@@ -82,7 +82,7 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
 
 
 # Cancer (RSNA)
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --img-dir 'RSNA_Cancer_Detection/train_images_png' \
   --csv-file 'RSNA_Cancer_Detection/train_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \

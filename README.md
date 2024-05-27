@@ -21,7 +21,7 @@ Download the VinDr and RSNA from the links for downstream evaluations:
 ### Convert to png: RSNA
 
 ```bash
-python ./Mammo-CLIP/src/preprocessing/preprocess_image_to_png_kaggle.py \
+python ./src/preprocessing/preprocess_image_to_png_kaggle.py \
   --phase="test" \
   --base_folder="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/RSNA_Cancer_Detection"
 ```
@@ -29,7 +29,7 @@ python ./Mammo-CLIP/src/preprocessing/preprocess_image_to_png_kaggle.py \
 ### convert to png: VinDr
 
 ```bash
-python ./Mammo-CLIP/src/preprocessing/preprocess_image_to_png_vindr.py \
+python ./src/preprocessing/preprocess_image_to_png_vindr.py \
   --phase="test" \
   --base_folder="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0"
 ```
@@ -51,7 +51,7 @@ python ./Mammo-CLIP/src/preprocessing/preprocess_image_to_png_vindr.py \
 # input: upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
 # output: clip_pretrain_100.csv
 
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/augment_text.py \
+python ./src/codebase/augment_text.py \
   --dataset-path="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/data_csv" \
   --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
   --dataset="upmc" 
@@ -127,7 +127,7 @@ CKPT="b2-model-best-epoch-10.tar"
 DIR="./Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n"
 FULL_CKPT="$DIR/checkpoints/fold_$FOLD/$CKPT"
 
-python ./Mammo-CLIP/src/codebase/eval_zero_shot_clip.py \
+python ./src/codebase/eval_zero_shot_clip.py \
   --config-name zs_clip.yaml hydra.run.dir=$DIR model.clip_check_point=$FULL_CKPT
 ```
 
@@ -136,7 +136,7 @@ Adjust the `CKPT` and `DIR` variables according to your setup.
 ### Linear probe vision encoder Mammo-CLIP on target classification task
 
 ```bash
-python ./Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
@@ -173,7 +173,7 @@ python ./Mammo-CLIP/src/codebase/train_classifier.py \
 ### Finetune vision encoder Mammo-CLIP on target classification task
 
 ```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./src/codebase/train_classifier.py \
   --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
@@ -210,7 +210,7 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
 ### Linear probe vision encoder Mammo-CLIP on target detection task
 
 ```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detector.py \
+python ./src/codebase/train_detector.py \
   --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
@@ -245,7 +245,7 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detec
 ### Finetune vision encoder Mammo-CLIP on target detection task
 
 ```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detector.py \
+python ./src/codebase/train_detector.py \
   --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
