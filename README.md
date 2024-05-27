@@ -2,6 +2,8 @@
 
 ## Environment setup
 
+Use [environment.yml](https://github.com/batmanlab/Mammo-CLIP/blob/main/environment.yml) to setup the environment.
+
 ```bash
 conda env create --name Mammo-CLIP -f environment.yml
 conda activate Mammo-CLIP
