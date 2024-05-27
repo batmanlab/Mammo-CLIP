@@ -40,11 +40,12 @@ def config():
         "--arch", default="upmc_breast_clip_det_b5_period_n_ft", type=str,
         help="For b5 classification, [upmc_breast_clip_det_b5_period_n_lp for linear probe and  upmc_breast_clip_det_b5_period_n_ft for finetuning]. "
              "For b2 classification, [upmc_breast_clip_det_b2_period_n_lp for linear probe and  upmc_breast_clip_det_b2_period_n_ft for finetuning].")
+    parser.add_argument("--label", default="cancer", type=str,
+                        help="cancer for RSNA or Mass, Suspicious_Calcification, density for VinDr")
     parser.add_argument("--detector-threshold", default=0.1, type=float)
     parser.add_argument("--swin_encoder", default="microsoft/swin-tiny-patch4-window7-224", type=str)
     parser.add_argument("--pretrained_swin_encoder", default="y", type=str)
     parser.add_argument("--swin_model_type", default="y", type=str)
-    parser.add_argument("--label", default="cancer", type=str)
     parser.add_argument("--VER", default="084", type=str)
     parser.add_argument("--epochs-warmup", default=0, type=float)
     parser.add_argument("--num_cycles", default=0.5, type=float)

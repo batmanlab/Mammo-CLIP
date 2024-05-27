@@ -81,39 +81,59 @@ generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/mai
 file.
 
 ## Data preparation for downstream tasks
-| Dataset   | CSV                                                                                                                                   |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| **VinDr** | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv)  |
-| **RSNA**  | [train_folds.csv]()
 
-## Pretrain b5
+Use the following files for the downstream tasks (classification, detection, zero-shot):
+
+| Dataset | CSV                                                                                                                                  |
+|---------|--------------------------------------------------------------------------------------------------------------------------------------|
+| VinDr   | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv) |
+| RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
+
+## Mammo-CLIP checkpoints
+
+| Model architecture | Checkpoints                                                                                            |
+|--------------------|--------------------------------------------------------------------------------------------------------|
+| Best performance   | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) |
+| Lightweight        | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing) | 
+
+## Warning
+
+Look for `/ocean/projects/asc170022p/shg121/PhD` and replace it with your own path.
+
+## Pretraining Mammo-CLIP
 
 ```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
+python ./Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
 ```
 
-## Pretrain lightweight b2
+* Use
+  [pre_train_b5_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b5_clip.yaml)
+  for pre-training image-text variant of Efficient-Net B5 Mammo-CLIP
+* Use
+  [pre_train_b2_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b2_clip.yaml)
+  for pre-training image-text variant of Efficient-Net B2 Mammo-CLIP
 
-```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train.py --config-name pre_train_b2_clip.yaml
-```
+## Evaluation
 
-## Zero-shot evaluation of Mammo-CLIP
+### Zero-shot evaluation of Mammo-CLIP
 
 ```bash
 FOLD=0
 CKPT="b2-model-best-epoch-10.tar"
-DIR="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n"
+DIR="./Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n"
 FULL_CKPT="$DIR/checkpoints/fold_$FOLD/$CKPT"
 
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/eval_zero_shot_clip.py \
+python ./Mammo-CLIP/src/codebase/eval_zero_shot_clip.py \
   --config-name zs_clip.yaml hydra.run.dir=$DIR model.clip_check_point=$FULL_CKPT
 ```
 
-## Linear probe vision encoder Mammo-CLIP on target classification task
+Adjust the `CKPT` and `DIR` variables according to your setup.
+
+### Linear probe vision encoder Mammo-CLIP on target classification task
 
 ```bash
-python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+python ./Mammo-CLIP/src/codebase/train_classifier.py \
+  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
@@ -133,10 +153,24 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
   --balanced-dataloader 'n' 
 ```
 
-## Finetune vision encoder Mammo-CLIP on target classification task
+* `data-dir`: root directory of the dataset
+* `img-dir`: directory containing images, absolute path: `data-dir/img-dir`
+* `csv-file`: csv file containing image paths and labels, absolute path: `data-dir/csv-file`
+* `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
+* `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
+* `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
+* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_lp` for B5
+  or `upmc_breast_clip_det_b2_period_n_lp` for B2
+* `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
+  dataset; `cancer` for RSNA dataset
+* `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
+  sanity check
+
+### Finetune vision encoder Mammo-CLIP on target classification task
 
 ```bash
 python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
@@ -156,10 +190,24 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_class
   --balanced-dataloader 'n'
  ```
 
-## Linear probe vision encoder Mammo-CLIP on target classification task
+* `data-dir`: root directory of the dataset
+* `img-dir`: directory containing images, absolute path: `data-dir/img-dir`
+* `csv-file`: csv file containing image paths and labels, absolute path: `data-dir/csv-file`
+* `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
+* `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
+* `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
+* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_ft` for B5
+  or `upmc_breast_clip_det_b2_period_n_ft` for B2
+* `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
+  dataset; `cancer` for RSNA dataset
+* `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
+  sanity check
+
+### Linear probe vision encoder Mammo-CLIP on target detection task
 
 ```bash
 python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detector.py \
+  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
@@ -178,10 +226,23 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detec
   --score-threshold 0.2
  ```
 
-## Finetune vision encoder Mammo-CLIP on target classification task
+* `data-dir`: root directory of the dataset
+* `img-dir`: directory containing images, absolute path: `data-dir/img-dir`
+* `csv-file`: csv file containing image paths and labels, absolute path: `data-dir/csv-file`
+* `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
+* `dataset`: dataset name, e.g., `ViNDr`
+* `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
+* `arch`: architecture of the model, e.g., `clip_b5_upmc` for B5 or `clip_b2_upmc` for B2
+* `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
+* `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
+  sanity check
+* `freeze_backbone`: freeze the backbone of the model, for linear probe, set to `y`
+
+### Finetune vision encoder Mammo-CLIP on target detection task
 
 ```bash
 python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detector.py \
+  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
   --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
@@ -200,11 +261,35 @@ python /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/train_detec
   --score-threshold 0.2
  ```
 
-## Checkpoint
+* `data-dir`: root directory of the dataset
+* `img-dir`: directory containing images, absolute path: `data-dir/img-dir`
+* `csv-file`: csv file containing image paths and labels, absolute path: `data-dir/csv-file`
+* `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
+* `dataset`: dataset name, e.g., `ViNDr`
+* `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
+* `arch`: architecture of the model, e.g., `clip_b5_upmc` for B5 or `clip_b2_upmc` for B2
+* `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
+* `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
+  sanity check
+* `freeze_backbone`: freeze the backbone of the model, for finetune, set to `n`
 
-[B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing)
+## Additional scripts
 
-[B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing)
+For all the training scripts, we add them in
+the [scripts](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/scripts) directory:
+
+| Scripts                                                                                                                      | Purpose                                                           |
+|------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| [pretrain_mammo_clip_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b5.sh)         | Pretrain Mammo-CLIP b5                                            |
+| [pretrain_mammo_clip_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b2.sh)         | Pretrain Mammo-CLIP b2                                            |
+| [classifier_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b5.sh)       | Evaluate Mammo-CLIP b5 on fine tuning tasks for classification    |
+| [classifier_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b2.sh)       | Evaluate Mammo-CLIP b2 on fine tuning tasks for classification    |
+| [classifier_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b5.sh) | Evaluate Mammo-CLIP b5 on linear probing tasks for classification |
+| [classifier_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b2.sh) | Evaluate Mammo-CLIP b2 on linear probing tasks for classification |
+| [detector_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b5.sh)           | Evaluate Mammo-CLIP b5 on fine tuning tasks for detection         |
+| [detector_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b2.sh)           | Evaluate Mammo-CLIP b2 on fine tuning tasks for detection         |
+| [detector_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b5.sh)     | Evaluate Mammo-CLIP b5 on linear probing tasks for detection      |
+| [detector_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b2.sh)     | Evaluate Mammo-CLIP b2 on linear probing tasks for detection      |
 
 ## Citation
 
