@@ -1,3 +1,9 @@
+# Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
+
+### [Shantanu Ghosh](https://shantanu-ai.github.io/), [Clare B. Poynton](https://www.bumc.bu.edu/camed/profile/clare-poynton/), [Shyam Visweswaran](https://www.thevislab.com/lab/doku.php), [Kayhan Batmanghelich](https://www.batman-lab.com/)
+
+### [[Paper](https://arxiv.org/pdf/2405.12255)]
+
 ## Table of Contents
 
 1. [Environment Setup](#environment-setup)
