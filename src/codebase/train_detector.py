@@ -90,7 +90,6 @@ def config():
 def main(args):
     print("PyTorch Version:", torch.__version__)
     print("Torchvision Version:", torchvision.__version__)
-    print(xxx)
     seed_all(args.seed)
     # get paths
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
