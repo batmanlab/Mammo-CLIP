@@ -1,6 +1,18 @@
-## Work in progress
+## Table of Contents
 
-## Environment setup
+1. [Environment Setup](#environment-setup)
+2. [Data Instructions](#data-instructions)
+3. [Pre-processing Images](#pre-processing-images)
+4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
+5. [Data Preparation for Downstream Tasks](#data-preparation-for-downstream-tasks)
+6. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
+7. [Evaluation](#evaluation)
+8. [Additional Scripts](#additional-scripts)
+9. [Citation](#citation)
+10. [License and Copyright](#license-and-copyright)
+11. [Contact](#contact)
+
+## Environment Setup
 
 Use [environment.yml](https://github.com/batmanlab/Mammo-CLIP/blob/main/environment.yml) to setup the environment.
 
