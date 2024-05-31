@@ -30,7 +30,11 @@ Use [environment.yml](https://github.com/batmanlab/Mammo-CLIP/blob/main/environm
 conda env create --name Mammo-CLIP -f environment.yml
 conda activate Mammo-CLIP
 ```
-
+Mammo-CLIP is implemented with following specification:
+* Python version: 3.8.18
+* PyTorch version: 2.2.2
+* CUDA version: 11.8
+  
 ## Data Instructions
 
 Download the VinDr and RSNA from the links for downstream evaluations:
