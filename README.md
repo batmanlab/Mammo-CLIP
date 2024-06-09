@@ -98,7 +98,7 @@ We use VinDr dataset as image-label dataset. So if you are planning to use it in
 following notebook to preprocess the VinDr dataset:
 
 ```bash
-./notebooks/preprocess-clip/VinDr.ipynb
+.src/codebase/notebooks/preprocess-clip/VinDr.ipynb
 ```
 
 When you download the VinDr dataset, you will get these two csv
