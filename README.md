@@ -334,7 +334,7 @@ the [scripts](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/scripts) dir
 
 ## License and copyright
 
-Licensed under the [MIT License](LICENSE)
+Licensed under the Creative Commons Attribution 4.0 International
 
 Copyright © [Batman Lab](https://www.batman-lab.com/), 2024
 
