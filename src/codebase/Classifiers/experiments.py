@@ -313,16 +313,23 @@ def train_loop(args, device):
 
         if args.label.lower() == "density" or args.label.lower() == "birads":
             model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_acc_cancer_ver{args.VER}.pth'
+            print(
+                f'[Fold{args.cur_fold}], Best Accuracy: {best_acc * 100:.4f}, '
+                f'Best pF Score: {best_pF}, PR-AUC Score: {best_prauc}, '
+                f'AUC-ROC Score: {best_aucroc:.4f}, AUPRC Score: {best_auprc:.4f}, '
+                f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
+            )
         else:
             model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_aucroc_ver{args.VER}.pth'
+            print(
+                f'[Fold{args.cur_fold}], '
+                f'Best pF Score: {best_pF}, PR-AUC Score: {best_prauc}, '
+                f'AUC-ROC Score: {best_aucroc:.4f}, AUPRC Score: {best_auprc:.4f}, '
+                f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
+            )
         predictions = torch.load(args.chk_pt_path / model_name, map_location='cpu')['predictions']
         args.valid_folds['prediction'] = predictions
-        print(
-            f'[Fold{args.cur_fold}], Best Accuracy: {best_acc * 100:.4f}, '
-            f'Best pF Score: {best_pF}, PR-AUC Score: {best_prauc}, '
-            f'AUC-ROC Score: {best_aucroc:.4f}, AUPRC Score: {best_auprc:.4f}, '
-            f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
-        )
+        
     torch.cuda.empty_cache()
     gc.collect()
     return args.valid_folds
