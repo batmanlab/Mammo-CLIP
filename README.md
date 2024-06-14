@@ -8,6 +8,10 @@
 [Kayhan Batmanghelich<sup>1</sup>](https://www.batman-lab.com/)
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
+
+## FAQ
+After going through the instruction, it is recommended to visit this [link](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining. If we hear more queries, we may add a separate FAQs in future.
+
 ## Table of Contents
 
 1. [Environment Setup](#environment-setup)
