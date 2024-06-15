@@ -61,18 +61,14 @@ def do_experiments(args, device):
 
         print(oof_df_agg.head(10))
         print('================ CV ================')
-        pF = pfbeta_binarized(gt=oof_df_agg[args.label].values, pred=oof_df_agg['prediction'].values)
         aucroc = auroc(gt=oof_df_agg[args.label].values, pred=oof_df_agg['prediction'].values)
-        auprc = compute_auprc(gt=oof_df_agg[args.label].values, pred=oof_df_agg['prediction'].values)
 
         oof_df_agg_cancer = oof_df_agg[oof_df_agg[args.label] == 1]
         oof_df_agg_cancer['prediction'] = oof_df_agg_cancer['prediction'].apply(lambda x: 1 if x >= 0.5 else 0)
         acc_cancer = compute_accuracy_np_array(oof_df_agg_cancer[args.label].values,
                                                oof_df_agg_cancer['prediction'].values)
 
-        print(
-            f'pF: {pF}, AUC-ROC: {aucroc}, AUPRC: {auprc}, acc +ve {args.label} '
-            f'patients: {acc_cancer * 100}')
+        print(f'AUC-ROC: {aucroc}, acc +ve {args.label} patients: {acc_cancer * 100}')
         print('\n')
         print(oof_df.head(10))
         print(f"Results shape: {oof_df.shape}")
@@ -313,23 +309,16 @@ def train_loop(args, device):
 
         if args.label.lower() == "density" or args.label.lower() == "birads":
             model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_acc_cancer_ver{args.VER}.pth'
-            print(
-                f'[Fold{args.cur_fold}], Best Accuracy: {best_acc * 100:.4f}, '
-                f'Best pF Score: {best_pF}, PR-AUC Score: {best_prauc}, '
-                f'AUC-ROC Score: {best_aucroc:.4f}, AUPRC Score: {best_auprc:.4f}, '
-                f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
-            )
+            print(f'[Fold{args.cur_fold}], Best Accuracy: {best_acc * 100:.4f}')
         else:
             model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_aucroc_ver{args.VER}.pth'
             print(
-                f'[Fold{args.cur_fold}], '
-                f'Best pF Score: {best_pF}, PR-AUC Score: {best_prauc}, '
-                f'AUC-ROC Score: {best_aucroc:.4f}, AUPRC Score: {best_auprc:.4f}, '
+                f'[Fold{args.cur_fold}], AUC-ROC Score: {best_aucroc:.4f}, '
                 f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
             )
         predictions = torch.load(args.chk_pt_path / model_name, map_location='cpu')['predictions']
         args.valid_folds['prediction'] = predictions
-        
+
     torch.cuda.empty_cache()
     gc.collect()
     return args.valid_folds
@@ -346,11 +335,8 @@ def inference_loop(args):
 
     valid_agg = args.valid_folds[['patient_id', 'laterality', 'cancer', 'prediction', 'fold']].groupby(
         ['patient_id', 'laterality']).mean()
-    score = pfbeta_binarized(valid_agg['cancer'].values, valid_agg['prediction'].values)
-    prauc = pr_auc(valid_agg['cancer'].values, valid_agg['prediction'].values)
     aucroc = auroc(valid_agg['cancer'].values, valid_agg['prediction'].values)
-    auprc = compute_auprc(gt=valid_agg['cancer'].values, pred=valid_agg['prediction'].values)
-    print(f'pF: {score}, PR-AUC: {prauc}, AUC-ROC: {aucroc}, AUPRC: {auprc}')
+    print(f'AUC-ROC: {aucroc}')
     return args.valid_folds.copy()
 
 
