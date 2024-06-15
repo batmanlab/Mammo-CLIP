@@ -1,7 +1,7 @@
 patient_id,GENDER,AGE,BIRADS_CATEGORY,HISTORY,FINDINGS,IMPRESSION,ASSESMENT,RECOMENDATION,CONCLUSION,image_id,fold,view,laterality,img_size_row,img_size_column,BIRADS_numeric
-140421,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,250833044448633383274960889440423295485.png,2,CC,R,2456,1995,0
-140421,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,1.218018924783571581641971247871200972675.png,2,CC,R,2456,1995,0
-1937906,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
+100,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,1png,2,CC,R,2456,1995,0
+100,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,2.png,2,CC,R,2456,1995,0
+200,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
 ",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -14,8 +14,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,15916085863391167576496243066479929300.png,2,CC,R,4096,3328,2
-1937906,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
+",,3.png,2,CC,R,4096,3328,2
+200,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
 ",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -28,8 +28,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,104389345981935981355845957979651015077.png,2,MLO,R,4096,3328,2
-1937906,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
+",,4.png,2,MLO,R,4096,3328,2
+200,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
 ",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -42,8 +42,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,239577423760362698062104766745244257383.png,2,CC,L,4096,3328,2
-1937906,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
+",,53.png,2,CC,L,4096,3328,2
+200,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
 ",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -56,8 +56,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,251214987475513478978273881893566675845.png,2,CC,R,4096,3328,2
-1937906,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
+",,6.png,2,CC,R,4096,3328,2
+200,FEMALE,100,BIRADS 2,"   The patient is 78 years old and presents for routine screening.
 
 ",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -70,8 +70,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,313778401526557888239855475718434265360.png,2,MLO,L,4096,3328,2
-19777050982,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
+",,7.png,2,MLO,L,4096,3328,2
+300,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
 ",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -84,8 +84,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,86654939575627976900666580629311592355.png,0,MLO,R,4096,3328,2
-19777050982,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
+",,8.png,0,MLO,R,4096,3328,2
+300,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
 ",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -98,8 +98,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,29659868489473312982324835190964813602.png,0,CC,L,4096,3328,2
-19777050982,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
+",,9.png,0,CC,L,4096,3328,2
+300,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
 ",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -112,8 +112,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,69003731047785300854128009343626278944.png,0,MLO,L,4096,3328,2
-19777050982,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
+",,10png,0,MLO,L,4096,3328,2
+300,FEMALE,100,BIRADS 2,"   The patient is 54 years old and presents for routine screening.
 
 ",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
 
@@ -126,8 +126,8 @@ patient.
 The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
-",,187647744170620796557226638492400303819.png,0,CC,R,4096,3328,2
-1922208,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,18227159593347317833423033201637809316.png,0,CC,L,2457,1890,2
-1922208,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,36004613130204259137740602032805821758.png,0,MLO,L,2457,1890,2
-1922208,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,305944197127775504789560886500592102820.png,0,CC,R,2457,1890,2
-1922208,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,318780599333165140583795437509747032288.png,0,MLO,R,2457,1890,2
+",,11.png,0,CC,R,4096,3328,2
+400,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,12.png,0,CC,L,2457,1890,2
+400,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,12.png,0,MLO,L,2457,1890,2
+400,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,13.png,0,CC,R,2457,1890,2
+400,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,14.png,0,MLO,R,2457,1890,2
