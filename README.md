@@ -155,12 +155,12 @@ python ./Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
 
 ## Creating classifiers and detectors
 
-* For creating classifiers using the image encoder of Mammo-CLIP, use the class `BreastClipClassifier`
+* For creating classifiers for downstream evaluations using the image encoder of Mammo-CLIP, use the class `BreastClipClassifier`
   in [breast-clip-classifier.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Classifiers/models/breast_clip_classifier.py#L6)
   file.
-* For creating detectors using the image encoder of Mammo-CLIP, use the function `RetinaNet_efficientnet`
+* For creating detectors for downstream evaluations using the image encoder of Mammo-CLIP, use the function `RetinaNet_efficientnet`
   in [detector_mode.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Detectors/retinanet/detector_model.py#L357)
-  file in [breast-clip-detector.py](
+  file.
 
 ## Evaluation
 
