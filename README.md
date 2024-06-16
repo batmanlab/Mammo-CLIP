@@ -10,7 +10,10 @@
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
 ## FAQ
-After going through the instruction, it is recommended to visit this [link](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining. If we hear more queries, we may add a separate FAQs in future.
+
+After going through the instruction, it is recommended to visit
+this [link](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining. If we hear
+more queries, we may add a separate FAQs in future.
 
 ## Table of Contents
 
@@ -20,11 +23,12 @@ After going through the instruction, it is recommended to visit this [link](http
 4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
 5. [Data Preparation for Downstream Tasks](#data-preparation-for-downstream-tasks)
 6. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
-7. [Evaluation](#evaluation)
-8. [Additional Scripts](#additional-scripts)
-9. [Citation](#citation)
-10. [License and Copyright](#license-and-copyright)
-11. [Contact](#contact)
+7. [Creating classifiers and detectors](#creating-classifiers-and-detectors)
+8. [Evaluation](#evaluation)
+9. [Additional Scripts](#additional-scripts)
+10. [Citation](#citation)
+11. [License and Copyright](#license-and-copyright)
+12. [Contact](#contact)
 
 ## Environment Setup
 
@@ -34,11 +38,13 @@ Use [environment.yml](https://github.com/batmanlab/Mammo-CLIP/blob/main/environm
 conda env create --name Mammo-CLIP -f environment.yml
 conda activate Mammo-CLIP
 ```
+
 Mammo-CLIP is implemented with following specification:
+
 * Python version: 3.8.18
 * PyTorch version: 2.2.2
 * CUDA version: 11.8
-  
+
 ## Data Instructions
 
 Download the VinDr and RSNA from the links for downstream evaluations:
@@ -146,6 +152,15 @@ python ./Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
 * Use
   [pre_train_b2_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b2_clip.yaml)
   for pre-training image-text variant of Efficient-Net B2 Mammo-CLIP
+
+## Creating classifiers and detectors
+
+* For creating classifiers using the image encoder of Mammo-CLIP, use the class `BreastClipClassifier`
+  in [breast-clip-classifier.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Classifiers/models/breast_clip_classifier.py#L6)
+  file.
+* For creating detectors using the image encoder of Mammo-CLIP, use the function `RetinaNet_efficientnet`
+  in [detector_mode.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Detectors/retinanet/detector_model.py#L357)
+  file in [breast-clip-detector.py](
 
 ## Evaluation
 
