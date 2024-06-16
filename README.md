@@ -13,7 +13,7 @@
 
 After going through the instruction, it is recommended to visit
 this [link](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining. If we hear
-more queries, we may add a separate FAQs in future.
+more queries, we may add a separate FAQs in the future.
 
 ## Table of Contents
 
