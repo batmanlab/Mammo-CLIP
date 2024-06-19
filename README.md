@@ -1,6 +1,6 @@
 # Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
 
-### [[Paper](https://arxiv.org/pdf/2405.12255)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/)] [[Pre-training checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)]
+### [[Paper](https://arxiv.org/pdf/2405.12255)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)]
 
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
 , [Clare B. Poynton<sup>2</sup>](https://www.bumc.bu.edu/camed/profile/clare-poynton/)
