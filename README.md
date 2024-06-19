@@ -22,13 +22,14 @@ more queries, we may add a separate FAQs in the future.
 3. [Pre-processing Images](#pre-processing-images)
 4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
 5. [Data Preparation for Downstream Tasks](#data-preparation-for-downstream-tasks)
-6. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
-7. [Creating classifiers and detectors](#creating-classifiers-and-detectors)
-8. [Evaluation](#evaluation)
-9. [Additional Scripts](#additional-scripts)
-10. [Citation](#citation)
-11. [License and Copyright](#license-and-copyright)
-12. [Contact](#contact)
+6. [Mammo-CLIP checkpoints](#mammo-clip-checkpoints)
+7. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
+8. [Creating classifiers and detectors](#creating-classifiers-and-detectors)
+9. [Evaluation](#evaluation)
+10. [Additional Scripts](#additional-scripts)
+11. [Citation](#citation)
+12. [License and Copyright](#license-and-copyright)
+13. [Contact](#contact)
 
 ## Environment Setup
 
