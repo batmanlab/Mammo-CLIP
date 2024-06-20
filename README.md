@@ -137,6 +137,8 @@ Use the following files for the downstream tasks (classification, detection, zer
 | Best performance   | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)   |
 | Lightweight        | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing) | [Efficient-Net B2](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b2-model-best-epoch-10.tar)  |
 
+We have also uploaded the downstream checkpoints for classification and localization (both linear probe and finetuning) with the image encoder of Efficient-Net B5 Mammo-CLIP for fold 0 [here](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Downstream-checkpoints).
+
 ## Warning
 
 Look for `/ocean/projects/asc170022p/shg121/PhD` and replace it with your own path.
