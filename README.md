@@ -131,7 +131,7 @@ Use the following files for the downstream tasks (classification, detection, zer
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
 
 ## Mammo-CLIP checkpoints
-
+Following are the pre-training checkpoints of Mammo-CLIP:
 | Model architecture | Checkpoints (Google drive)                                                                             | Checkpoints (Hugging Face)                                                                                                  |
 |--------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Best performance   | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)   |
