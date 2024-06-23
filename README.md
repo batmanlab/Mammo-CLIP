@@ -21,7 +21,7 @@ more queries, we may add a separate FAQs in the future.
 2. [Data Instructions](#data-instructions)
 3. [Pre-processing Images](#pre-processing-images)
 4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
-5. [Data Preparation for Downstream Tasks](#data-preparation-for-downstream-tasks)
+5. [Data Preparation for Downstream Evaluation Tasks](#data-preparation-for-downstream-evaluation-tasks)
 6. [Mammo-CLIP checkpoints](#mammo-clip-checkpoints)
 7. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
 8. [Creating classifiers and detectors](#creating-classifiers-and-detectors)
@@ -121,7 +121,7 @@ get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
 
-## Data preparation for downstream tasks
+## Data preparation for downstream evaluation tasks
 
 Use the following files for the downstream tasks (classification, detection, zero-shot):
 
