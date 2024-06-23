@@ -123,7 +123,7 @@ file.
 
 ## Data preparation for downstream evaluation tasks
 
-Use the following files for the downstream tasks (classification, detection, zero-shot):
+Use the following csv files as metadata for the downstream tasks (classification, detection, zero-shot):
 
 | Dataset | CSV                                                                                                                                  |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------|
