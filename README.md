@@ -18,7 +18,7 @@ more queries, we may add a separate FAQs in the future.
 ## Table of Contents
 
 1. [Environment Setup](#environment-setup)
-2. [Data Instructions](#data-instructions)
+2. [Data Download](#data-download)
 3. [Pre-processing Images](#pre-processing-images)
 4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
 5. [Data Preparation for Downstream Evaluation Tasks](#data-preparation-for-downstream-evaluation-tasks)
@@ -48,10 +48,16 @@ Mammo-CLIP is implemented with following specification:
 
 ## Data Instructions
 
-Download the VinDr and RSNA from the links for downstream evaluations:
+Download the original versions VinDr and RSNA from the links for downstream evaluations:
 
 - [RSNA](https://www.kaggle.com/competitions/rsna-breast-cancer-detection)
 - [VinDr](vindr.ai/datasets/mammo)
+
+For the PNG images converted from the original Dicom images, as mentioned in the preprocessing steps in the paper, refer to the following links:
+  - RSNA (WIP)
+  - [VinDr](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
+
+To preprocess the dicom images directly, follow the instructions in the next section. If you downloaded the PNG images, skip the preprocessing steps.
 
 ## Pre-processing images
 
@@ -130,7 +136,6 @@ Use the following csv files as metadata for the downstream tasks (classification
 | VinDr   | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv) |
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
 
-We preprocessed and uploaded the png images from DICOM of VinDr dataset [here](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png).
 
 ## Mammo-CLIP checkpoints
 Following are the pre-training checkpoints of Mammo-CLIP:
