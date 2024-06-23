@@ -1,6 +1,6 @@
 # Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
 
-### [[Paper](https://arxiv.org/pdf/2405.12255)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)]
+### [[Paper](https://arxiv.org/pdf/2405.12255)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)] [VinDr png data](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
 
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
 , [Clare B. Poynton<sup>2</sup>](https://www.bumc.bu.edu/camed/profile/clare-poynton/)
@@ -129,6 +129,8 @@ Use the following files for the downstream tasks (classification, detection, zer
 |---------|--------------------------------------------------------------------------------------------------------------------------------------|
 | VinDr   | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv) |
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
+
+We preprocessed and uploaded the png images from DICOM of VinDr dataset [here](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png).
 
 ## Mammo-CLIP checkpoints
 Following are the pre-training checkpoints of Mammo-CLIP:
