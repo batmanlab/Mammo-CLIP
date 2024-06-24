@@ -46,7 +46,7 @@ Mammo-CLIP is implemented with following specification:
 * PyTorch version: 2.2.2
 * CUDA version: 11.8
 
-## Data Instructions
+## Data Download
 
 Download the original versions VinDr and RSNA from the links for downstream evaluations:
 
