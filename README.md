@@ -136,6 +136,7 @@ Use the following csv files as metadata for the downstream tasks (classification
 | VinDr   | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv) |
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
 
+For detection/localization tasks, we have included the coordinates of the resized bounding boxes of VinDr in the above csv file. Somebody interested in resizing the bounding boxes by themselves, refer to this [code](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/preprocessing/preprocess_VinDr_detector.py)
 
 ## Mammo-CLIP checkpoints
 Following are the pre-training checkpoints of Mammo-CLIP:
