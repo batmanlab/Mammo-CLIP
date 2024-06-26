@@ -3,7 +3,6 @@ import sys
 
 from IPython.core.display import display
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging"))
 import os
 import dicomsdl
 import numpy as np
