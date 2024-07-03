@@ -134,8 +134,8 @@ file.
 
 The csv file of the final image-label (VinDr) dataset should have the following format:
 
-| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                | MLO                                                                                  | CC_FINDING                                                                | MLO_FINDING                                                               |
-|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                | MLO                                                                                  | CC_FINDING                                                               | MLO_FINDING                                                               |
+|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img .. ] | Findings per image per laterality for CC view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
 
 **Explanation for CC_FINDING and MLO_FINDING Columns:**
@@ -181,14 +181,11 @@ this [code](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/preprocessing/
 ## Mammo-CLIP checkpoints
 
 Following are the pre-training checkpoints of Mammo-CLIP:
-| Model architecture | Checkpoints (Google
-drive)                                                                             | Checkpoints (Hugging
-Face)                                                                                                  |
-|--------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Best
-performance | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)   |
-|
-Lightweight | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing) | [Efficient-Net B2](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b2-model-best-epoch-10.tar)  |
+
+| Model architecture | Checkpoints (Google  drive)                                                                              | Checkpoints (Hugging Face)                                                                                                 |
+|--------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Best performance   | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing)   | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)  |
+| Lightweight        | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing)   | [Efficient-Net B2](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b2-model-best-epoch-10.tar) |
 
 We have also uploaded the downstream checkpoints for classification and localization (both linear probe and finetuning)
 with the image encoder of Efficient-Net B5 Mammo-CLIP for fold
