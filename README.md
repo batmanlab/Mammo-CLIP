@@ -134,67 +134,34 @@ file.
 
 The csv file of the final image-label (VinDr) dataset should have the following format:
 
-| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                           | MLO                                                                                             | CC_FINDING                                                               | MLO_FINDING                                                               |
-|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img1, CC_img2, ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img1, MLO_img2, ..] | Findings per image per laterality for CC view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
+| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                | MLO                                                                                  | CC_FINDING                                                                | MLO_FINDING                                                               |
+|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img .. ] | Findings per image per laterality for MLO view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
 
 **Explanation for CC_FINDING and MLO_FINDING Columns:**
-
-* Findings per image per laterality for CC view: Each entry will contain a list of findings for each image in the CC
-  view. Positive and negative findings are denoted for the respective laterality ('R' for right, 'L' for left). For
-  example, *`['+ve for R', '-ve for L']`*.
-* Findings per image per laterality for MLO view: Similarly, each entry will detail the findings for each image in the
-  MLO view categorized by laterality.
-
 In the above table, for the row, CC_FINDING can be expanded
 as:
 
 ```
 [
-    [+ve finding of CC_img1 if CC_img1 has laterality 'R'],
-    [+ve finding of CC_img2 if CC_img2 has laterality 'R'],
-    ...
-] ,
-[
-    [+ve finding of CC_img1 if CC_img1 has laterality 'L'],
-    [+ve finding of CC_img2 if CC_img2 has laterality 'L'],
-    ...
-],
-[
-    [-ve finding of CC_img1 if CC_img1 has laterality 'R'], 
-    [-ve finding of CC_img2 if CC_img2 has laterality 'R'],
-    ...
-], 
-[
-    [-ve finding of CC_img1 if CC_img1 has laterality 'L'], 
-    [-ve finding of CC_img2 if CC_img2 has laterality 'L'],
-    ...
+  [+ve findings for CC_img if laterality of CC_img is R],
+  [+ve findings for CC_img if laterality of CC_img is L],
+  [-ve findings for CC_img if laterality of CC_img is R],
+  [-ve findings for CC_img if laterality of CC_img is L],
 ]
 ```
+
+As VinDr contains a single image per patient-laterality combo, we did n
 
 Similarly, in the above table, for the row, MLO_FINDING can be expanded
 as:
 
 ```
 [
-    [+ve finding of MLO_img1 if MLO_img1 has laterality 'R'],
-    [+ve finding of MLO_img2 if MLO_img2 has laterality 'R'],
-    ...
-    ] ,
-[
-    [+ve finding of MLO_img1 if MLO_img1 has laterality 'L'],
-    [+ve finding of MLO_img2 if MLO_img2 has laterality 'L'],
-    ...
-],
-[
-    [-ve finding of CC_img1 if CC_img1 has laterality 'R'], 
-    [-ve finding of MLO_img2 if MLO_img2 has laterality 'R'],
-    ...
-], 
-[
-    [-ve finding of CC_img1 if CC_img1 has laterality 'L'], 
-    [-ve finding of MLO_img2 if MLO_img2 has laterality 'L'],
-    ...
+  [+ve findings for MLO_img if laterality of MLO_img is R],
+  [+ve findings for MLO_img if laterality of MLO_img is L],
+  [-ve findings for MLO_img if laterality of MLO_img is R],
+  [-ve findings for MLO_img if laterality of MLO_img is L],
 ]
 ```
 
