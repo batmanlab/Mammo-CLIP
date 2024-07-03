@@ -120,7 +120,7 @@ the
 following notebook to preprocess the VinDr dataset:
 
 ```bash
-.src/codebase/notebooks/preprocess-clip/VinDr.ipynb
+./src/codebase/notebooks/preprocess-clip/VinDr.ipynb
 ```
 
 When you download the VinDr dataset, you will get these two csv
@@ -136,7 +136,7 @@ The csv file of the final image-label (VinDr) dataset should have the following 
 
 | index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                | MLO                                                                                  | CC_FINDING                                                                | MLO_FINDING                                                               |
 |-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img .. ] | Findings per image per laterality for MLO view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
+| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img .. ] | Findings per image per laterality for CC view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
 
 **Explanation for CC_FINDING and MLO_FINDING Columns:**
 In the above table, for the row, CC_FINDING can be expanded
