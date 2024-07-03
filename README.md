@@ -53,11 +53,14 @@ Download the original versions VinDr and RSNA from the links for downstream eval
 - [RSNA](https://www.kaggle.com/competitions/rsna-breast-cancer-detection)
 - [VinDr](vindr.ai/datasets/mammo)
 
-For the PNG images converted from the original Dicom images, as mentioned in the preprocessing steps in the paper, refer to the following links:
-  - RSNA (WIP)
-  - [VinDr](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
+For the PNG images converted from the original Dicom images, as mentioned in the preprocessing steps in the paper, refer
+to the following links:
 
-To preprocess the dicom images directly, follow the instructions in the next section. If you downloaded the PNG images, skip the preprocessing steps.
+- RSNA (WIP)
+- [VinDr](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
+
+To preprocess the dicom images directly, follow the instructions in the next section. If you downloaded the PNG images,
+skip the preprocessing steps.
 
 ## Pre-processing images
 
@@ -102,16 +105,18 @@ python ./src/codebase/augment_text.py \
 
 4. The csv file of the final image-text dataset should have the following format:
 
-| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                              | MLO                                                              | text                            | text_augment                                       |
-|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------|---------------------------------|----------------------------------------------------|
-| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo | List of image paths for MLO view for patient_id-laterality combo | List of [findings, impression]  | List of [augmented findings, augmented impression] |
+| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                              | MLO                                                              | text                           | text_augment                                       |
+|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------|--------------------------------|----------------------------------------------------|
+| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo | List of image paths for MLO view for patient_id-laterality combo | List of [findings, impression] | List of [augmented findings, augmented impression] |
 
 5. The final sample csv file as the output of `step3` is
    here: [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
 
 ### Image-label dataset
 
-We use VinDr dataset as image-label dataset. So if you are planning to use it in the pre-training setup, use the
+We use VinDr dataset as image-label dataset though it can be expanded to any such datasets. Make sure that every patient
+should have atleast one CC and MLO image per laterality. So if you are planning to use it in the pre-training setup, use
+the
 following notebook to preprocess the VinDr dataset:
 
 ```bash
@@ -127,6 +132,72 @@ get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
 
+The csv file of the final image-label (VinDr) dataset should have the following format:
+
+| index | patient_id | laterality              | image                                                   | view                                                                         | CC                                                                                           | MLO                                                                                             | CC_FINDING                                                               | MLO_FINDING                                                               |
+|-------|------------|-------------------------|---------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo, e.g, [CC_img1, CC_img2, ..] | List of image paths for MLO view for patient_id-laterality combo, e.g, [MLO_img1, MLO_img2, ..] | Findings per image per laterality for CC view (see below for the format) | Findings per image per laterality for MLO view (see below for the format) |
+
+**Explanation for CC_FINDING and MLO_FINDING Columns:**
+
+* Findings per image per laterality for CC view: Each entry will contain a list of findings for each image in the CC
+  view. Positive and negative findings are denoted for the respective laterality ('R' for right, 'L' for left). For
+  example, *`['+ve for R', '-ve for L']`*.
+* Findings per image per laterality for MLO view: Similarly, each entry will detail the findings for each image in the
+  MLO view categorized by laterality.
+
+In the above table, for the row, CC_FINDING can be expanded
+as:
+
+```
+[
+    [+ve finding of CC_img1 if CC_img1 has laterality 'R'],
+    [+ve finding of CC_img2 if CC_img2 has laterality 'R'],
+    ...
+] ,
+[
+    [+ve finding of CC_img1 if CC_img1 has laterality 'L'],
+    [+ve finding of CC_img2 if CC_img2 has laterality 'L'],
+    ...
+],
+[
+    [-ve finding of CC_img1 if CC_img1 has laterality 'R'], 
+    [-ve finding of CC_img2 if CC_img2 has laterality 'R'],
+    ...
+], 
+[
+    [-ve finding of CC_img1 if CC_img1 has laterality 'L'], 
+    [-ve finding of CC_img2 if CC_img2 has laterality 'L'],
+    ...
+]
+```
+
+Similarly, in the above table, for the row, MLO_FINDING can be expanded
+as:
+
+```
+[
+    [+ve finding of MLO_img1 if MLO_img1 has laterality 'R'],
+    [+ve finding of MLO_img2 if MLO_img2 has laterality 'R'],
+    ...
+    ] ,
+[
+    [+ve finding of MLO_img1 if MLO_img1 has laterality 'L'],
+    [+ve finding of MLO_img2 if MLO_img2 has laterality 'L'],
+    ...
+],
+[
+    [-ve finding of CC_img1 if CC_img1 has laterality 'R'], 
+    [-ve finding of MLO_img2 if MLO_img2 has laterality 'R'],
+    ...
+], 
+[
+    [-ve finding of CC_img1 if CC_img1 has laterality 'L'], 
+    [-ve finding of MLO_img2 if MLO_img2 has laterality 'L'],
+    ...
+]
+```
+
 ## Data preparation for downstream evaluation tasks
 
 Use the following csv files as metadata for the downstream tasks (classification, detection, zero-shot):
@@ -136,16 +207,25 @@ Use the following csv files as metadata for the downstream tasks (classification
 | VinDr   | [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv) |
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
 
-For detection/localization tasks, we have included the coordinates of the resized bounding boxes of VinDr in the above csv file. Somebody interested in resizing the bounding boxes by themselves, refer to this [code](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/preprocessing/preprocess_VinDr_detector.py).
+For detection/localization tasks, we have included the coordinates of the resized bounding boxes of VinDr in the above
+csv file. Somebody interested in resizing the bounding boxes by themselves, refer to
+this [code](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/preprocessing/preprocess_VinDr_detector.py).
 
 ## Mammo-CLIP checkpoints
-Following are the pre-training checkpoints of Mammo-CLIP:
-| Model architecture | Checkpoints (Google drive)                                                                             | Checkpoints (Hugging Face)                                                                                                  |
-|--------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Best performance   | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)   |
-| Lightweight        | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing) | [Efficient-Net B2](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b2-model-best-epoch-10.tar)  |
 
-We have also uploaded the downstream checkpoints for classification and localization (both linear probe and finetuning) with the image encoder of Efficient-Net B5 Mammo-CLIP for fold 0 [here](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Downstream-checkpoints).
+Following are the pre-training checkpoints of Mammo-CLIP:
+| Model architecture | Checkpoints (Google
+drive)                                                                             | Checkpoints (Hugging
+Face)                                                                                                  |
+|--------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Best
+performance | [Efficient-Net B5](https://drive.google.com/file/d/1c14IwqxkMRFD78BEhNA17n3b6C21fuQ1/view?usp=sharing) | [Efficient-Net B5](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b5-model-best-epoch-7.tar)   |
+|
+Lightweight | [Efficient-Net B2](https://drive.google.com/file/d/1dNqicN0_Oeo4T4920eljxDX0x0htFgAc/view?usp=sharing) | [Efficient-Net B2](https://huggingface.co/shawn24/Mammo-CLIP/blob/main/Pre-trained-checkpoints/b2-model-best-epoch-10.tar)  |
+
+We have also uploaded the downstream checkpoints for classification and localization (both linear probe and finetuning)
+with the image encoder of Efficient-Net B5 Mammo-CLIP for fold
+0 [here](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Downstream-checkpoints).
 
 ## Warning
 
@@ -166,10 +246,12 @@ python ./Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
 
 ## Creating classifiers and detectors
 
-* For creating classifiers for downstream evaluations using the image encoder of Mammo-CLIP, use the class `BreastClipClassifier`
+* For creating classifiers for downstream evaluations using the image encoder of Mammo-CLIP, use the
+  class `BreastClipClassifier`
   in [breast-clip-classifier.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Classifiers/models/breast_clip_classifier.py#L6)
   file.
-* For creating detectors for downstream evaluations using the image encoder of Mammo-CLIP, use the function `RetinaNet_efficientnet`
+* For creating detectors for downstream evaluations using the image encoder of Mammo-CLIP, use the
+  function `RetinaNet_efficientnet`
   in [detector_mode.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Detectors/retinanet/detector_model.py#L357)
   file.
 
