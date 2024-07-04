@@ -146,10 +146,7 @@ def train_loop(args, device):
     else:
         criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
 
-    best_pF = 0.
     best_aucroc = 0.
-    best_prauc = 0.
-    best_auprc = 0.
     best_acc_cancer = 0.
     best_acc = 0
     for epoch in range(args.epochs):
@@ -204,11 +201,7 @@ def train_loop(args, device):
                     }, args.chk_pt_path / model_name
                 )
         else:
-            pF = pfbeta_binarized(valid_agg[args.label].values, valid_agg['prediction'].values)
-            prauc = pr_auc(valid_agg[args.label].values, valid_agg['prediction'].values)
             aucroc = auroc(valid_agg[args.label].values, valid_agg['prediction'].values)
-            auprc = compute_auprc(valid_agg[args.label].values, valid_agg['prediction'].values)
-
             valid_agg_cancer = valid_agg[valid_agg[args.label] == 1]
             valid_agg_cancer['prediction'] = valid_agg_cancer['prediction'].apply(lambda x: 1 if x >= 0.5 else 0)
             acc_cancer = compute_accuracy_np_array(valid_agg_cancer[args.label].values,
@@ -219,13 +212,9 @@ def train_loop(args, device):
                 f'Epoch {epoch + 1} - avg_train_loss: {avg_loss:.4f}  avg_val_loss: {avg_val_loss:.4f}  time: {elapsed:.0f}s'
             )
             print(
-                f'Epoch {epoch + 1} - pF Score: {pF:.4f}, PR-AUC Score: {prauc:.4f}, AUC-ROC Score: {aucroc:.4f}, '
-                f'AUPRC Score: {auprc:.4f}, Acc +ve {args.label}: {acc_cancer * 100:.4f}'
+                f'Epoch {epoch + 1} - AUC-ROC Score: {aucroc:.4f}, Acc +ve {args.label}: {acc_cancer * 100:.4f}'
             )
             logger.add_scalar(f'valid/{args.label}/AUC-ROC', aucroc, epoch + 1)
-            logger.add_scalar(f'valid/{args.label}/pF Score', pF, epoch + 1)
-            logger.add_scalar(f'valid/{args.label}/PR-AUC Score', prauc, epoch + 1)
-            logger.add_scalar(f'valid/{args.label}/AUPRC Score', auprc, epoch + 1)
             logger.add_scalar(f'valid/{args.label}/+ve Acc Score', acc_cancer, epoch + 1)
 
             if best_acc_cancer < acc_cancer:
@@ -238,25 +227,6 @@ def train_loop(args, device):
                         'predictions': predictions,
                         'epoch': epoch,
                         'auroc': aucroc,
-                        'prauc': prauc,
-                        'pF': pF,
-                        'auprc': auprc,
-                    }, args.chk_pt_path / model_name
-                )
-
-            if best_prauc < prauc:
-                best_prauc = prauc
-                model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_prauc_ver{args.VER}.pth'
-                print(f'Epoch {epoch + 1} - Save Best prauc: {best_prauc:.4f} Model')
-                torch.save(
-                    {
-                        'model': model.state_dict(),
-                        'predictions': predictions,
-                        'epoch': epoch,
-                        'auroc': aucroc,
-                        'prauc': prauc,
-                        'pF': pF,
-                        'auprc': auprc,
                     }, args.chk_pt_path / model_name
                 )
 
@@ -270,40 +240,6 @@ def train_loop(args, device):
                         'predictions': predictions,
                         'epoch': epoch,
                         'auroc': aucroc,
-                        'prauc': prauc,
-                        'pF': pF,
-                        'auprc': auprc,
-                    }, args.chk_pt_path / model_name
-                )
-
-            if best_pF < pF:
-                best_pF = pF
-                print(f'Epoch {epoch + 1} - Save Best pF: {best_pF:.4f} Model')
-                model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_pF_ver{args.VER}.pth'
-                torch.save(
-                    {
-                        'model': model.state_dict(),
-                        'predictions': predictions,
-                        'epoch': epoch,
-                        'auroc': aucroc,
-                        'prauc': prauc,
-                        'pF': pF,
-                        'auprc': auprc,
-                    }, args.chk_pt_path / model_name
-                )
-            if best_auprc < auprc:
-                best_auprc = auprc
-                print(f'Epoch {epoch + 1} - Save Best AUPRC: {best_auprc:.4f} Model')
-                model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_auprc_ver{args.VER}.pth'
-                torch.save(
-                    {
-                        'model': model.state_dict(),
-                        'predictions': predictions,
-                        'epoch': epoch,
-                        'auroc': aucroc,
-                        'prauc': prauc,
-                        'pF': pF,
-                        'auprc': auprc,
                     }, args.chk_pt_path / model_name
                 )
 
