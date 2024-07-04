@@ -200,7 +200,7 @@ Look for `/ocean/projects/asc170022p/shg121/PhD` and replace it with your own pa
 ```bash
 python ./Mammo-CLIP/src/codebase/train.py --config-name pre_train_b5_clip.yaml
 ```
-
+All the `yaml` files for the config are found [here](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/codebase/configs).
 * Use
   [pre_train_b5_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b5_clip.yaml)
   for pre-training image-text variant of Efficient-Net B5 Mammo-CLIP
@@ -384,18 +384,22 @@ python ./src/codebase/train_detector.py \
 For all the training scripts, we add them in
 the [scripts](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/scripts) directory:
 
-| Scripts                                                                                                                      | Purpose                                                           |
-|------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| [pretrain_mammo_clip_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b5.sh)         | Pretrain Mammo-CLIP b5                                            |
-| [pretrain_mammo_clip_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b2.sh)         | Pretrain Mammo-CLIP b2                                            |
-| [classifier_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b5.sh)       | Evaluate Mammo-CLIP b5 on fine tuning tasks for classification    |
-| [classifier_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b2.sh)       | Evaluate Mammo-CLIP b2 on fine tuning tasks for classification    |
-| [classifier_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b5.sh) | Evaluate Mammo-CLIP b5 on linear probing tasks for classification |
-| [classifier_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b2.sh) | Evaluate Mammo-CLIP b2 on linear probing tasks for classification |
-| [detector_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b5.sh)           | Evaluate Mammo-CLIP b5 on fine tuning tasks for detection         |
-| [detector_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b2.sh)           | Evaluate Mammo-CLIP b2 on fine tuning tasks for detection         |
-| [detector_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b5.sh)     | Evaluate Mammo-CLIP b5 on linear probing tasks for detection      |
-| [detector_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b2.sh)     | Evaluate Mammo-CLIP b2 on linear probing tasks for detection      |
+| Scripts                                                                                                                                 | Purpose                                                           |
+|-----------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| [pretrain_mammo_clip_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b5.sh)                    | Pretrain Mammo-CLIP b5 with image+text data                       |
+| [pretrain_mammo_clip_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_b2.sh)                    | Pretrain Mammo-CLIP b2 with image+text data                       |
+| [pretrain_mammo_clip_w_vindr_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/pretrain_mammo_clip_w_vindr_b5.sh)    | Pretrain Mammo-CLIP b5 with image+text data and image+label data  |
+| [classifier_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b5.sh)                  | Evaluate Mammo-CLIP b5 on fine tuning tasks for classification    |
+| [classifier_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_fine_tune_b2.sh)                  | Evaluate Mammo-CLIP b2 on fine tuning tasks for classification    |
+| [classifier_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b5.sh)            | Evaluate Mammo-CLIP b5 on linear probing tasks for classification |
+| [classifier_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/classifier_linear_probe_b2.sh)            | Evaluate Mammo-CLIP b2 on linear probing tasks for classification |
+| [detector_fine_tune_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b5.sh)                      | Evaluate Mammo-CLIP b5 on fine tuning tasks for detection         |
+| [detector_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b2.sh)                      | Evaluate Mammo-CLIP b2 on fine tuning tasks for detection         |
+| [detector_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b5.sh)                | Evaluate Mammo-CLIP b5 on linear probing tasks for detection      |
+| [detector_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b2.sh)                | Evaluate Mammo-CLIP b2 on linear probing tasks for detection      |
+
+
+
 
 ## Citation
 
