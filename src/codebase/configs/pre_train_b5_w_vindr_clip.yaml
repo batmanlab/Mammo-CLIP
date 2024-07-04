@@ -1,0 +1,47 @@
+defaults:
+  - _self_
+  - data_train:
+      - upmc_wo_period
+      - vindr_wo_period
+  - data_zs:
+      - upmc_zs
+  - dataloader: dataloader_b5
+  - tokenizer: clinical_bert
+  - transform: clahe
+  - model: clip_b5_det_clinical
+  - optimizer: adamw
+  - scheduler: cosine_epoch15_warmup1
+  - loss: breast_clip
+
+base:
+  period: "n"
+  resume_training: False
+  epoch_to_start: 0
+  checkpoint_to_start: ""
+  train_fast: False
+  fold: 0
+  seed: 10
+  amp: True
+  mean: 0.3089279
+  std: 0.25053555408335154
+  image_size_h: 1520
+  image_size_w: 912
+  text_max_length: 256
+  loss_best: contrastive
+  data_frac: 1.0
+  zs_prompts:
+    upmc:
+      - "birads category 0"
+      - "birads category 1"
+      - "birads category 2"
+    rsna:
+      - "no malignancy"
+      - "malignancy"
+  output:
+    args_path: ${hydra:run.dir}
+    checkpoint: ${hydra:run.dir}/checkpoints/
+    tensorboard: ${hydra:run.dir}/tensorboard/
+
+hydra:
+  run:
+    dir: /ocean/projects/asc170022p/shg121/PhD/Breast-CLIP/src/codebase/outputs/upmc_vindr_clip/b5_detector_prompts_all_period_${base.period}
