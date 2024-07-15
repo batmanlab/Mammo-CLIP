@@ -50,8 +50,9 @@ class ImageTextDataset(Dataset):
         self.image_aug_other_image = True
         self.image_view_aug = True
         self.has_backtranslated = hasattr(self.df, "text_augment")
-        print(kwargs)
-        with open(self.root_dir / "Mammo-CLIP/src/codebase/breastclip/data/datasets/prompts_all.json") as f:
+        with open(
+                "/restricted/projectnb/batmanlab/shawn24/PhD/Breast-CLIP/src/codebase/breastclip/data/datasets/prompts.json"
+        ) as f:
             self.prompt_json = json.load(f)
 
         log.info(f"split: {split} transform")
@@ -61,14 +62,16 @@ class ImageTextDataset(Dataset):
         return len(self.df)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == 'upmc':
-            return self.root_dir / self.img_dir / f'Patient_{study_id}' / image_id
-        else:
-            return self.root_dir / self.img_dir / f'{str(study_id)}' / image_id
+        if self.dataset.lower() == "upmc":
+            return self.root_dir / self.img_dir / f"Patient_{study_id}" / image_id
+        elif self.dataset.lower() == "vindr":
+            return self.root_dir / self.img_dir / f"{str(study_id)}" / image_id
+        elif self.dataset.lower() == "embed":
+            return image_id.replace(".dcm", ".png")
 
     def __getitem__(self, index):
-        # print(self.df.columns)
         view_list = None
+        selected_image_indices = {}
         if hasattr(self.df, "CC"):
             try:
                 view_list = ast.literal_eval(self.df["view"][index])
@@ -80,12 +83,14 @@ class ImageTextDataset(Dataset):
                 image_path_list = []
                 for view in view_list:
                     try:
-                        image_path_list = ast.literal_eval(self.df[view][index])
+                        image_paths = ast.literal_eval(self.df[view][index])
                     except Exception:
-                        image_path_list = [self.df[view][index]]
-
-                    image_path = np.random.choice(image_path_list, size=1)[0]
-                    image_path_list.append(image_path)
+                        image_paths = [self.df[view][index]]
+                    if image_paths:
+                        chosen_index = np.random.choice(len(image_paths))
+                        image_path = image_paths[chosen_index]
+                        image_path_list.append(image_path)
+                        selected_image_indices[view] = chosen_index
 
             else:
                 if len(view_list) == 1:
@@ -195,11 +200,16 @@ class ImageTextDataset(Dataset):
 
         # Get from image-label dataset.
         elif hasattr(self.df, "CC_FINDING"):
-            cc, mlo = view_list
-            cc_findings = ast.literal_eval(self.df[f"{cc}_FINDING"][index])
-            mlo_findings = ast.literal_eval(self.df[f"{mlo}_FINDING"][index])
-            text = generate_report_from_labels(cc_findings, self.prompt_json, deterministic=(self.split != "train"))
-            text2 = generate_report_from_labels(mlo_findings, self.prompt_json, deterministic=(self.split != "train"))
+            if self.dataset.lower() == "vindr":
+                # Image and view column of upmc_vindr should be in order of ["CC", "MLO"]
+                # CC_FINDING, MLO_FINDING are in order:
+                # [[+ve right findings], [+ve left findings], [-ve right findings], [-ve left findings]]
+                cc, mlo = view_list
+                cc_findings = ast.literal_eval(self.df[f"{cc}_FINDING"][index])
+                mlo_findings = ast.literal_eval(self.df[f"{mlo}_FINDING"][index])
+                text = generate_report_from_labels(cc_findings, self.prompt_json, deterministic=(self.split != "train"))
+                text2 = generate_report_from_labels(mlo_findings, self.prompt_json,
+                                                    deterministic=(self.split != "train"))
         else:
             raise AttributeError("There is no report column in DataFrame.")
 
