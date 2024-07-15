@@ -9,7 +9,7 @@
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
-## **⚠️ WARNING: This is a critical operation. Proceed with caution!**
+## **⚠️ We are still modifying this codebase to remove redundant parts. Currently it doesnot support distributed training. We are working on it.**
 
 ## FAQ
 
