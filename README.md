@@ -9,7 +9,7 @@
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
-## **⚠️ We are still modifying the Mammo-CLIP pretraining code to remove redundant parts. Currently, the pretraining does not support distributed training. We are working on it.**
+## **⚠️ We are still modifying the Mammo-CLIP pretraining code to remove redundant parts. Currently, the pretraining does not support distributed training. We are working on it. Feel free to use the downstream code with the checkpoints.**
 
 ## FAQ
 
