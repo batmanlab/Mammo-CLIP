@@ -9,6 +9,8 @@
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
+### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path.
+
 ## FAQ
 
 After going through the instruction, it is recommended to visit
@@ -194,10 +196,6 @@ Following are the pre-training checkpoints of Mammo-CLIP:
 We have also uploaded the downstream checkpoints for classification and localization (both linear probe and finetuning)
 with the image encoder of Efficient-Net B5 Mammo-CLIP for fold
 0 [here](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Downstream-checkpoints).
-
-## Warning
-
-Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path.
 
 ## Pretraining Mammo-CLIP
 
