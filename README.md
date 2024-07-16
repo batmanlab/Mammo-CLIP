@@ -199,13 +199,13 @@ with the image encoder of Efficient-Net B5 Mammo-CLIP for fold
 
 ## Pretraining Mammo-CLIP
 
-For pretraining Mammo-CLIP with a single GPU, use the following command:
+For pretraining Efficient Net-B5 Mammo-CLIP with a single GPU, use the following command:
 
 ```bash
 python ./src/codebase/train.py --config-name pre_train_b5_clip.yaml
 ```
 
-For pretraining Mammo-CLIP with a 4 GPUs using pytorch-ddp, use the following command:
+For pretraining Efficient Net-B5 Mammo-CLIP with a 4 GPUs using pytorch-ddp, use the following command:
 
 ```bash
 torchrun --nproc_per_node=4 ./src/codebase/train.py --config-name pre_train_b5_clip.yaml
