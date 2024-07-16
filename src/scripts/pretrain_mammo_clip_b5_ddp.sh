@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#$ -N b5_det_upmc_embed_no_cancer_no_ethnicity_ddp        # Give job a name
+#$ -N b5_det_upmc_ddp        # Give job a name
 #$ -o /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/scc_logs/pretrain/fold0_b5_det_$JOB_ID_$JOB_NAME.out       # File name for the stdout output of the job.
 
 #$ -P batmanlab     # Specify the SCC project name you want to use
