@@ -128,7 +128,7 @@ files: [breast-level_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/bl
 and [finding_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/finding_annotations.csv)
 . We preprocess the `finding_annotations.csv` file to
 get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv)
-. `VinDr.ipynb` notebook requires vindr_detection_v1_folds.csv file as input and
+. [VinDr.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/preprocess-clip/VinDr.ipynb) notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file. **Both `clip_pretrain_100.csv` and `clip_vindr_final.csv` files are used for pretraining the image-text and
 image-label variant of Mammo-CLIP.**
