@@ -130,7 +130,8 @@ files: [breast-level_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/bl
 and [finding_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/finding_annotations.csv)
 . We preprocess the `finding_annotations.csv` file to
 get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv)
-. [VinDr.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/preprocess-clip/VinDr.ipynb) notebook requires vindr_detection_v1_folds.csv file as input and
+. [VinDr.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/preprocess-clip/VinDr.ipynb)
+notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file. **Both `clip_pretrain_100.csv` and `clip_vindr_final.csv` files are used for pretraining the image-text and
 image-label variant jointly of Mammo-CLIP.**
@@ -178,7 +179,9 @@ Use the following csv files as metadata for the downstream tasks (classification
 | RSNA    | [train_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/train_folds.csv)                           | 
 
 For detection/localization tasks, we have included the coordinates of the resized bounding boxes of VinDr in the above
-csv file. Somebody interested in resizing the bounding boxes by themselves, run the following command with [finding_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/finding_annotations.csv) file as input:
+csv file. Somebody interested in resizing the bounding boxes by themselves, run the following command
+with [finding_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/finding_annotations.csv)
+file as input:
 
 ```bash
 python ./src/preprocessing/preprocess_VinDr_detector.py
@@ -220,10 +223,9 @@ found [here](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/codebase/conf
 * Use
   [pre_train_b2_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b2_clip.yaml)
   for pre-training image-text variant of Efficient-Net B2 Mammo-CLIP
-*
-    * Use
-      [pre_train_b5_w_vindr_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b5_w_vindr_clip.yaml)
-      for pre-training image-text + image-label variant of Efficient-Net B5 Mammo-CLIP
+* Use
+  [pre_train_b5_w_vindr_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b5_w_vindr_clip.yaml)
+  for pre-training image-text + image-label variant of Efficient-Net B5 Mammo-CLIP
 
 ## Creating classifiers and detectors
 
