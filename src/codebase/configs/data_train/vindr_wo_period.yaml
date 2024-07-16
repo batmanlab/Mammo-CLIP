@@ -1,5 +1,5 @@
 vindr_wo_period:
-  name: "upmc_vindr"
+  name: "vindr"
   data_type: "imagetext"
   data_dir: "${base.data_dir}"
   img_dir: "RSNA_Breast_Imaging/Dataset/External/Vindr/upmc_vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png"

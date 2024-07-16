@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --output=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/b5_det_lp_%j.out
+#SBATCH --output=/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/psc_logs/b5_det_lp_%j.out
 
 pwd
 hostname
@@ -8,8 +8,8 @@ date
 CURRENT=$(date +"%Y-%m-%d_%T")
 echo $CURRENT
 
-slurm_output_train_mass=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_lp_mass_$CURRENT.out
-slurm_output_train_calc=/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_lp_calc_$CURRENT.out
+slurm_output_train_mass=/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_lp_mass_$CURRENT.out
+slurm_output_train_calc=/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_lp_calc_$CURRENT.out
 
 echo "Mammo-clip b2"
 source /ocean/projects/asc170022p/shg121/anaconda3/etc/profile.d/conda.sh
@@ -20,7 +20,7 @@ conda activate breast_clip_rtx_6000
 python ./src/codebase/train_detector.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
   --arch 'clip_b5_upmc' \
   --epochs 120 \
@@ -40,7 +40,7 @@ python ./src/codebase/train_detector.py \
 python ./src/codebase/train_detector.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
   --arch 'clip_b5_upmc' \
   --epochs 120 \

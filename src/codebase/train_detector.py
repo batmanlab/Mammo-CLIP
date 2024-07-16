@@ -14,17 +14,17 @@ import pickle
 def config():
     parser = argparse.ArgumentParser()
     parser.add_argument('--tensorboard-path', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/Multimodal-mistakes-debug/log',
+                        default='/restricted/projectnb/batmanlab/shawn24/PhD/Multimodal-mistakes-debug/log',
                         help='path to tensorboard logs')
     parser.add_argument('--checkpoints', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/Multimodal-mistakes-debug/checkpoints',
+                        default='/restricted/projectnb/batmanlab/shawn24/PhD/Multimodal-mistakes-debug/checkpoints',
                         help='path to checkpoints')
     parser.add_argument('--output_path', metavar='DIR',
-                        default='/ocean/projects/asc170022p/shg121/PhD/Multimodal-mistakes-debug/out',
+                        default='/restricted/projectnb/batmanlab/shawn24/PhD/Multimodal-mistakes-debug/out',
                         help='path to output logs')
     parser.add_argument(
         "--data-dir",
-        default="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset",
+        default="/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset",
         type=str, help="Path to data file"
     )
     parser.add_argument(

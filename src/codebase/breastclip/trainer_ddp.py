@@ -8,12 +8,20 @@ from typing import Dict
 
 import numpy as np
 import torch
-import torch.distributed as dist
+import torch.nn as nn
+import torch.optim as optim
+
 from omegaconf import OmegaConf
 from scipy.special import softmax
 from sklearn import metrics
 from sklearn.metrics import accuracy_score, f1_score
+
+# DDP
 from torch.nn.parallel import DistributedDataParallel as DDP
+import torch.distributed as dist
+from torch.utils.data.distributed import DistributedSampler
+from torch.utils.data import DataLoader
+
 from tqdm import tqdm
 
 from . import util
@@ -25,8 +33,13 @@ from .scheduler import build_scheduler
 
 log = logging.getLogger(__name__)
 
+import nltk
 
-def run(local_rank, cfg: Dict):
+log.info("Download nltk module")
+nltk.download("punkt")
+
+
+def run_ddp(local_rank, cfg: Dict):
     if "tokenizer" in cfg:
         assert (
                 cfg["tokenizer"]["pretrained_model_name_or_path"] == cfg["model"]["text_encoder"]["name"]
@@ -36,23 +49,28 @@ def run(local_rank, cfg: Dict):
     log.info(f"local_rank: {local_rank}")
     log.info(f"distributed: {distributed}")
 
+    # DDP
     if distributed:
-        ngpus_per_node = torch.cuda.device_count()
-        print(f"ngpus_per_node: {ngpus_per_node}")
-        dist.init_process_group(backend="nccl")
-        print(f"local_rank: {local_rank}")
-        print(f"device_count: {torch.cuda.device_count()}")
-        # Check if local_rank is within the valid range of CUDA devices
-        assert local_rank < torch.cuda.device_count(), f"Invalid local_rank: {local_rank}"
+        torch.cuda.set_device(local_rank)
+        dist.init_process_group(backend='nccl', init_method='env://')
+        world_size = dist.get_world_size()
+        assert world_size <= torch.cuda.device_count(), f"world_size cannot be greater than available CUDA devices"
 
         # Set the CUDA device based on local_rank
-        device = torch.device(f"cuda:{local_rank}")
-        torch.cuda.set_device(device)
+        device = torch.device(f'cuda:{local_rank}')  # Define the device for model and tensors
+
+        # Set the CUDA device for the current process
+        torch.cuda.set_device(device)  # It tells PyTorch which GPU this particular process should primarily use
+
+
     else:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     if "args_path" in cfg["base"]["output"]:
-        pickle.dump(cfg, open(os.path.join(cfg["base"]["output"]["args_path"], "cfg.pkl"), "wb"))
+        os.makedirs(cfg["base"]["output"]["args_path"], exist_ok=True)
+
+        with open(os.path.join(cfg["base"]["output"]["args_path"], "cfg.pkl"), "wb") as f:
+            pickle.dump(cfg, f)
 
     cur_fold = cfg["base"]["fold"]
     check_pt_dir = Path(cfg["base"]["output"]["checkpoint"])
@@ -111,8 +129,10 @@ def run(local_rank, cfg: Dict):
         ckpt = torch.load(filename, map_location=device)
         model.load_state_dict(ckpt["model"], strict=False)
 
+    # DDP
     if distributed:
-        model = DDP(model, device_ids=[device], find_unused_parameters=True)
+        model = DDP(model, device_ids=[local_rank], find_unused_parameters=True)
+
     if util.GlobalEnv.get().master:
         log.info(f"{device}: Model info:\n{model}")
 
@@ -124,10 +144,8 @@ def run(local_rank, cfg: Dict):
 
     log.info(f"{device}: Build the LR scheulder")
     if "total_epochs" in cfg["scheduler"]["config"]:
-        # with open_dict(cfg):
         cfg["scheduler"]["config"]["total_steps"] = len(train_dataloader) * cfg["scheduler"]["config"]["total_epochs"]
     if "warmup_epochs" in cfg["scheduler"]["config"]:
-        # with open_dict(cfg):
         if isinstance(cfg["scheduler"]["config"]["warmup_epochs"], int):
             cfg["scheduler"]["config"]["warmup_steps"] = len(train_dataloader) * cfg["scheduler"]["config"][
                 "warmup_epochs"]
@@ -136,12 +154,6 @@ def run(local_rank, cfg: Dict):
 
     scheduler = build_scheduler(optimizer, cfg["scheduler"])
     scaler = torch.cuda.amp.GradScaler() if cfg["base"]["amp"] else None
-
-    if local_rank < 1:
-        import nltk
-
-        log.info("Download nltk module")
-        nltk.download("punkt")
 
     # train
     if "total_epoch" in cfg["scheduler"]:
@@ -157,20 +169,23 @@ def run(local_rank, cfg: Dict):
     util.GlobalEnv.get().summary_writer.train.add_text(
         "hyperparams/config", "\n".join(["\t" + line for line in OmegaConf.to_yaml(cfg).splitlines()]), 0
     )
+
     log.info(valid_dataloaders)
 
+    # Master process
     if util.GlobalEnv.get().master:
         os.makedirs(check_pt_path, exist_ok=True)
 
-        log.info(f"{device}: Training the model")
-        # training
+    log.info(f"{device}: Training the model")
+    # training
 
-        best_loss = 9e9
-        if "epoch_to_start" in cfg["base"]:
-            epoch_resume = cfg["base"]["epoch_to_start"]
-        else:
-            epoch_resume = 0
+    best_loss = 9e9
+    if "epoch_to_start" in cfg["base"]:
+        epoch_resume = cfg["base"]["epoch_to_start"]
+    else:
+        epoch_resume = 0
 
+    try:
         for epoch in range(epoch_resume, total_epochs):
             if train_sampler is not None:
                 train_sampler.set_epoch(epoch)
@@ -212,10 +227,13 @@ def run(local_rank, cfg: Dict):
                 util.GlobalEnv.get().summary_writer.valid.add_scalar(f"loss_per_epoch/{loss_key}",
                                                                      avg_val_loss_per_loss[loss_key], epoch + 1)
 
+            # DDP
             if util.GlobalEnv.get().master:
                 # checkpoint
                 filename = check_pt_path / "model"
                 checkpoint = f"{filename}-epoch-{epoch + 1}.tar"
+
+                # DDP
                 model_state_dict = model.state_dict() if local_rank == -1 else model.module.state_dict()
                 torch.save(
                     {
@@ -239,6 +257,10 @@ def run(local_rank, cfg: Dict):
         util.GlobalEnv.get().summary_writer.train.close()
         util.GlobalEnv.get().summary_writer.valid.close()
         log.info(f"{device}: Training has been completed")
+
+    finally:
+        if distributed:
+            dist.destroy_process_group()
 
 
 def train(model, device, loss_func, optimizer, scheduler, dataloader, epoch, total_epochs, scaler, total_step,
@@ -313,6 +335,8 @@ def train(model, device, loss_func, optimizer, scheduler, dataloader, epoch, tot
         if total_step == scheduler._step_count:
             break
 
+        if idx == 10:
+            break
     for k in avg_loss_dict:
         avg_loss_dict[k] = avg_loss_dict[k] / len(dataloader)
 
@@ -374,6 +398,9 @@ def validate(model, device, loss_func, dataloader_dict, epoch, total_epochs, loc
                             "CUDA-Util(%)": torch.cuda.utilization(device),
                         }
                     )
+
+                if idx == 10:
+                    break
 
             for loss_key in avg_loss_dict:
                 avg_loss_dict[loss_key] = avg_loss_dict[loss_key] / len(dataloader)

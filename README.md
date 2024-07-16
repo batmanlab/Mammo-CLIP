@@ -71,7 +71,7 @@ skip the preprocessing steps.
 ```bash
 python ./src/preprocessing/preprocess_image_to_png_kaggle.py \
   --phase="test" \
-  --base_folder="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/RSNA_Cancer_Detection"
+  --base_folder="/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/RSNA_Cancer_Detection"
 ```
 
 ### convert to png: VinDr
@@ -79,7 +79,7 @@ python ./src/preprocessing/preprocess_image_to_png_kaggle.py \
 ```bash
 python ./src/preprocessing/preprocess_image_to_png_vindr.py \
   --phase="test" \
-  --base_folder="/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0"
+  --base_folder="/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0"
 ```
 
 ## Data preparation for pretraining
@@ -100,7 +100,7 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 # output: clip_pretrain_100.csv
 
 python ./src/codebase/augment_text.py \
-  --dataset-path="/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/data_csv" \
+  --dataset-path="/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/data_csv" \
   --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
   --dataset="upmc" 
 ```
@@ -195,7 +195,7 @@ with the image encoder of Efficient-Net B5 Mammo-CLIP for fold
 
 ## Warning
 
-Look for `/ocean/projects/asc170022p/shg121/PhD` and replace it with your own path.
+Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path.
 
 ## Pretraining Mammo-CLIP
 
@@ -241,10 +241,10 @@ Adjust the `CKPT` and `DIR` variables according to your setup.
 
 ```bash
 python ./src/codebase/train_classifier.py \
-  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
+  --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
   --arch 'upmc_breast_clip_det_b5_period_n_lp' \
@@ -278,10 +278,10 @@ python ./src/codebase/train_classifier.py \
 
 ```bash
 python ./src/codebase/train_classifier.py \
-  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
+  --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
   --arch 'upmc_breast_clip_det_b5_period_n_ft' \
@@ -315,10 +315,10 @@ python ./src/codebase/train_classifier.py \
 
 ```bash
 python ./src/codebase/train_detector.py \
-  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
+  --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
   --arch 'clip_b5_upmc' \
   --epochs 120 \
@@ -350,10 +350,10 @@ python ./src/codebase/train_detector.py \
 
 ```bash
 python ./src/codebase/train_detector.py \
-  --data-dir '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset' \
+  --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
   --arch 'clip_b5_upmc' \
   --epochs 120 \

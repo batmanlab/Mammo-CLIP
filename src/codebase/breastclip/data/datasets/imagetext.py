@@ -51,7 +51,7 @@ class ImageTextDataset(Dataset):
         self.image_view_aug = True
         self.has_backtranslated = hasattr(self.df, "text_augment")
         with open(
-                "/restricted/projectnb/batmanlab/shawn24/PhD/Breast-CLIP/src/codebase/breastclip/data/datasets/prompts.json"
+                "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/breastclip/data/datasets/prompts.json"
         ) as f:
             self.prompt_json = json.load(f)
 
@@ -66,8 +66,6 @@ class ImageTextDataset(Dataset):
             return self.root_dir / self.img_dir / f"Patient_{study_id}" / image_id
         elif self.dataset.lower() == "vindr":
             return self.root_dir / self.img_dir / f"{str(study_id)}" / image_id
-        elif self.dataset.lower() == "embed":
-            return image_id.replace(".dcm", ".png")
 
     def __getitem__(self, index):
         view_list = None

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.8.18 (sftp://shg121@localhost:8887/ocean/projects/asc170022p/shg121/anaconda3/envs/breast_clip_rtx_6000/bin/python) (6)" project-jdk-type="Python SDK" />
+  <component name="Black">
+    <option name="sdkName" value="Remote Python 3.8.18 (sftp://shawn24@scc4.bu.edu:22/usr3/graduate/shawn24/.conda/envs/breast_clip_rtx_6000/bin/python) (3)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.8.18 (sftp://shawn24@scc4.bu.edu:22/usr3/graduate/shawn24/.conda/envs/breast_clip_rtx_6000/bin/python) (3)" project-jdk-type="Python SDK" />
 </project>

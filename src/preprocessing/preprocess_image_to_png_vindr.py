@@ -3,7 +3,7 @@ import sys
 
 from IPython.core.display import display
 
-sys.path.append(os.path.abspath("/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging"))
+sys.path.append(os.path.abspath("/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging"))
 import os
 import dicomsdl
 import argparse
@@ -100,7 +100,7 @@ def main():
     parser.add_argument('--width', type=int, default=912, help='The width of the image')
     parser.add_argument('--height', type=int, default=1520, help='The height of the image')
     parser.add_argument('--base_folder', type=str,
-                        default='/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0',
+                        default='/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0',
                         help='Base folder for dataset and outputs')
 
     args = parser.parse_args()

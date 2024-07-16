@@ -139,7 +139,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print('device:', device)
 
 train_df = pd.read_csv(
-    '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/finding_annotations.csv')
+    '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/finding_annotations.csv')
 train_df = train_df.head(2255)
 display(train_df.head(5))
 display(train_df.shape)
@@ -149,7 +149,7 @@ phase = 'train'  # 'test'
 if phase == 'train':
     df = train_df.reset_index(drop=True)
 
-IMG_PATH = f"/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images"
+IMG_PATH = f"/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images"
 # test_images = glob.glob(f"{IMG_PATH}*/*.dcm")
 
 print("Number of images :", len(df))
@@ -181,6 +181,6 @@ df['resized_xmax'] = resized_xmax_arr
 df['resized_ymax'] = resized_ymax_arr
 
 df.to_csv(
-    '/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection.csv',
+    '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection.csv',
     index=False
 )

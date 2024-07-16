@@ -12,7 +12,7 @@ model:
   clip_check_point: ????
 
 base:
-  data_dir: "/ocean/projects/asc170022p/shg121/PhD"
+  data_dir: "/restricted/projectnb/batmanlab/shared/Data"
   period: "n"
   fold: 0
   seed: 10

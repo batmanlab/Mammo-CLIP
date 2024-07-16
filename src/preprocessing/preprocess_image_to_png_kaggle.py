@@ -315,7 +315,7 @@ def main():
     parser.add_argument('--width', type=int, default=912, help='The width of the image')
     parser.add_argument('--height', type=int, default=1520, help='The height of the image')
     parser.add_argument('--base_folder', type=str,
-                        default='/ocean/projects/asc170022p/shg121/PhD/RSNA_Breast_Imaging/Dataset/RSNA_Cancer_Detection',
+                        default='/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset/RSNA_Cancer_Detection',
                         help='Base folder for dataset and outputs')
 
     args = parser.parse_args()

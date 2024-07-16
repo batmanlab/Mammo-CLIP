@@ -2,8 +2,6 @@ defaults:
   - _self_
   - data_train:
       - upmc_wo_period
-  - data_zs:
-      - upmc_zs
   - dataloader: dataloader_b5
   - tokenizer: clinical_bert
   - transform: clahe
@@ -13,7 +11,7 @@ defaults:
   - loss: breast_clip
 
 base:
-  data_dir: "/ocean/projects/asc170022p/shg121/PhD"
+  data_dir: "/restricted/projectnb/batmanlab/shared/Data"
   period: "n"
   resume_training: False
   epoch_to_start: 0
@@ -29,14 +27,6 @@ base:
   text_max_length: 256
   loss_best: contrastive
   data_frac: 1.0
-  zs_prompts:
-    upmc:
-      - "birads category 0"
-      - "birads category 1"
-      - "birads category 2"
-    rsna:
-      - "no malignancy"
-      - "malignancy"
   output:
     args_path: ${hydra:run.dir}
     checkpoint: ${hydra:run.dir}/checkpoints/
@@ -44,4 +34,4 @@ base:
 
 hydra:
   run:
-    dir: /ocean/projects/asc170022p/shg121/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_${base.period}
+    dir: /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_${base.period}

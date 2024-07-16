@@ -5,6 +5,8 @@ from typing import Dict
 import pandas as pd
 from breastclip import util
 from torch.utils.data import ConcatDataset, DataLoader
+
+# DDP
 from torch.utils.data.distributed import DistributedSampler
 
 #
@@ -54,8 +56,12 @@ class DataModule:
             df = pd.read_csv(Path(
                 data_config[dataset]["data_dir"]) / data_config[dataset]["data_path"], dtype=dtype_options)
             df = df.fillna(0)
-            train_df = df[df['fold'] != cur_fold].reset_index(drop=True)
-            valid_df = df[df['fold'] == cur_fold].reset_index(drop=True)
+            if data_config[dataset]["name"].lower() == "vindr":
+                train_df = df[df['split'] == "training"].reset_index(drop=True)
+                valid_df = df[df['split'] == "test"].reset_index(drop=True)
+            else:
+                train_df = df[df['fold'] != cur_fold].reset_index(drop=True)
+                valid_df = df[df['fold'] == cur_fold].reset_index(drop=True)
 
             train_dataset = load_dataset(
                 df=train_df,
@@ -109,19 +115,18 @@ class DataModule:
         if self.train_loader is None:
             dataset = ConcatDataset(self.datasets["train"])
             shuffle = self.dataloader_config["train"]["shuffle"]
-            if distributed:
-                self.dataloader_config["train"]["shuffle"] = False
-                if self.dataloader_config["train"]["batch_size"] % util.GlobalEnv.get().world_size != 0:
-                    raise Exception(
-                        f'train.batch_size({self.dataloader_config["train"]["batch_size"]}) \
-                            is must be a multiple of world_size({util.GlobalEnv.get().world_size})'
-                    )
-                self.dataloader_config["train"]["batch_size"] = (
-                        self.dataloader_config["train"]["batch_size"] // util.GlobalEnv.get().world_size
-                )
 
-            self.train_sampler = DistributedSampler(dataset=dataset, shuffle=shuffle) if distributed else None
-            print(self.train_sampler)
+            # DDP
+            if distributed:
+                self.dataloader_config["train"]["shuffle"] = False  # Disable shuffle if using DistributedSampler
+
+                # Create DistributedSampler
+                self.train_sampler = DistributedSampler(dataset=dataset, num_replicas=util.GlobalEnv.get().world_size,
+                                                        rank=util.GlobalEnv.get().world_rank)
+
+            else:
+                self.train_sampler = None
+
             self.train_loader = DataLoader(
                 dataset,
                 collate_fn=getattr(self.datasets["train"][0], "collate_fn", None),
@@ -133,20 +138,19 @@ class DataModule:
 
     def valid_dataloader(self, distributed=False):
         assert self.dataloader_config is not None
+
         if self.valid_loader_dict is None:
             self.valid_loader_dict = dict()
-            if self.dataloader_config["valid"]["batch_size"] % util.GlobalEnv.get().world_size != 0:
-                raise Exception(
-                    f'valid.batch_size({self.dataloader_config["valid"]["batch_size"]}) \
-                        is must be a multiple of world_size({util.GlobalEnv.get().world_size})'
-                )
-            self.dataloader_config["valid"]["batch_size"] = self.dataloader_config["valid"][
-                                                                "batch_size"] // util.GlobalEnv.get().world_size
 
             for val_dataset in self.datasets["valid"]:
-                sampler = DistributedSampler(dataset=val_dataset, shuffle=False) if distributed else None
-                if sampler is not None:
-                    sampler.set_epoch(0)
+                # DDP
+                if distributed:
+                    sampler = DistributedSampler(dataset=val_dataset, num_replicas=util.GlobalEnv.get().world_size,
+                                                 rank=util.GlobalEnv.get().world_rank)
+                else:
+                    sampler = None
+                    # sampler.set_epoch(0)   # This ensures shuffling will be the same across epochs.
+
                 dataloader = DataLoader(
                     val_dataset, collate_fn=getattr(val_dataset, "collate_fn", None), sampler=sampler,
                     **self.dataloader_config["valid"]
@@ -154,14 +158,3 @@ class DataModule:
                 self.valid_loader_dict[val_dataset.dataset] = dataloader
 
         return self.valid_loader_dict
-
-    def test_dataloader(self):
-        assert self.dataloader_config is not None
-        if self.test_loader is None:
-            self.test_loader = {
-                test_dataset.name: DataLoader(
-                    test_dataset, collate_fn=getattr(test_dataset, "collate_fn", None), **self.dataloader_config["test"]
-                )
-                for test_dataset in self.datasets["test"]
-            }
-        return self.test_loader
