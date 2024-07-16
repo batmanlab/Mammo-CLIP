@@ -31,36 +31,14 @@ class MammoDataset(Dataset):
         if self.dataset.lower() == "rsna":
             img_path = f'{img_path}.png'
         if (
-                self.image_encoder_type == "swin" or
-                self.image_encoder_type == "tf_efficientnetv2-detect" or
-                self.image_encoder_type == "tf_efficientnet_b5_ns-detect" or
-                self.image_encoder_type == "resnet101" or
-                self.image_encoder_type == "resnet152" or
-                self.args.arch.lower() == "swin_tiny_tf" or
-                self.args.arch.lower() == 'swin_tiny_custom' or
-                self.args.arch.lower() == 'swin_tiny_custom_norm' or
-                self.args.arch.lower() == "swin_base_tf" or
-                self.args.arch.lower() == 'swin_base_custom' or
-                self.args.arch.lower() == 'swin_base_custom_norm' or
                 self.args.arch.lower() == "upmc_breast_clip_det_b5_period_n_ft" or
                 self.args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_ft" or
                 self.args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                self.args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp_attn" or
                 self.args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
                 self.args.arch.lower() == "upmc_breast_clip_det_b2_period_n_ft" or
                 self.args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_ft" or
                 self.args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                self.args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp" or
-                self.args.arch.lower() == "upmc_breast_clip_resnet101_period_n_ft" or
-                self.args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_ft" or
-                self.args.arch.lower() == "upmc_breast_clip_resnet101_period_n_lp" or
-                self.args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_lp" or
-                self.args.arch.lower() == "upmc_breast_clip_resnet152_period_n_ft" or
-                self.args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_ft" or
-                self.args.arch.lower() == "upmc_breast_clip_resnet152_period_n_lp" or
-                self.args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_lp" or
-                'efficientnetv2-detect' in self.args.arch or
-                'efficientnet_b5_ns-detect' in self.args.arch
+                self.args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"
         ):
             img = Image.open(img_path).convert('RGB')
         else:

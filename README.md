@@ -284,8 +284,10 @@ python ./src/codebase/train_classifier.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_lp` for B5
-  or `upmc_breast_clip_det_b2_period_n_lp` for B2
+* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_lp` for Efficient-Net B5
+  or `upmc_breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on UPMC dataset.
+  Also, `upmc_vindr_breast_clip_det_b5_period_n_lp` for Efficient-Net B5
+  or `upmc_vindr_breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on UPMC and VinDr datasets.
 * `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
   dataset; `cancer` for RSNA dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -321,8 +323,10 @@ python ./src/codebase/train_classifier.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_ft` for B5
-  or `upmc_breast_clip_det_b2_period_n_ft` for B2
+* `arch`: `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_ft` for Efficient-Net B5
+  or `upmc_breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on UPMC dataset.
+  Also, `upmc_vindr_breast_clip_det_b5_period_n_ft` for Efficient-Net B5
+  or `upmc_vindr_breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on UPMC and VinDr datasets.
 * `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
   dataset; `cancer` for RSNA dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -357,7 +361,9 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `clip_b5_upmc` for B5 or `clip_b2_upmc` for B2
+* `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
+  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for Efficient-Net B2,
+  pretrained on UPMC and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
   sanity check
@@ -392,7 +398,9 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `clip_b5_upmc` for B5 or `clip_b2_upmc` for B2
+* `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
+  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for Efficient-Net B2,
+  pretrained on UPMC and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
   sanity check

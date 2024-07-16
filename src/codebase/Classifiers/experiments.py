@@ -41,6 +41,7 @@ def do_experiments(args, device):
             args.valid_folds = args.df[args.df['fold'] == args.cur_fold].reset_index(drop=True)
             print(f"train_folds shape: {args.train_folds.shape}")
             print(f"valid_folds shape: {args.valid_folds.shape}")
+
         elif args.dataset.lower() == "vindr":
             args.train_folds = args.df[args.df['split'] == "training"].reset_index(drop=True)
             args.valid_folds = args.df[args.df['split'] == "test"].reset_index(drop=True)
@@ -286,15 +287,6 @@ def train_fn(train_loader, model, criterion, optimizer, epoch, args, scheduler, 
     for step, data in progress_iter:
         inputs = data['x'].to(device)
         if (
-                'efficientnet_b5_ns-detect' in args.arch or
-                'efficientnetv2-detect' in args.arch or
-                args.arch.lower() == "swin_tiny_tf" or
-                args.arch.lower() == 'swin_tiny_custom' or
-                args.arch.lower() == "swin_base_tf" or
-                args.arch.lower() == 'swin_base_custom' or
-                args.arch.lower() == "upmc_breast_clip_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp_attn" or
-                args.arch.lower() == "upmc_breast_clip_b2_period_n_lp" or
                 args.arch.lower() == "upmc_breast_clip_det_b5_period_n_ft" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_ft" or
                 args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
@@ -302,24 +294,8 @@ def train_fn(train_loader, model, criterion, optimizer, epoch, args, scheduler, 
                 args.arch.lower() == "upmc_breast_clip_det_b2_period_n_ft" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_ft" or
                 args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet101_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet152_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_large_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_b5_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_large_512_period_n_lp"):
+                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"
+        ):
             inputs = inputs.squeeze(1).permute(0, 3, 1, 2)
         elif args.arch.lower() == 'swin_tiny_custom_norm' or args.arch.lower() == 'swin_base_custom_norm':
             inputs = inputs.squeeze(1)
@@ -404,38 +380,15 @@ def valid_fn(valid_loader, model, criterion, args, device, epoch=1, mapper=None,
         inputs = data['x'].to(device)
         batch_size = inputs.size(0)
         if (
-                'efficientnet_b5_ns-detect' in args.arch or
-                'efficientnetv2-detect' in args.arch or
-                args.arch.lower() == "swin_tiny_tf" or
-                args.arch.lower() == 'swin_tiny_custom' or
-                args.arch.lower() == "swin_base_tf" or
-                args.arch.lower() == 'swin_base_custom' or
                 args.arch.lower() == "upmc_breast_clip_det_b5_period_n_ft" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_ft" or
                 args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp_attn" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
                 args.arch.lower() == "upmc_breast_clip_det_b2_period_n_ft" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_ft" or
                 args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet101_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet152_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_large_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_b5_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_large_512_period_n_lp"):
+                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"
+        ):
             inputs = inputs.squeeze(1).permute(0, 3, 1, 2)
         elif args.arch.lower() == 'swin_tiny_custom_norm' or args.arch.lower() == 'swin_base_custom_norm':
             inputs = inputs.squeeze(1)

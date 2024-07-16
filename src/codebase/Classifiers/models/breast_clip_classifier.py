@@ -18,26 +18,10 @@ class BreastClipClassifier(nn.Module):
         self.image_encoder_type = ckpt["config"]["model"]["image_encoder"]["model_type"]
         self.arch = args.arch.lower()
         if (
-                args.arch.lower() == "upmc_breast_clip_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_b2_period_n_lp" or
                 args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp_attn" or
                 args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
                 args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet101_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_resnet152_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_swin_large_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_b5_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_tiny_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_base_512_period_n_lp" or
-                args.arch.lower() == "upmc_rsna_breast_clip_swin_large_512_period_n_lp"):
+                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"):
             print("freezing image encoder to not be trained")
             for param in self.image_encoder.parameters():
                 param.requires_grad = False

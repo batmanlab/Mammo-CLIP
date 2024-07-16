@@ -371,7 +371,7 @@ def RetinaNet_efficientnet(
         [torch model]: [description]
     """
 
-    if model_type == "clip_b5_upmc" or model_type == "clip_b5_upmc_vindr" or model_type == "clip_b5_upmc_vindr_all":
+    if model_type == "clip_b5_upmc" or model_type == "clip_b5_upmc_vindr":
         efficientnet = EfficientNet.from_pretrained(model_name="efficientnet-b5", model_type=model_type,
                                                     num_classes=num_classes, clip_chk_pt=clip_chk_pt,
                                                     freeze_backbone=freeze_backbone)

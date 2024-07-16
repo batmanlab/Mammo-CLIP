@@ -395,7 +395,6 @@ def load_pretrained_weights(
     """Loads pretrained weights, and downloads if loading for the first time."""
     if (
             model_type == "clip_b5_upmc" or model_type == "clip_b5_upmc_vindr" or
-            model_type == "clip_b5_upmc_vindr_all" or
             model_type == "clip_b2_upmc" or model_type == "clip_b2_upmc_vindr"):
         chk_pt = torch.load(clip_chk_pt, map_location="cpu")["model"]
         state_dict = {}
