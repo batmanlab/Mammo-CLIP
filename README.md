@@ -86,7 +86,7 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 1. Our image-text dataset is an in-house dataset from UPMC. The sample
    csv: [upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv)
 
-2. Note the `HISTORY`, `FINDINGS`, and `IMPRESSION` columns in the csv file. The `FINDINGS` and `IMPRESSION` columns are
+2. Note the `FINDINGS` and `IMPRESSION` columns are
    used to generate the text for the image. The `HISTORY`, `FINDINGS` and `IMPRESSION` columns contains templated text
    due to privacy.
 3. Next run the following command to augment the text with `upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
