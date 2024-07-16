@@ -109,7 +109,8 @@ python ./src/codebase/augment_text.py \
 | 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo | List of image paths for MLO view for patient_id-laterality combo | List of [findings, impression] | List of [augmented findings, augmented impression] |
 
 5. The final sample csv file as the output of `step3` is
-   here: [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
+   here: [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv). `clip_pretrain_100.csv`
+   is used for pretraining the image-text variant of Mammo-CLIP.
 
 ### Image-label dataset
 
@@ -129,7 +130,8 @@ and [finding_annotations.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/
 get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/vindr_detection_v1_folds.csv)
 . `VinDr.ipynb` notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
-file.
+file. **Both `clip_pretrain_100.csv` and `clip_vindr_final.csv` files are used for pretraining the image-text and
+image-label variant of Mammo-CLIP.**
 
 The csv file of the final image-label (VinDr) dataset should have the following format:
 
@@ -438,4 +440,5 @@ For any queries, contact [Shantanu Ghosh](https://shantanu-ai.github.io/) (email
 ## Acknowledgements
 
 Special thanks to Boston University Masters
-students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a75748159/) & [Akshat Gurbuxani](https://www.linkedin.com/in/akshatgurbuxani/) for enabling multi-GPU support to Mammo-CLIP.
+students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a75748159/) & [Akshat Gurbuxani](https://www.linkedin.com/in/akshatgurbuxani/)
+for enabling multi-GPU support to Mammo-CLIP.
