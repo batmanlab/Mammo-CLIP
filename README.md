@@ -227,7 +227,7 @@ found [here](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/codebase/conf
   [pre_train_b5_w_vindr_clip.yaml](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/configs/pre_train_b5_w_vindr_clip.yaml)
   for pre-training image-text + image-label variant of Efficient-Net B5 Mammo-CLIP
 
-## Creating classifiers and detectors
+## Creating classifiers and detectors for downstream evaluations
 
 * For creating classifiers for downstream evaluations using the image encoder of Mammo-CLIP, use the
   class `BreastClipClassifier`
