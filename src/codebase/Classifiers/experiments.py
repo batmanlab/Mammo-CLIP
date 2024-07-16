@@ -36,9 +36,8 @@ def do_experiments(args, device):
         args.cur_fold = fold
         seed_all(args.seed)
         if args.dataset.lower() == "rsna":
-            args.train_folds = args.df[args.df['fold'] != args.cur_fold].reset_index(drop=True)
-            # args.train_folds = args.df[
-            #     (args.df['fold'] == 1) | (args.df['fold'] == 2)].reset_index(drop=True)
+            args.train_folds = args.df[
+                (args.df['fold'] == 1) | (args.df['fold'] == 2)].reset_index(drop=True)
             args.valid_folds = args.df[args.df['fold'] == args.cur_fold].reset_index(drop=True)
             print(f"train_folds shape: {args.train_folds.shape}")
             print(f"valid_folds shape: {args.valid_folds.shape}")
