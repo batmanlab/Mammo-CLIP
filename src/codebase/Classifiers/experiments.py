@@ -147,7 +147,6 @@ def train_loop(args, device):
         criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
 
     best_aucroc = 0.
-    best_acc_cancer = 0.
     best_acc = 0
     for epoch in range(args.epochs):
         start_time = time.time()
@@ -202,33 +201,12 @@ def train_loop(args, device):
                 )
         else:
             aucroc = auroc(valid_agg[args.label].values, valid_agg['prediction'].values)
-            valid_agg_cancer = valid_agg[valid_agg[args.label] == 1]
-            valid_agg_cancer['prediction'] = valid_agg_cancer['prediction'].apply(lambda x: 1 if x >= 0.5 else 0)
-            acc_cancer = compute_accuracy_np_array(valid_agg_cancer[args.label].values,
-                                                   valid_agg_cancer['prediction'].values)
-
             elapsed = time.time() - start_time
             print(
                 f'Epoch {epoch + 1} - avg_train_loss: {avg_loss:.4f}  avg_val_loss: {avg_val_loss:.4f}  time: {elapsed:.0f}s'
             )
-            print(
-                f'Epoch {epoch + 1} - AUC-ROC Score: {aucroc:.4f}, Acc +ve {args.label}: {acc_cancer * 100:.4f}'
-            )
+            print(f'Epoch {epoch + 1} - AUC-ROC Score: {aucroc:.4f}')
             logger.add_scalar(f'valid/{args.label}/AUC-ROC', aucroc, epoch + 1)
-            logger.add_scalar(f'valid/{args.label}/+ve Acc Score', acc_cancer, epoch + 1)
-
-            if best_acc_cancer < acc_cancer:
-                best_acc_cancer = acc_cancer
-                model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_acc_cancer_ver{args.VER}.pth'
-                print(f'Epoch {epoch + 1} - Save Best acc +ve {args.label}: {best_acc_cancer * 100:.4f} Model')
-                torch.save(
-                    {
-                        'model': model.state_dict(),
-                        'predictions': predictions,
-                        'epoch': epoch,
-                        'auroc': aucroc,
-                    }, args.chk_pt_path / model_name
-                )
 
             if best_aucroc < aucroc:
                 best_aucroc = aucroc
@@ -248,10 +226,7 @@ def train_loop(args, device):
             print(f'[Fold{args.cur_fold}], Best Accuracy: {best_acc * 100:.4f}')
         else:
             model_name = f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_aucroc_ver{args.VER}.pth'
-            print(
-                f'[Fold{args.cur_fold}], AUC-ROC Score: {best_aucroc:.4f}, '
-                f'Acc +ve {args.label}: {best_acc_cancer * 100:.4f}'
-            )
+            print(f'[Fold{args.cur_fold}], AUC-ROC Score: {best_aucroc:.4f}')
         predictions = torch.load(args.chk_pt_path / model_name, map_location='cpu')['predictions']
         args.valid_folds['prediction'] = predictions
 
