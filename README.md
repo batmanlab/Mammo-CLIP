@@ -38,6 +38,8 @@ more queries, we may add a separate FAQs in the future.
 Use [environment.yml](https://github.com/batmanlab/Mammo-CLIP/blob/main/environment.yml) to setup the environment.
 
 ```bash
+git clone git@github.com:batmanlab/Mammo-CLIP.git
+cd Mammo-CLIP
 conda env create --name Mammo-CLIP -f environment.yml
 conda activate Mammo-CLIP
 ```
