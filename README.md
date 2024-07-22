@@ -237,7 +237,7 @@ found [here](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/codebase/conf
   file.
 * For creating detectors for downstream evaluations using the image encoder of Mammo-CLIP, use the
   function `RetinaNet_efficientnet`
-  in [detector_mode.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Detectors/retinanet/detector_model.py#L357)
+  in [detector_model.py](https://github.com/batmanlab/Mammo-CLIP/blob/c9cc232368eaf0a6d55f1bea04490d9136362466/src/codebase/Detectors/retinanet/detector_model.py#L357)
   file.
 
 ## Evaluation
