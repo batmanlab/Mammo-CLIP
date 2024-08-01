@@ -29,9 +29,10 @@ more queries, we may add a separate FAQs in the future.
 8. [Creating classifiers and detectors](#creating-classifiers-and-detectors)
 9. [Evaluation](#evaluation)
 10. [Additional Scripts](#additional-scripts)
-11. [Citation](#citation)
-12. [License and Copyright](#license-and-copyright)
-13. [Contact](#contact)
+11. [Mammo-FActOR](#mammo-factor)
+12. [Citation](#citation)
+13. [License and Copyright](#license-and-copyright)
+14. [Contact](#contact)
 
 ## Environment Setup
 
@@ -428,6 +429,9 @@ the [scripts](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/scripts) dir
 | [detector_fine_tune_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_fine_tune_b2.sh)                   | Evaluate Mammo-CLIP b2 on fine tuning tasks for detection         |
 | [detector_linear_probe_b5.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b5.sh)             | Evaluate Mammo-CLIP b5 on linear probing tasks for detection      |
 | [detector_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b2.sh)             | Evaluate Mammo-CLIP b2 on linear probing tasks for detection      |
+
+## Mammo-FActOR
+For training Mammo-FActOR, refer to the following [notebook](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Mammo-Factor/Mammo-Factor.ipynb).
 
 ## Citation
 
