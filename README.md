@@ -26,7 +26,7 @@ more queries, we may add a separate FAQs in the future.
 5. [Data Preparation for Downstream Evaluation Tasks](#data-preparation-for-downstream-evaluation-tasks)
 6. [Mammo-CLIP checkpoints](#mammo-clip-checkpoints)
 7. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
-8. [Creating classifiers and detectors](#creating-classifiers-and-detectors-for-downstream-evaluations)
+8. [Creating classifiers and detectors for downstream evaluations](#creating-classifiers-and-detectors-for-downstream-evaluations)
 9. [Evaluation](#evaluation)
 10. [Additional Scripts](#additional-scripts)
 11. [Mammo-FActOR](#mammo-factor)
