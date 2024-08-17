@@ -29,7 +29,7 @@ more queries, we may add a separate FAQs in the future.
 8. [Creating classifiers and detectors for downstream evaluations](#creating-classifiers-and-detectors-for-downstream-evaluations)
 9. [Evaluation](#evaluation)
 10. [Tutorial Notebooks](#tutorial-notebooks)
-11. [Additional Scripts](#additional-scripts)2
+11. [Additional Scripts](#additional-scripts)
 12. [Mammo-FActOR](#mammo-factor)
 13. [Citation](#citation)
 14. [License and Copyright](#license-and-copyright)
