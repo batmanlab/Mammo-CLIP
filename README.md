@@ -28,11 +28,12 @@ more queries, we may add a separate FAQs in the future.
 7. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
 8. [Creating classifiers and detectors for downstream evaluations](#creating-classifiers-and-detectors-for-downstream-evaluations)
 9. [Evaluation](#evaluation)
-10. [Additional Scripts](#additional-scripts)
-11. [Mammo-FActOR](#mammo-factor)
-12. [Citation](#citation)
-13. [License and Copyright](#license-and-copyright)
-14. [Contact](#contact)
+10. [Tutorial Notebooks](#tutorial-notebooks)
+11. [Additional Scripts](#additional-scripts)2
+12. [Mammo-FActOR](#mammo-factor)
+13. [Citation](#citation)
+14. [License and Copyright](#license-and-copyright)
+15. [Contact](#contact)
 
 ## Environment Setup
 
@@ -408,6 +409,10 @@ python ./src/codebase/train_detector.py \
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
   sanity check
 * `freeze_backbone`: freeze the backbone of the model, for finetune, set to `n`
+
+## Tutorial Notebooks
+* For a quick look at setting up the downstream classifier, follow the notebook: [Downstream_classifier_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Downstream_classifier_tutorial.ipynb)
+* For a quick look at downloading the image embeddings from the vision encoder of Mammo-CLIP, follow the notebook: [Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb)
 
 ## Additional scripts
 
