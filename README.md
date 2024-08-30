@@ -239,7 +239,6 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 ```bash
 .
 ├── train_folds.csv
-├── train_folds_density.csv
 ├── train_images_png/
     ├── 59549/
     │   ├── 1154694388.png
