@@ -24,16 +24,17 @@ more queries, we may add a separate FAQs in the future.
 3. [Pre-processing Images](#pre-processing-images)
 4. [Data Preparation for Pretraining](#data-preparation-for-pretraining)
 5. [Data Preparation for Downstream Evaluation Tasks](#data-preparation-for-downstream-evaluation-tasks)
-6. [Mammo-CLIP checkpoints](#mammo-clip-checkpoints)
-7. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
-8. [Creating classifiers and detectors for downstream evaluations](#creating-classifiers-and-detectors-for-downstream-evaluations)
-9. [Evaluation](#evaluation)
-10. [Tutorial Notebooks](#tutorial-notebooks)
-11. [Additional Scripts](#additional-scripts)
-12. [Mammo-FActOR](#mammo-factor)
-13. [Citation](#citation)
-14. [License and Copyright](#license-and-copyright)
-15. [Contact](#contact)
+6. [Final Dataset Directory Structures](#final-dataset-directory-structures)
+7. [Mammo-CLIP checkpoints](#mammo-clip-checkpoints)
+8. [Pretraining Mammo-CLIP](#pretraining-mammo-clip)
+9. [Creating classifiers and detectors for downstream evaluations](#creating-classifiers-and-detectors-for-downstream-evaluations)
+10. [Evaluation](#evaluation)
+11. [Tutorial Notebooks](#tutorial-notebooks)
+12. [Additional Scripts](#additional-scripts)
+13. [Mammo-FActOR](#mammo-factor)
+14. [Citation](#citation)
+15. [License and Copyright](#license-and-copyright)
+16. [Contact](#contact)
 
 ## Environment Setup
 
@@ -66,6 +67,7 @@ to the following links:
 
 To preprocess the dicom images directly, follow the instructions in the next section. If you downloaded the PNG images,
 skip the preprocessing steps.
+
 
 ## Pre-processing images
 
@@ -191,6 +193,67 @@ file as input:
 python ./src/preprocessing/preprocess_VinDr_detector.py
 ````
 
+## Final dataset directory structures
+### Image+Text pretraining dataset
+```bash
+.
+├── list_tree_files.sh
+├── upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
+└── DICOM/images_png_CC_MLO/
+    ├── Patient_100/
+    │   ├── 1.png
+    │   ├── 2.png
+    └── Patient_200/
+        ├── 3.png
+        ├── 4.png
+        ├── 53.png
+        ├── 6.png
+        └── 7.png
+        
+
+```
+### VinDr
+```bash
+.
+├── breast-level_annotations.csv
+├── finding_annotations.csv
+├── vindr_detection_v1.csv
+└── images_png/
+    ├── c7811f4575c1229ad4a7606de49ea68f/
+    │   ├── 9eb4650a2b630e44074c403f6127c5a1.png
+    │   ├── cc3fdc5d733a671f3000e20838e192d9.png
+    │   ├── 181fd193d3b785dc9faafdaa8e1695fc.png
+    │   └── 55eb5ea616abacd225e584ffc8be57da.png
+    └── a1dd219b28806fc295fac20ceb147870/
+        ├── 887cdcc99ebed66bd062ada6c8210152.png
+        ├── 36f2921a2ac19eba7420c591c4c07ae4.png
+        ├── 12dc17dfd9d30ea7c0c1ccb33a505085.png
+        └── e22e4f297b4c82279e7b78a98417a6cd.png
+```
+
+### RSNA
+```bash
+.
+├── train_folds.csv
+├── train_folds_density.csv
+├── train_images_png/
+    ├── 59549/
+    │   ├── 1154694388.png
+    │   ├── 1192817932.png
+    │   ├── 1979035704.png
+    │   ├── 2022274082.png
+    │   ├── 431013616.png
+    │   ├── 457600713.png
+    │   ├── 78005871.png
+    │   └── 856162422.png
+    └── 28242/
+        ├── 1966298736.png
+        ├── 233201459.png
+        ├── 349787619.png
+        └── 98615814.png
+
+
+```
 ## Mammo-CLIP checkpoints
 
 Following are the pre-training checkpoints of Mammo-CLIP:
@@ -366,7 +429,8 @@ python ./src/codebase/train_detector.py \
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
 * `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
-  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for Efficient-Net B2,
+  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for
+  Efficient-Net B2,
   pretrained on UPMC and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -403,7 +467,8 @@ python ./src/codebase/train_detector.py \
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
 * `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
-  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for Efficient-Net B2,
+  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for
+  Efficient-Net B2,
   pretrained on UPMC and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -411,8 +476,11 @@ python ./src/codebase/train_detector.py \
 * `freeze_backbone`: freeze the backbone of the model, for finetune, set to `n`
 
 ## Tutorial Notebooks
-* For a quick look at setting up the downstream classifier, follow the notebook: [Downstream_classifier_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Downstream_classifier_tutorial.ipynb)
-* For a quick look at downloading the image embeddings from the vision encoder of Mammo-CLIP, follow the notebook: [Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb)
+
+* For a quick look at setting up the downstream classifier, follow the
+  notebook: [Downstream_classifier_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Downstream_classifier_tutorial.ipynb)
+* For a quick look at downloading the image embeddings from the vision encoder of Mammo-CLIP, follow the
+  notebook: [Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Tutorial/Get_Embedding_Vision_encoder_Mammo_CLIP_tutorial.ipynb)
 
 ## Additional scripts
 
@@ -436,7 +504,9 @@ the [scripts](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/scripts) dir
 | [detector_linear_probe_b2.sh](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/scripts/detector_linear_probe_b2.sh)             | Evaluate Mammo-CLIP b2 on linear probing tasks for detection      |
 
 ## Mammo-FActOR
-For training Mammo-FActOR, refer to the following [notebook](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Mammo-Factor/Mammo-Factor.ipynb).
+
+For training Mammo-FActOR, refer to the
+following [notebook](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/Mammo-Factor/Mammo-Factor.ipynb).
 
 ## Citation
 
