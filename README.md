@@ -18,6 +18,7 @@ After going through the instruction, it is recommended to visit the following qu
 * [Issue-10](https://github.com/batmanlab/Mammo-CLIP/issues/10) for getting the embeddings.
 * [Issue-6](https://github.com/batmanlab/Mammo-CLIP/issues/6) for further clarification on the downstream tasks and corresponding datasets.
 * [Issue-13](https://github.com/batmanlab/Mammo-CLIP/issues/13) for setting up the baselines.
+* [Issue-9](https://github.com/batmanlab/Mammo-CLIP/issues/9) for problems related to BioClinincalBert from Hugging Face.
   
 If we hear more queries, we may add a separate FAQs in the future.
 
