@@ -223,6 +223,7 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 ├── breast-level_annotations.csv
 ├── finding_annotations.csv
 ├── vindr_detection_v1.csv
+├── clip_vindr_final.csv
 └── images_png/
     ├── c7811f4575c1229ad4a7606de49ea68f/
     │   ├── 9eb4650a2b630e44074c403f6127c5a1.png
