@@ -62,7 +62,7 @@ Mammo-CLIP is implemented with following specification:
 Download the original versions VinDr and RSNA from the links for downstream evaluations:
 
 - [RSNA](https://www.kaggle.com/competitions/rsna-breast-cancer-detection)
-- [VinDr](vindr.ai/datasets/mammo)
+- [VinDr](https://vindr.ai/datasets/mammo)
 
 For the PNG images converted from the original Dicom images, as mentioned in the preprocessing steps in the paper, refer
 to the following links:
