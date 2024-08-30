@@ -203,6 +203,7 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 .
 ├── list_tree_files.sh
 ├── upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
+├── clip_pretrain_100.csv
 └── DICOM/images_png_CC_MLO/
     ├── Patient_100/
     │   ├── 1.png
