@@ -544,4 +544,4 @@ students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a7574
 for enabling multi-GPU support to Mammo-CLIP.
 
 ## Contributing
-Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send a [pull request]([https://github.com/shantanu-ai/deep-learning-resources/pulls]).
+Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send a [pull request](https://github.com/shantanu-ai/deep-learning-resources/pulls).
