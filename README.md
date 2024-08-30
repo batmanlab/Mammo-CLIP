@@ -40,6 +40,8 @@ If we hear more queries, we may add a separate FAQs in the future.
 14. [Citation](#citation)
 15. [License and Copyright](#license-and-copyright)
 16. [Contact](#contact)
+17. [Acknowledgements](#acknowledgements)
+18. [Contributing](#contributing)
 
 ## Environment Setup
 
@@ -540,3 +542,6 @@ For any queries, contact [Shantanu Ghosh](https://shantanu-ai.github.io/) (email
 Special thanks to Boston University Masters
 students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a75748159/) & [Akshat Gurbuxani](https://www.linkedin.com/in/akshatgurbuxani/)
 for enabling multi-GPU support to Mammo-CLIP.
+
+### Contributing
+Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send a [pull request]([https://github.com/shantanu-ai/deep-learning-resources/pulls]).
