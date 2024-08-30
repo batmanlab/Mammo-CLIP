@@ -543,5 +543,5 @@ Special thanks to Boston University Masters
 students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a75748159/) & [Akshat Gurbuxani](https://www.linkedin.com/in/akshatgurbuxani/)
 for enabling multi-GPU support to Mammo-CLIP.
 
-### Contributing
+## Contributing
 Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send a [pull request]([https://github.com/shantanu-ai/deep-learning-resources/pulls]).
