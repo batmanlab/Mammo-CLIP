@@ -13,9 +13,13 @@
 
 ## FAQ
 
-After going through the instruction, it is recommended to visit
-this [link](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining. If we hear
-more queries, we may add a separate FAQs in the future.
+After going through the instruction, it is recommended to visit the following queries logged in the issues:
+* [Issue-2](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining.
+* [Issue-10](https://github.com/batmanlab/Mammo-CLIP/issues/10) for getting the embeddings.
+* [Issue-6](https://github.com/batmanlab/Mammo-CLIP/issues/6) for further clarification on the downstream tasks and corresponding datasets.
+* [Issue-13](https://github.com/batmanlab/Mammo-CLIP/issues/13) for setting up the baselines.
+  
+If we hear more queries, we may add a separate FAQs in the future.
 
 ## Table of Contents
 
