@@ -11,15 +11,20 @@
 
 ### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path.
 
+### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings.
+
 ## FAQ
 
 After going through the instruction, it is recommended to visit the following queries logged in the issues:
+
 * [Issue-2](https://github.com/batmanlab/Mammo-CLIP/issues/2) for any further clarification on pretraining.
 * [Issue-10](https://github.com/batmanlab/Mammo-CLIP/issues/10) for getting the embeddings.
-* [Issue-6](https://github.com/batmanlab/Mammo-CLIP/issues/6) for further clarification on the downstream tasks and corresponding datasets.
+* [Issue-6](https://github.com/batmanlab/Mammo-CLIP/issues/6) for further clarification on the downstream tasks and
+  corresponding datasets.
 * [Issue-13](https://github.com/batmanlab/Mammo-CLIP/issues/13) for setting up the baselines.
-* [Issue-9](https://github.com/batmanlab/Mammo-CLIP/issues/9) for problems related to BioClinincalBert from Hugging Face.
-  
+* [Issue-9](https://github.com/batmanlab/Mammo-CLIP/issues/9) for problems related to BioClinincalBert from Hugging
+  Face.
+
 If we hear more queries, we may add a separate FAQs in the future.
 
 ## Table of Contents
@@ -74,7 +79,6 @@ to the following links:
 
 To preprocess the dicom images directly, follow the instructions in the next section. If you downloaded the PNG images,
 skip the preprocessing steps.
-
 
 ## Pre-processing images
 
@@ -146,7 +150,10 @@ get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/
 . [VinDr.ipynb](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/notebooks/preprocess-clip/VinDr.ipynb)
 notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
-file. **Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv) and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv) files are used for pretraining the image-text and
+file. *
+*Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
+and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
+files are used for pretraining the image-text and
 image-label variant of Mammo-CLIP.**
 
 The csv file of the final image-label (VinDr) dataset should have the following format:
@@ -201,7 +208,9 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 ````
 
 ## Final dataset directory structures
+
 ### Image+Text pretraining dataset
+
 ```bash
 .
 ├── list_tree_files.sh
@@ -220,7 +229,9 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
         
 
 ```
+
 ### VinDr
+
 ```bash
 .
 ├── breast-level_annotations.csv
@@ -241,6 +252,7 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 ```
 
 ### RSNA
+
 ```bash
 .
 ├── train_folds.csv
@@ -262,6 +274,7 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 
 
 ```
+
 ## Mammo-CLIP checkpoints
 
 Following are the pre-training checkpoints of Mammo-CLIP:
@@ -544,4 +557,6 @@ students [Abhishek Varshney](https://www.linkedin.com/in/abhishek-varshney-a7574
 for enabling multi-GPU support to Mammo-CLIP.
 
 ## Contributing
-Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send a [pull request](https://github.com/shantanu-ai/deep-learning-resources/pulls).
+
+Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send
+a [pull request](https://github.com/shantanu-ai/deep-learning-resources/pulls).

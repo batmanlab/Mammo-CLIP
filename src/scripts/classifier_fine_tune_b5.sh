@@ -19,10 +19,11 @@ source /ocean/projects/asc170022p/shg121/anaconda3/etc/profile.d/conda.sh
 conda activate breast_clip_rtx_6000
 
 # Mass (VinDr)
-python ./src/codebase/train_classifier.py \
+python /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/train_classifier.py \
+  --data-dir '/restricted/projectnb/batmanlab/shared/Data/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Breast-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
   --arch 'upmc_breast_clip_det_b5_period_n_ft' \
