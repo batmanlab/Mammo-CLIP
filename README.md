@@ -13,6 +13,14 @@
 
 #### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings. If you use the VinDr png dataset uploaded in kaggle, it is fully pre-processed. Else you can use the pre-processing scripts provided in the following sections.
 
+#### ⚠️ WARNING: If you find the `punkt_tab` error, run the following command in the python environment:
+
+```python
+import nltk
+
+nltk.download('punkt_tab')
+```
+
 ## FAQ
 
 After going through the instruction, it is recommended to visit the following queries logged in the issues:
@@ -151,7 +159,8 @@ get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/
 notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
-**Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
+*
+*Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
 and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 files are used for pretraining the image-text and
 image-label variant of Mammo-CLIP.**
