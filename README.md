@@ -1,6 +1,6 @@
 # Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
 
-### [[Project](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)] [[Paper](https://arxiv.org/pdf/2405.12255)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)] [[VinDr png data](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)][[Poster](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)]
+### [[Project](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)] [[Paper](https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)] [[VinDr png data](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)][[Poster](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)]
 
 
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
