@@ -1,7 +1,11 @@
 # Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
 
-### [[Project](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)] [[Paper](https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf)] [[Hugging Face](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/)] [[Pre-training Checkpoints](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)] [[VinDr png data](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)][[Poster](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)]
-
+[![Project](https://img.shields.io/badge/Project%20page-lightgreen)](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)
+[![Paper](https://img.shields.io/badge/Paper-9cf)](https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf)
+[![Hugging Face](https://img.shields.io/badge/Checkpoints-Hugging%20Face-yellow)](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/)
+[![Pre-training Checkpoints](https://img.shields.io/badge/Checkpoints-Google%20Drive-blue)](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)
+[![VinDr png data](https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue)](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
+[![Poster](https://img.shields.io/badge/Poster-orange)](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)
 
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
 , [Clare B. Poynton<sup>2</sup>](https://www.bumc.bu.edu/camed/profile/clare-poynton/)
@@ -160,7 +164,9 @@ get [vindr_detection_v1_folds.csv](https://github.com/batmanlab/Mammo-CLIP/blob/
 notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
+
 *
+
 *Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
 and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 files are used for pretraining the image-text and
