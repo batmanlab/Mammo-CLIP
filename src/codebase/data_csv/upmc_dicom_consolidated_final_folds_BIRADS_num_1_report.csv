@@ -1,9 +1,9 @@
-patient_id,GENDER,AGE,BIRADS_CATEGORY,HISTORY,FINDINGS,IMPRESSION,ASSESMENT,RECOMENDATION,CONCLUSION,image_id,fold,view,laterality,img_size_row,img_size_column,BIRADS_numeric
-100,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,1png,2,CC,R,2456,1995,0
-100,FEMALE,100,BIRADS 0,,The examination shows biopsy recommended for suspicious lesion. Further examination may be needed.,"Birads: 4, Patient is: 47 years old, and further imaging evaluation is suggested",,,,2.png,2,CC,R,2456,1995,0
+patient_id,GENDER,AGE,BIRADS_CATEGORY,HISTORY,FINDINGS,"birads : 4 , patient is : 69 years old , and no additional imaging required at this time",ASSESMENT,RECOMENDATION,CONCLUSION,image_id,fold,view,laterality,img_size_row,img_size_column,BIRADS_numeric
+100,FEMALE,100,BIRADS 0,,the examination shows benign lymph node enlargement further examination may be needed,"birads : 6 , patient is : 47 years old , and patient should consider clinical follow - up",,,,1png,2,CC,R,2456,1995,0
+100,FEMALE,100,BIRADS 0,,the examination shows benign calcifications present further examination may be needed,"birads : 3 , patient is : 72 years old , and routine mammographic screening recommended",,,,2.png,2,CC,R,2456,1995,0
 200,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows implants intact with no evidence of rupture further examination may be needed,"birads : 4 , patient is : 47 years old , and further imaging evaluation is suggested","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -17,7 +17,7 @@ target due date for the next exam.
 ",,3.png,2,CC,R,4096,3328,2
 200,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows biopsy recommended for suspicious lesion further examination may be needed,"birads : 5 , patient is : 86 years old , and patient should consider clinical follow - up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -31,7 +31,7 @@ target due date for the next exam.
 ",,4.png,2,MLO,R,4096,3328,2
 200,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows diffuse skin thickening further examination may be needed,"birads : 5 , patient is : 28 years old , and patient should consider clinical follow - up","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -45,7 +45,7 @@ target due date for the next exam.
 ",,53.png,2,CC,L,4096,3328,2
 200,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows no significant abnormality detected. Further examination may be needed.,"Birads: 1, Patient is: 48 years old, and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows architectural distortion with no associated mass further examination may be needed,"birads : 6 , patient is : 77 years old , and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -59,7 +59,7 @@ target due date for the next exam.
 ",,6.png,2,CC,R,4096,3328,2
 200,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows benign calcifications present. Further examination may be needed.,"Birads: 1, Patient is: 52 years old, and follow-up and possible biopsy necessary","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows scattered fibroglandular tissue further examination may be needed,"birads : 6 , patient is : 56 years old , and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -73,7 +73,7 @@ target due date for the next exam.
 ",,7.png,2,MLO,L,4096,3328,2
 300,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows diffuse skin thickening further examination may be needed,"birads : 1 , patient is : 85 years old , and routine mammographic screening recommended","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -87,7 +87,7 @@ target due date for the next exam.
 ",,8.png,0,MLO,R,4096,3328,2
 300,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows no significant abnormality detected further examination may be needed,"birads : 0 , patient is : 61 years old , and further imaging evaluation is suggested","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -101,7 +101,7 @@ target due date for the next exam.
 ",,9.png,0,CC,L,4096,3328,2
 300,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows previous excisional biopsy site noted. Further examination may be needed.,"Birads: 5, Patient is: 87 years old, and patient should consider clinical follow-up","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows fibrocystic changes with multiple cysts further examination may be needed,"birads : 1 , patient is : 32 years old , and further imaging evaluation is suggested","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -115,7 +115,7 @@ target due date for the next exam.
 ",,10png,0,MLO,L,4096,3328,2
 300,FEMALE,100,BIRADS 2,"   The patient is 100 years old and presents for routine screening.
 
-",The examination shows scattered fibroglandular tissue. Further examination may be needed.,"Birads: 1, Patient is: 80 years old, and recommend MRI for better evaluation","  BI-RADS: 2 - BENIGN FINDING(S)
+",the examination shows benign lymph node enlargement further examination may be needed,"birads : 2 , patient is : 75 years old , and no additional imaging required at this time","  BI-RADS: 2 - BENIGN FINDING(S)
 
 RIS CODE: 2BENIGN
 "," 
@@ -127,7 +127,34 @@ The patient has been entered into a computer reminder system with a
 target due date for the next exam.
 
 ",,11.png,0,CC,R,4096,3328,2
-400,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,12.png,0,CC,L,2457,1890,2
-400,FEMALE,100,BIRADS 2,,The examination shows solitary dilated duct visible. Further examination may be needed.,"Birads: 1, Patient is: 43 years old, and further imaging evaluation is suggested",,,,12.png,0,MLO,L,2457,1890,2
-400,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,13.png,0,CC,R,2457,1890,2
-400,FEMALE,100,BIRADS 2,,The examination shows implants intact with no evidence of rupture. Further examination may be needed.,"Birads: 1, Patient is: 32 years old, and routine mammographic screening recommended",,,,14.png,0,MLO,R,2457,1890,2
+400,FEMALE,100,BIRADS 2,,the examination shows asymmetrical breast density observed further examination may be needed,"birads : 2 , patient is : 78 years old , and no additional imaging required at this time",,,,12.png,0,CC,L,2457,1890,2
+400,FEMALE,100,BIRADS 2,,the examination shows normal axillary appearance further examination may be needed,"birads : 3 , patient is : 46 years old , and follow - up and possible biopsy necessary",,,,12.png,0,MLO,L,2457,1890,2
+400,FEMALE,100,BIRADS 2,,the examination shows asymmetrical breast density observed further examination may be needed,"birads : 0 , patient is : 49 years old , and routine mammographic screening recommended",,,,13.png,0,CC,R,2457,1890,2
+400,FEMALE,100,BIRADS 2,,the examination shows implants intact with no evidence of rupture further examination may be needed,"birads : 3 , patient is : 55 years old , and follow - up and possible biopsy necessary",,,,14.png,0,MLO,R,2457,1890,2
+,,,,,the examination shows post - surgical changes evident further examination may be needed,"birads : 2 , patient is : 47 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows architectural distortion with no associated mass further examination may be needed,"birads : 6 , patient is : 44 years old , and recommend mri for better evaluation",,,,,,,,,,
+,,,,,the examination shows previous excisional biopsy site noted further examination may be needed,"birads : 1 , patient is : 57 years old , and patient should consider clinical follow - up",,,,,,,,,,
+,,,,,the examination shows normal axillary appearance further examination may be needed,"birads : 0 , patient is : 55 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows normal axillary appearance further examination may be needed,"birads : 6 , patient is : 58 years old , and recommend mri for better evaluation",,,,,,,,,,
+,,,,,the examination shows architectural distortion with no associated mass further examination may be needed,"birads : 4 , patient is : 84 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows benign calcifications present further examination may be needed,"birads : 4 , patient is : 43 years old , and further imaging evaluation is suggested",,,,,,,,,,
+,,,,,the examination shows lymph node with cortical thickening further examination may be needed,"birads : 0 , patient is : 30 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows lymph node with cortical thickening further examination may be needed,"birads : 5 , patient is : 87 years old , and patient should consider clinical follow - up",,,,,,,,,,
+,,,,,the examination shows previous excisional biopsy site noted further examination may be needed,"birads : 1 , patient is : 80 years old , and recommend mri for better evaluation",,,,,,,,,,
+,,,,,the examination shows scattered fibroglandular tissue further examination may be needed,"birads : 6 , patient is : 89 years old , and recommend mri for better evaluation",,,,,,,,,,
+,,,,,the examination shows post - surgical changes evident further examination may be needed,"birads : 4 , patient is : 44 years old , and routine mammographic screening recommended",,,,,,,,,,
+,,,,,the examination shows suspicious mass identified requiring further evaluation further examination may be needed,"birads : 5 , patient is : 30 years old , and no additional imaging required at this time",,,,,,,,,,
+,,,,,the examination shows normal axillary appearance further examination may be needed,"birads : 1 , patient is : 85 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows fibroglandular densities noted further examination may be needed,"birads : 4 , patient is : 70 years old , and no additional imaging required at this time",,,,,,,,,,
+,,,,,the examination shows solitary dilated duct visible further examination may be needed,"birads : 1 , patient is : 52 years old , and follow - up and possible biopsy necessary",,,,,,,,,,
+,,,,,the examination shows benign calcifications present further examination may be needed,"birads : 1 , patient is : 48 years old , and routine mammographic screening recommended",,,,,,,,,,
+,,,,,the examination shows no significant abnormality detected further examination may be needed,"birads : 6 , patient is : 69 years old , and no additional imaging required at this time",,,,,,,,,,
+,,,,,the examination shows no significant abnormality detected further examination may be needed,"birads : 4 , patient is : 63 years old , and further imaging evaluation is suggested",,,,,,,,,,
+,,,,,the examination shows benign lymph node enlargement further examination may be needed,"birads : 5 , patient is : 28 years old , and patient should consider clinical follow - up",,,,,,,,,,
+,,,,,the examination shows benign calcifications present further examination may be needed,"birads : 1 , patient is : 43 years old , and further imaging evaluation is suggested",,,,,,,,,,
+,,,,,the examination shows solitary dilated duct visible further examination may be needed,"birads : 1 , patient is : 32 years old , and routine mammographic screening recommended",,,,,,,,,,
+,,,,,the examination shows implants intact with no evidence of rupture further examination may be needed,"birads : 0 , patient is : 31 years old , and routine mammographic screening recommended",,,,,,,,,,
+,,,,,the examination shows microcalcifications detected in the upper quadrant further examination may be needed,"birads : 6 , patient is : 69 years old , and further imaging evaluation is suggested",,,,,,,,,,
+,,,,,the examination shows previous excisional biopsy site noted further examination may be needed,"birads : 3 , patient is : 51 years old , and recommend mri for better evaluation",,,,,,,,,,
+,,,,,the examination shows normal axillary appearance further examination may be needed,"birads : 2 , patient is : 83 years old , and patient should consider clinical follow - up",,,,,,,,,,
+,,,,,the examination shows normal axillary appearance further examination may be needed,,,,,,,,,,,
