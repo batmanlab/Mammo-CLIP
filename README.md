@@ -120,7 +120,7 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 
 2. Note the `FINDINGS` and `IMPRESSION` columns are
    used to generate the text for the image. The `HISTORY`, `FINDINGS` and `IMPRESSION` columns contains templated text
-   due to privacy.
+   due to privacy. **To preprocess, convert the texts of `FINDINGS` and `IMPRESSION` to lower case and there should be any period or puncuations.**
 3. Next run the following command to augment the text with `upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
    file:
 
