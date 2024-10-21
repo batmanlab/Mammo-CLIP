@@ -15,6 +15,7 @@
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
 #### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g, `.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
+
 #### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings. If you use the VinDr png dataset uploaded in kaggle, it is fully pre-processed. Else you can use the pre-processing scripts provided in the following sections.
 
 #### ⚠️ WARNING: If you find the `punkt_tab` error, run the following command in the python environment:
@@ -114,12 +115,14 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 
 ### Image-text dataset
 
-1. Our image-text dataset is an in-house dataset from UPMC. The sample
+1. Our image-text dataset is an in-house dataset from UPMC. Extract the `IMPRESSION` and `FINDINGS` sections from the
+   report and create a csv. The sample
    csv: [upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv)
 
 2. Note the `FINDINGS` and `IMPRESSION` columns are
    used to generate the text for the image. The `HISTORY`, `FINDINGS` and `IMPRESSION` columns contains templated text
-   due to privacy. **To preprocess, convert the texts of `FINDINGS` and `IMPRESSION` to lower case and there should be any period or puncuations.**
+   due to privacy.
+
 3. Next run the following command to augment the text with `upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
    file:
 
@@ -132,6 +135,10 @@ python ./src/codebase/augment_text.py \
   --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
   --dataset="upmc" 
 ```
+
+The `augment_text.py` script will do the preprocessing for the `FINDINGS` and `IMPRESSION` columns by converting them to
+lower case and removing punctuations. Look at the `_split_report_into_segment_concat` function in the script for more
+details.
 
 4. The csv file of the final image-text dataset should have the following format:
 
