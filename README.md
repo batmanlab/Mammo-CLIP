@@ -552,11 +552,26 @@ following [notebook](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codeb
 ## Citation
 
 ```bibtex
-@article{ghosh2024mammo,
-  title={Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography},
-  author={Ghosh, Shantanu and Poynton, Clare B and Visweswaran, Shyam and Batmanghelich, Kayhan},
-  journal={arXiv preprint arXiv:2405.12255},
-  year={2024}
+@InProceedings{10.1007/978-3-031-72390-2_59,
+author="Ghosh, Shantanu
+and Poynton, Clare B.
+and Visweswaran, Shyam
+and Batmanghelich, Kayhan",
+editor="Linguraru, Marius George
+and Dou, Qi
+and Feragen, Aasa
+and Giannarou, Stamatia
+and Glocker, Ben
+and Lekadir, Karim
+and Schnabel, Julia A.",
+title="Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography",
+booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2024",
+year="2024",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="632--642",
+abstract="The lack of large and diverse training data on Computer-Aided Diagnosis (CAD) in breast cancer detection has been one of the concerns that impedes the adoption of the system. Recently, pre-training with large-scale image text datasets via Vision-Language models (VLM) (e.g., CLIP) partially addresses the issue of robustness and data efficiency in computer vision (CV). This paper proposes Mammo-CLIP, the first VLM pre-trained on a substantial amount of screening mammogram-report pairs, addressing the challenges of dataset diversity and size. Our experiments on two public datasets demonstrate strong performance in classifying and localizing various mammographic attributes crucial for breast cancer detection, showcasing data efficiency and robustness similar to CLIP in CV. We also propose Mammo-FActOR, a novel feature attribution method, to provide spatial interpretation of representation with sentence-level granularity within mammography reports. Code is available publicly: https://github.com/batmanlab/Mammo-CLIP.",
+isbn="978-3-031-72390-2"
 }
 ```
 
