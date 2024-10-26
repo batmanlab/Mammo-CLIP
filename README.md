@@ -6,6 +6,7 @@
 [![Pre-training Checkpoints](https://img.shields.io/badge/Checkpoints-Google%20Drive-blue)](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)
 [![VinDr png data](https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue)](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
 [![Poster](https://img.shields.io/badge/Poster-orange)](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)
+![](https://visitor-badge.laobi.icu/badge?page_id=batmanlab.Mammo-CLIP&right_color=%23FFA500)
 
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
 , [Clare B. Poynton<sup>2</sup>](https://www.bumc.bu.edu/camed/profile/clare-poynton/)
