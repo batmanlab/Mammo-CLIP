@@ -116,7 +116,8 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 
 ### Image-text dataset
 
-1. Our image-text dataset is an in-house dataset from UPMC. Extract the `IMPRESSION` and `FINDINGS` sections from the
+1. Our image-text dataset is an in-house dataset from UPMC. You can have your own image+text dataset where images are 2D
+   mammograms and texts are radiology reports. If you have access to such dataset, follow the setup here. Extract the `IMPRESSION` and `FINDINGS` sections from the
    report and create a csv. The sample
    csv: [upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv)
 
@@ -172,7 +173,8 @@ notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
 
-**Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
+*
+*Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
 and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 files are used for pretraining the image-text and
 image-label variant of Mammo-CLIP.**
