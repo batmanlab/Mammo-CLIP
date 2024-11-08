@@ -11,7 +11,7 @@ echo $CURRENT
 slurm_output_train_mass=/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_ft_mass_$CURRENT.out
 slurm_output_train_calc=/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/psc_logs/clip_train/b5_det_ft_calc_$CURRENT.out
 
-echo "Mammo-clip b2"
+echo "Mammo-clip b5"
 source /ocean/projects/asc170022p/shg121/anaconda3/etc/profile.d/conda.sh
 
 conda activate breast_clip_rtx_6000
