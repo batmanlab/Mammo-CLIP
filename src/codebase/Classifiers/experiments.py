@@ -235,18 +235,53 @@ def train_loop(args, device):
     return args.valid_folds
 
 
+# def inference_loop(args):
+#     print(f'================== fold: {args.cur_fold} validating ======================')
+#     print(args.valid_folds.shape)
+#     predictions = torch.load(
+#         args.chk_pt_path / f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_score_ver084.pth',
+#         map_location='cpu')['predictions']
+#     print(f'predictions: {predictions.shape}', type(predictions))
+#     args.valid_folds['prediction'] = predictions
+#
+#     valid_agg = args.valid_folds[['patient_id', 'laterality', 'cancer', 'prediction', 'fold']].groupby(
+#         ['patient_id', 'laterality']).mean()
+#     aucroc = auroc(valid_agg['cancer'].values, valid_agg['prediction'].values)
+#     print(f'AUC-ROC: {aucroc}')
+#     return args.valid_folds.copy()
+
 def inference_loop(args):
     print(f'================== fold: {args.cur_fold} validating ======================')
     print(args.valid_folds.shape)
     predictions = torch.load(
-        args.chk_pt_path / f'{args.model_base_name}_seed_{args.seed}_fold{args.cur_fold}_best_score_ver084.pth',
-        map_location='cpu')['predictions']
+        args.chk_pt_path,
+        map_location='cpu',weights_only=False)['predictions']
     print(f'predictions: {predictions.shape}', type(predictions))
     args.valid_folds['prediction'] = predictions
-
-    valid_agg = args.valid_folds[['patient_id', 'laterality', 'cancer', 'prediction', 'fold']].groupby(
-        ['patient_id', 'laterality']).mean()
-    aucroc = auroc(valid_agg['cancer'].values, valid_agg['prediction'].values)
+    if args.label.lower() == "density" or args.label.lower() == "birads":
+        key="density"
+    elif args.label.lower() == "cancer":
+        key="cancer"
+    elif args.label.lower() == "mass":
+        key="Mass"
+    elif args.label.lower() == "suspicious_calcification":
+        key="Suspicious_Calcification"
+    else:
+        print("Invalid label")
+        return None
+    #valid_agg = args.valid_folds[['patient_id', 'laterality', 'cancer', 'prediction', 'fold']].groupby(
+        #['patient_id', 'laterality']).mean()
+    valid_agg = args.valid_folds[['patient_id', 'laterality', key, 'prediction', 'fold']].groupby(
+    ['patient_id', 'laterality']).mean()
+    print("Valid Agg key shape and dtype:")
+    print(valid_agg[key].values.shape, valid_agg[key].values.dtype)
+    print("Valid Agg prediction shape and dtype:")
+    print(valid_agg['prediction'].values.shape, valid_agg['prediction'].values.dtype)
+    gt = valid_agg[key].values.astype(np.float32)
+    pred = valid_agg['prediction'].values.astype(np.float32)
+    print(f"Ground truth sample: {gt[:10]}")
+    print(f"Prediction sample: {pred[:10]}")
+    aucroc = auroc(gt.astype(int), pred)
     print(f'AUC-ROC: {aucroc}')
     return args.valid_folds.copy()
 
