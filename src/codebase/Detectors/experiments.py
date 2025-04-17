@@ -157,7 +157,7 @@ def train_loop(args, device):
 
         if best_MAP < MAP:
             best_MAP = MAP
-            print(f'Epoch {epoch_num + 1} - Save Best aucroc: {best_MAP:.4f} Model')
+            print(f'Epoch {epoch_num + 1} - Save Best mAP: {best_MAP:.4f} Model')
             torch.save(
                 {
                     'state_dict': retinanet.state_dict(),
