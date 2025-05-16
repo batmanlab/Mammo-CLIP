@@ -1,4 +1,4 @@
-# Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography
+# <div align="center"> Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography <div>
 
 [![Project](https://img.shields.io/badge/Project%20page-lightgreen)](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)
 [![Paper](https://img.shields.io/badge/Paper-9cf)](https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf)
@@ -597,4 +597,4 @@ for enabling multi-GPU support to Mammo-CLIP.
 ## Contributing
 
 Did you try Mammo-CLIP on other datasets containing 2D-Mammograms and want to report the results? Feel free to send
-a [pull request](https://github.com/shantanu-ai/deep-learning-resources/pulls).
+a [pull request](https://github.com/batmanlab/Mammo-CLIP/pulls).
