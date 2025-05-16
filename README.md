@@ -1,20 +1,35 @@
-# <div align="center"> Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography <div>
+# <div align="center"> Mammo-CLIP: A Vision Language Foundation Model to Enhance Data Efficiency and Robustness in Mammography </div>
 
-[![Project](https://img.shields.io/badge/Project%20page-lightgreen)](https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/)
-[![Paper](https://img.shields.io/badge/Paper-9cf)](https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf)
-[![Hugging Face](https://img.shields.io/badge/Checkpoints-Hugging%20Face-yellow)](https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/)
-[![Pre-training Checkpoints](https://img.shields.io/badge/Checkpoints-Google%20Drive-blue)](https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints)
-[![VinDr png data](https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue)](https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png)
-[![Poster](https://img.shields.io/badge/Poster-orange)](https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf)
-![](https://visitor-badge.laobi.icu/badge?page_id=batmanlab.Mammo-CLIP&right_color=%23FFA500)
+<p align="center">
+  <a href="https://shantanu-ai.github.io/projects/MICCAI-2024-Mammo-CLIP/">
+    <img src="https://img.shields.io/badge/Project%20page-lightgreen" alt="Project Page" />
+  </a>
+  <a href="https://papers.miccai.org/miccai-2024/paper/0926_paper.pdf">
+    <img src="https://img.shields.io/badge/Paper-9cf" alt="Paper" />
+  </a>
+  <a href="https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/">
+    <img src="https://img.shields.io/badge/Checkpoints-Hugging%20Face-yellow" alt="Hugging Face Checkpoints" />
+  </a>
+  <a href="https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints">
+    <img src="https://img.shields.io/badge/Checkpoints-Google%20Drive-blue" alt="Google Drive Checkpoints" />
+  </a>
+  <a href="https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png">
+    <img src="https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue" alt="VinDr PNG" />
+  </a>
+  <a href="https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf">
+    <img src="https://img.shields.io/badge/Poster-orange" alt="Poster" />
+  </a>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=batmanlab.Mammo-CLIP&right_color=%23FFA500" alt="Visitor badge" />
+</p>
 
+---
 [Shantanu Ghosh<sup>1</sup>](https://shantanu-ai.github.io/)
 , [Clare B. Poynton<sup>2</sup>](https://www.bumc.bu.edu/camed/profile/clare-poynton/)
 , [Shyam Visweswaran<sup>3</sup>](https://www.thevislab.com/lab/doku.php),
 [Kayhan Batmanghelich<sup>1</sup>](https://www.batman-lab.com/)
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
-
+---
 #### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g, `.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
 
 #### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings. If you use the VinDr png dataset uploaded in kaggle, it is fully pre-processed. Else you can use the pre-processing scripts provided in the following sections.
