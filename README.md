@@ -35,11 +35,11 @@
 ## 🔥🔥🔥 Major Update: LADDER & Mammo‑CLIP for Bias Discovery & Mitigation 👁️
 **Interested in finding biases for breast cancer prediction models?**
 
-We’re thrilled to announce the ACL2025 paper: **LADDER: Language‑Driven Slice Discovery and Error Rectification in Vision
+We’re thrilled to announce the **ACL2025** paper: **LADDER: Language‑Driven Slice Discovery and Error Rectification in Vision
 Classifiers**, now integrated with **Mammo‑CLIP** for detecting and fixing bias in breast cancer prediction models.
 Check out the following links for details
 
-- 📄 **Paper**: ([click here](https://aclanthology.org/2025.findings-acl.1177/))
+- 📄 **Paper**: [ACL2025](https://aclanthology.org/2025.findings-acl.1177/)
 - 🌐 **Project Page**: [ACL‑2025‑LADDER project](https://shantanu-ai.github.io/projects/ACL-2025-Ladder/index.html)
 - 💻 **Code on GitHub**: [batmanlab/Ladder](https://github.com/batmanlab/Ladder)
 
