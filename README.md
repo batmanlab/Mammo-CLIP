@@ -29,7 +29,32 @@
 [Kayhan Batmanghelich<sup>1</sup>](https://www.batman-lab.com/)
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
+
 ---
+
+## 🔥🔥🔥 Major Update: LADDER & Mammo‑CLIP for Bias Discovery & Mitigation 👁️
+**Interested in finding biases for breast cancer prediction models?**
+
+We’re thrilled to announce the ACL2025 paper: **LADDER: Language‑Driven Slice Discovery and Error Rectification in Vision
+Classifiers**, now integrated with **Mammo‑CLIP** for detecting and fixing bias in breast cancer prediction models.
+Check out the following links for details
+
+- 📄 **Paper**: ([click here](https://aclanthology.org/2025.findings-acl.1177/))
+- 🌐 **Project Page**: [ACL‑2025‑LADDER project](https://shantanu-ai.github.io/projects/ACL-2025-Ladder/index.html)
+- 💻 **Code on GitHub**: [batmanlab/Ladder](https://github.com/batmanlab/Ladder)
+
+### 🩻 Example Use Case: Mammogram Bias Detection
+
+Suppose your mammography classifier underperforms on **dense-breast cases** or **specific implant types**. LADDER will:
+
+- Retrieve radiology text describing correctly vs incorrectly labeled cases  
+- Generate hypotheses like “missing calcifications in high-density tissue”  
+- Use those to define an error slice and retrain with pseudo-labeled correction  
+
+All of this is achieved **without group annotations**.
+
+---
+
 #### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g, `.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
 
 #### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings. If you use the VinDr png dataset uploaded in kaggle, it is fully pre-processed. Else you can use the pre-processing scripts provided in the following sections.
@@ -189,7 +214,9 @@ notebook requires vindr_detection_v1_folds.csv file as input and
 generate [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 file.
 
-**Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
+*
+
+*Both [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv)
 and [clip_vindr_final.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_vindr_final.csv)
 files are used for pretraining the image-text and
 image-label variant of Mammo-CLIP.**
