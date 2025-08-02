@@ -30,7 +30,7 @@
 <br/>
 <sup>1</sup>BU ECE, <sup>2</sup> BUMC, <sup>3</sup> Pitt DBMI <br/>
 
----
+<div style="border: 2px solid #ccc; border-radius: 8px; padding: 16px; background-color: black">
 
 ## 🔥🔥🔥 Major Update: LADDER & Mammo‑CLIP for Bias Discovery & Mitigation 👁️
 **Interested in finding biases for breast cancer prediction models?**
@@ -53,7 +53,8 @@ Suppose your mammography classifier underperforms on **dense-breast cases** or *
 
 All of this is achieved **without group annotations**.
 
----
+</div>
+
 
 #### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g, `.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
 
