@@ -16,6 +16,9 @@
   <a href="https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png">
     <img src="https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue" alt="VinDr PNG" />
   </a>
+<a href="https://huggingface.co/datasets/shawn24/RSNA-Breast-Cancer-detection-from-mammograms-PNG">
+    <img src="https://img.shields.io/badge/RSNA%20Mammogram%20png%20images-lightblue" alt="RSNA PNG" />
+  </a>
   <a href="https://github.com/shantanu-ai/shantanu-ai.github.io/tree/main/projects/MICCAI-2024-Mammo-CLIP/static/data/Mammo-CLIP-MICCAI-24-poster-v1.pdf">
     <img src="https://img.shields.io/badge/Poster-orange" alt="Poster" />
   </a>
@@ -33,9 +36,11 @@
 ---
 
 ## 🔥🔥🔥 Major Update: LADDER & Mammo‑CLIP for Bias Discovery & Mitigation 👁️
+
 **Interested in finding biases for breast cancer prediction models?**
 
-We’re thrilled to announce the **ACL2025** paper: **LADDER: Language‑Driven Slice Discovery and Error Rectification in Vision
+We’re thrilled to announce the **ACL2025** paper: **LADDER: Language‑Driven Slice Discovery and Error Rectification in
+Vision
 Classifiers**, now integrated with **Mammo‑CLIP** for detecting and fixing bias in breast cancer prediction models.
 Check out the following links for details
 
@@ -47,9 +52,9 @@ Check out the following links for details
 
 Suppose your mammography classifier underperforms on **dense-breast cases** or **specific implant types**. LADDER will:
 
-- Retrieve radiology text describing correctly vs incorrectly labeled cases  
-- Generate hypotheses like “missing calcifications in high-density tissue”  
-- Use those to define an error slice and retrain with pseudo-labeled correction  
+- Retrieve radiology text describing correctly vs incorrectly labeled cases
+- Generate hypotheses like “missing calcifications in high-density tissue”
+- Use those to define an error slice and retrain with pseudo-labeled correction
 
 All of this is achieved **without group annotations**.
 
