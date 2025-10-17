@@ -625,11 +625,19 @@ isbn="978-3-031-72390-2"
 }
 ```
 
-## License and copyright
+## License and Copyright
 
-Licensed under the Creative Commons Attribution 4.0 International
+This project is licensed under the **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
 
-Copyright © [Batman Lab](https://www.batman-lab.com/), 2024
+You **may use, share, and adapt** this work **for non-commercial research and educational purposes only**, provided that you:
+- Give appropriate credit to the original authors.
+- Indicate if changes were made.
+- Distribute any derivative works under the **same license** (CC BY-NC-SA 4.0).
+
+**Commercial use, including model deployment, integration into for-profit products or services, or sale of derivatives, is strictly prohibited.**
+
+Copyright © [Batman Lab](https://www.batman-lab.com/), 2024  
+License text: [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Contact
 
