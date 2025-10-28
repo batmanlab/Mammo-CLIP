@@ -10,9 +10,9 @@
   <a href="https://huggingface.co/shawn24/Mammo-CLIP/tree/main/Pre-trained-checkpoints/">
     <img src="https://img.shields.io/badge/Checkpoints-Hugging%20Face-yellow" alt="Hugging Face Checkpoints" />
   </a>
-  <a href="https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints">
+  <!-- <a href="https://github.com/batmanlab/Mammo-CLIP/blob/main/README.md#mammo-clip-checkpoints">
     <img src="https://img.shields.io/badge/Checkpoints-Google%20Drive-blue" alt="Google Drive Checkpoints" />
-  </a>
+  </a> -->
   <a href="https://www.kaggle.com/datasets/shantanughosh/vindr-mammogram-dataset-dicom-to-png">
     <img src="https://img.shields.io/badge/VinDr%20Mammogram%20png%20images-lightblue" alt="VinDr PNG" />
   </a>
