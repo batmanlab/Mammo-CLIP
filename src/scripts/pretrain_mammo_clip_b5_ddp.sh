@@ -36,3 +36,6 @@ torchrun --nproc_per_node=4 /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CL
 
 
 
+
+
+
