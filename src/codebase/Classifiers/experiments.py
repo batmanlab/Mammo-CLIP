@@ -297,14 +297,10 @@ def train_fn(train_loader, model, criterion, optimizer, epoch, args, scheduler, 
     for step, data in progress_iter:
         inputs = data['x'].to(device)
         if (
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b2_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"
+                args.arch.lower() == "breast_clip_det_b5_period_n_ft" or
+                args.arch.lower() == "breast_clip_det_b5_period_n_lp" or
+                args.arch.lower() == "breast_clip_det_b2_period_n_ft" or
+                args.arch.lower() == "breast_clip_det_b2_period_n_lp"
         ):
             inputs = inputs.squeeze(1).permute(0, 3, 1, 2)
         elif args.arch.lower() == 'swin_tiny_custom_norm' or args.arch.lower() == 'swin_base_custom_norm':
@@ -390,14 +386,10 @@ def valid_fn(valid_loader, model, criterion, args, device, epoch=1, mapper=None,
         inputs = data['x'].to(device)
         batch_size = inputs.size(0)
         if (
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b2_period_n_ft" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_ft" or
-                args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"
+                args.arch.lower() == "breast_clip_det_b5_period_n_ft" or
+                args.arch.lower() == "breast_clip_det_b5_period_n_lp" or
+                args.arch.lower() == "breast_clip_det_b2_period_n_ft" or
+                args.arch.lower() == "breast_clip_det_b2_period_n_lp"
         ):
             inputs = inputs.squeeze(1).permute(0, 3, 1, 2)
         elif args.arch.lower() == 'swin_tiny_custom_norm' or args.arch.lower() == 'swin_base_custom_norm':

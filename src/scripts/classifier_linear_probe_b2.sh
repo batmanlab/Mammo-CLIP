@@ -22,10 +22,10 @@ conda activate breast_clip_rtx_6000
 python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
-  --arch 'upmc_breast_clip_det_b2_period_n_lp' \
+  --arch 'breast_clip_det_b2_period_n_lp' \
   --label "Mass" \
   --epochs 30 \
   --batch-size 8 \
@@ -43,10 +43,10 @@ python ./src/codebase/train_classifier.py \
 python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
-  --arch 'upmc_breast_clip_det_b2_period_n_lp' \
+  --arch 'breast_clip_det_b2_period_n_lp' \
   --label "Suspicious_Calcification" \
   --epochs 30 \
   --batch-size 8 \
@@ -64,10 +64,10 @@ python ./src/codebase/train_classifier.py \
 python ./src/codebase/train_classifier.py \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
-  --arch 'upmc_breast_clip_det_b2_period_n_lp' \
+  --arch 'breast_clip_det_b2_period_n_lp' \
   --label "density" \
   --epochs 30 \
   --batch-size 8 \
@@ -85,7 +85,7 @@ python ./src/codebase/train_classifier.py \
 python ./src/codebase/train_classifier.py \
   --img-dir 'RSNA_Cancer_Detection/train_images_png' \
   --csv-file 'RSNA_Cancer_Detection/train_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_n/checkpoints/fold_0/b2-model-best-epoch-10.tar" \
   --dataset 'RSNA' \
   --data_frac 1.0 \
   --label "cancer" \
@@ -93,7 +93,7 @@ python ./src/codebase/train_classifier.py \
   --lr 5e-5 \
   --weight-decay 1e-4 \
   --warmup-epochs 1 \
-  --arch 'upmc_breast_clip_det_b2_period_n_lp' \
+  --arch 'breast_clip_det_b2_period_n_lp' \
   --epochs 20 \
   --batch-size 6 \
   --num-workers 0 \

@@ -161,27 +161,27 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
 
 ### Image-text dataset
 
-1. Our image-text dataset is an in-house dataset from UPMC. You can have your own image+text dataset where images are 2D
+1. Our image-text dataset is an in-house dataset. You can have your own image+text dataset where images are 2D
    mammograms and texts are radiology reports. If you have access to such dataset, follow the setup here. Extract
    the `IMPRESSION` and `FINDINGS` sections from the
    report and create a csv. The sample
-   csv: [upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv)
+   csv: [img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv)
 
 2. Note the `FINDINGS` and `IMPRESSION` columns are
    used to generate the text for the image. The `HISTORY`, `FINDINGS` and `IMPRESSION` columns contains templated text
    due to privacy.
 
-3. Next run the following command to augment the text with `upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
+3. Next run the following command to augment the text with `img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
    file:
 
 ```bash
-# input: upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
+# input: img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
 # output: clip_pretrain_100.csv
 
 python ./src/codebase/augment_text.py \
   --dataset-path="/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/data_csv" \
-  --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
-  --dataset="upmc" 
+  --csv-path="img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
+  --dataset="img_text" 
 ```
 
 The `augment_text.py` script will do the preprocessing for the `FINDINGS` and `IMPRESSION` columns by converting them to
@@ -284,7 +284,7 @@ python ./src/preprocessing/preprocess_VinDr_detector.py
 ```bash
 .
 ├── list_tree_files.sh
-├── upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
+├── img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv
 ├── clip_pretrain_100.csv
 └── DICOM/images_png_CC_MLO/
     ├── Patient_100/
@@ -403,7 +403,7 @@ found [here](https://github.com/batmanlab/Mammo-CLIP/tree/main/src/codebase/conf
 ```bash
 FOLD=0
 CKPT="b2-model-best-epoch-10.tar"
-DIR="./Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_n"
+DIR="./Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_n"
 FULL_CKPT="$DIR/checkpoints/fold_$FOLD/$CKPT"
 
 python ./src/codebase/eval_zero_shot_clip.py \
@@ -419,10 +419,10 @@ python ./src/codebase/train_classifier.py \
   --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
-  --arch 'upmc_breast_clip_det_b5_period_n_lp' \
+  --arch 'breast_clip_det_b5_period_n_lp' \
   --label "Mass" \
   --epochs 30 \
   --batch-size 8 \
@@ -442,10 +442,10 @@ python ./src/codebase/train_classifier.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_lp` for Efficient-Net B5
-  or `upmc_breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on UPMC dataset.
-  Also, `upmc_vindr_breast_clip_det_b5_period_n_lp` for Efficient-Net B5
-  or `upmc_vindr_breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on UPMC and VinDr datasets.
+* `arch`: architecture of the model, e.g., `breast_clip_det_b5_period_n_lp` for Efficient-Net B5
+  or `breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on img_text dataset.
+  Also, `breast_clip_det_b5_period_n_lp` for Efficient-Net B5
+  or `breast_clip_det_b2_period_n_lp` for Efficient-Net B2, pretrained on img_text and VinDr datasets.
 * `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
   dataset; `cancer` for RSNA dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -458,10 +458,10 @@ python ./src/codebase/train_classifier.py \
   --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --data_frac 1.0 \
   --dataset 'ViNDr' \
-  --arch 'upmc_breast_clip_det_b5_period_n_ft' \
+  --arch 'breast_clip_det_b5_period_n_ft' \
   --label "Mass" \
   --epochs 30 \
   --batch-size 8 \
@@ -481,10 +481,10 @@ python ./src/codebase/train_classifier.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr` or `RSNA`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: `arch`: architecture of the model, e.g., `upmc_breast_clip_det_b5_period_n_ft` for Efficient-Net B5
-  or `upmc_breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on UPMC dataset.
-  Also, `upmc_vindr_breast_clip_det_b5_period_n_ft` for Efficient-Net B5
-  or `upmc_vindr_breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on UPMC and VinDr datasets.
+* `arch`: `arch`: architecture of the model, e.g., `breast_clip_det_b5_period_n_ft` for Efficient-Net B5
+  or `breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on img_text dataset.
+  Also, `breast_clip_det_b5_period_n_ft` for Efficient-Net B5
+  or `breast_clip_det_b2_period_n_ft` for Efficient-Net B2, pretrained on img_text and VinDr datasets.
 * `label`: target label for classification, e.g., `Mass`, `Suspicious_Calcification`or `density` for ViNDr
   dataset; `cancer` for RSNA dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
@@ -497,9 +497,9 @@ python ./src/codebase/train_detector.py \
   --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
-  --arch 'clip_b5_upmc' \
+  --arch 'breast_clip_b5' \
   --epochs 120 \
   --batch-size 7 \
   --freeze_backbone "y" \
@@ -519,10 +519,10 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
-  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for
+* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net B2,
+  pretrained on img_text dataset. Similarly, `breast_clip_b5_vindr` for Efficient-Net B5 or `breast_clip_b2` for
   Efficient-Net B2,
-  pretrained on UPMC and VinDr datasets.
+  pretrained on img_text and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
   sanity check
@@ -535,9 +535,9 @@ python ./src/codebase/train_detector.py \
   --data-dir '/restricted/projectnb/batmanlab/shawn24/PhD/RSNA_Breast_Imaging/Dataset' \
   --img-dir 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/images_png' \
   --csv-file 'External/Vindr/vindr-mammo-a-large-scale-benchmark-dataset-for-computer-aided-detection-and-diagnosis-in-full-field-digital-mammography-1.0.0/vindr_detection_v1_folds.csv' \
-  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
+  --clip_chk_pt_path "/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b5_detector_period_n/checkpoints/fold_0/b5-model-best-epoch-7.tar" \
   --dataset 'ViNDr' \
-  --arch 'clip_b5_upmc' \
+  --arch 'breast_clip_b5' \
   --epochs 120 \
   --batch-size 7 \
   --freeze_backbone "n" \
@@ -557,10 +557,10 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `clip_b5_upmc` for Efficient-Net B5 or `clip_b2_upmc` for Efficient-Net B2,
-  pretrained on UPMC dataset. Similarly, `clip_b5_upmc_vindr` for Efficient-Net B5 or `clip_b2_upmc_vindr` for
+* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net B2,
+  pretrained on img_text dataset. Similarly, `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for
   Efficient-Net B2,
-  pretrained on UPMC and VinDr datasets.
+  pretrained on img_text and VinDr datasets.
 * `concepts`: target label for classification, e.g., `Mass`, `Suspicious Calcification` for ViNDr dataset
 * `running-interactive`: running on interactive mode. In this mode,the training will be done using 100 samples for
   sanity check

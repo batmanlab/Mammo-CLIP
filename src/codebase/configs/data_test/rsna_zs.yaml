@@ -3,5 +3,5 @@ rsna:
   data_type: "image_classification_zs"
   data_dir: "${base.data_dir}/RSNA_Breast_Imaging/Dataset"
   img_dir: "RSNA_Cancer_Detection/train_images_png"
-  data_path: "RSNA_Cancer_Detection/rsna_w_upmc_concepts_breast_clip.csv"
+  data_path: "RSNA_Cancer_Detection/rsna_concepts_breast_clip.csv"
   text_max_length: ${base.text_max_length}

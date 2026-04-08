@@ -61,9 +61,6 @@ class ImageTextDataset(Dataset):
         return len(self.study_laterality_groups)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == 'upmc':
-            return self.root_dir / self.img_dir / f'Patient_{study_id}' / image_id
-        else:
             return self.root_dir / self.img_dir / f'{str(study_id)}' / image_id
 
     def _split_report_into_segment(self, report):

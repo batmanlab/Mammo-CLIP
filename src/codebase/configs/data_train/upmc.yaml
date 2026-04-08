@@ -1,8 +1,8 @@
-upmc:
-  name: "upmc"
+img_text:
+  name: "img_text"
   data_type: "imagetext"
   data_dir: "${base.data_dir}/RSNA_Breast_Imaging/Dataset"
-  img_dir: "External/UPMC/DICOM/images_png_CC_MLO"
-  data_path: "External/UPMC/upmc_breast_clip.csv"
+  img_dir: "External/img_text/DICOM/images_png_CC_MLO"
+  data_path: "External/img_text/img_text_breast_clip.csv"
   text_max_length: ${base.text_max_length}
   data_frac: 1.0

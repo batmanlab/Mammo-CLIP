@@ -371,7 +371,7 @@ def RetinaNet_efficientnet(
         [torch model]: [description]
     """
 
-    if model_type == "clip_b5_upmc" or model_type == "clip_b5_upmc_vindr":
+    if model_type == "breast_clip_b5":
         efficientnet = EfficientNet.from_pretrained(model_name="efficientnet-b5", model_type=model_type,
                                                     num_classes=num_classes, clip_chk_pt=clip_chk_pt,
                                                     freeze_backbone=freeze_backbone)
@@ -380,7 +380,7 @@ def RetinaNet_efficientnet(
             num_classes, efficientnet, [176, 512, 2048], focal_alpha=focal_alpha, focal_gamma=focal_gamma,
             domain_classifier=domain_classifier
         )
-    elif model_type == "clip_b2_upmc" or model_type == "clip_b2_upmc_vindr":
+    elif model_type == "breast_clip_b2":
         efficientnet = EfficientNet.from_pretrained(model_name="efficientnet-b2", model_type=model_type,
                                                     num_classes=num_classes, clip_chk_pt=clip_chk_pt,
                                                     freeze_backbone=freeze_backbone)

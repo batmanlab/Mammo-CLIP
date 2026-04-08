@@ -1,9 +1,9 @@
-upmc_zs:
-  name: "upmc"
+img_text_zs:
+  name: "img_text"
   data_type: "image_classification"
   data_dir: "${base.data_dir}"
-  img_dir: "RSNA_Breast_Imaging/Dataset/External/UPMC/DICOM/images_png_CC_MLO"
-  data_path: "RSNA_Breast_Imaging/Dataset/External/UPMC/upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv"
+  img_dir: "RSNA_Breast_Imaging/Dataset/External/img_text/DICOM/images_png_CC_MLO"
+  data_path: "RSNA_Breast_Imaging/Dataset/External/img_text/img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv"
   text_max_length: ${base.text_max_length}
   data_frac: 1.0
   label_col: "BIRADS_numeric"

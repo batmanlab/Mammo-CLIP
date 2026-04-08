@@ -1,0 +1,10 @@
+img_text_wo_period:
+  name: "img_text"
+  data_type: "imagetext"
+  data_dir: ${base.data_dir}
+  img_dir: "RSNA_Breast_Imaging/Dataset/External/img_text/DICOM/images_png_CC_MLO"
+  data_path: "RSNA_Breast_Imaging/Dataset/External/img_text/clip_pretrain_100.csv"
+  text_max_length: ${base.text_max_length}
+  data_frac: 1.0
+
+

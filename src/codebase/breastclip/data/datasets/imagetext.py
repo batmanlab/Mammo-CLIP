@@ -62,9 +62,6 @@ class ImageTextDataset(Dataset):
         return len(self.df)
 
     def _get_img_path(self, study_id, image_id):
-        if self.dataset.lower() == "upmc":
-            return self.root_dir / self.img_dir / f"Patient_{study_id}" / image_id
-        elif self.dataset.lower() == "vindr":
             return self.root_dir / self.img_dir / f"{str(study_id)}" / image_id
 
     def __getitem__(self, index):
@@ -199,7 +196,7 @@ class ImageTextDataset(Dataset):
         # Get from image-label dataset.
         elif hasattr(self.df, "CC_FINDING"):
             if self.dataset.lower() == "vindr":
-                # Image and view column of upmc_vindr should be in order of ["CC", "MLO"]
+                # Image and view column should be in order of ["CC", "MLO"]
                 # CC_FINDING, MLO_FINDING are in order:
                 # [[+ve right findings], [+ve left findings], [-ve right findings], [-ve left findings]]
                 cc, mlo = view_list

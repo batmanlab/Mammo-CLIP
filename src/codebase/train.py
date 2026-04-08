@@ -10,7 +10,7 @@ from breastclip import convert_dictconfig_to_dict, run, run_ddp, seed_everything
 log = logging.getLogger(__name__)
 
 
-@hydra.main(version_base=None, config_path="configs", config_name="train_vit_upmc_rsna_vindr")
+@hydra.main(version_base=None, config_path="configs", config_name="train_vit_rsna_vindr")
 def main(cfg: DictConfig):
     OmegaConf.resolve(cfg)
 

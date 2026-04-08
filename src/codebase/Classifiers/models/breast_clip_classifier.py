@@ -18,10 +18,8 @@ class BreastClipClassifier(nn.Module):
         self.image_encoder_type = ckpt["config"]["model"]["image_encoder"]["model_type"]
         self.arch = args.arch.lower()
         if (
-                args.arch.lower() == "upmc_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b5_period_n_lp" or
-                args.arch.lower() == "upmc_breast_clip_det_b2_period_n_lp" or
-                args.arch.lower() == "upmc_vindr_breast_clip_det_b2_period_n_lp"):
+                args.arch.lower() == "breast_clip_det_b5_period_n_lp" or
+                args.arch.lower() == "breast_clip_det_b2_period_n_lp"):
             print("freezing image encoder to not be trained")
             for param in self.image_encoder.parameters():
                 param.requires_grad = False

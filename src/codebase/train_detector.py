@@ -28,9 +28,9 @@ def config():
         type=str, help="Path to data file"
     )
     parser.add_argument(
-        "--img-dir", default="External/UPMC/DICOM/images_png_CC_MLO", type=str, help="Path to image file"
+        "--img-dir", default="", type=str, help="Path to image file"
     )
-    parser.add_argument("--csv-file", default="External/UPMC/upmc_dicom_consolidated_folds.csv", type=str,
+    parser.add_argument("--csv-file", default="", type=str,
                         help="data csv file")
     parser.add_argument("--clip_chk_pt_path", default=None, type=str, help="Path to Mammo-CLIP chkpt")
     parser.add_argument("--dataset", default="ViNDr", type=str, help="Dataset name?")
@@ -38,8 +38,8 @@ def config():
     parser.add_argument(
         "--freeze_backbone", default='n', type=str,
         help="Freeze backbone? (y for yes, n for no). If freezes, only the head is only trained")
-    parser.add_argument("--arch", default="clip_b5_upmc", type=str,
-                        help="Model architecture, (clip_b5_upmc or clip_b2_upmc)")
+    parser.add_argument("--arch", default="clip_b5", type=str,
+                        help="Model architecture, (clip_b5 or clip_b2)")
     parser.add_argument("--iou-threshold", default=0.5, type=float)
     parser.add_argument("--score-threshold", default=0.05, type=float)
     parser.add_argument("--epochs-warmup", default=0, type=float)

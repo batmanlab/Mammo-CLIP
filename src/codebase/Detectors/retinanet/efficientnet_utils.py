@@ -394,8 +394,8 @@ def load_pretrained_weights(
         model, model_name, model_type, load_fc=True, clip_chk_pt=None, freeze_backbone="n"):
     """Loads pretrained weights, and downloads if loading for the first time."""
     if (
-            model_type == "clip_b5_upmc" or model_type == "clip_b5_upmc_vindr" or
-            model_type == "clip_b2_upmc" or model_type == "clip_b2_upmc_vindr"):
+            model_type == "breast_clip_b5" or
+            model_type == "breast_clip_b2"):
         chk_pt = torch.load(clip_chk_pt, map_location="cpu")["model"]
         state_dict = {}
         for k in chk_pt.keys():

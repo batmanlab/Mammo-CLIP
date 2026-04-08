@@ -37,9 +37,9 @@ def config():
     parser.add_argument("--dataset", default="RSNA", type=str, help="Dataset name? (RSNA or VinDr)")
     parser.add_argument("--data_frac", default=1.0, type=float, help="Fraction of data to be used for training")
     parser.add_argument(
-        "--arch", default="upmc_breast_clip_det_b5_period_n_ft", type=str,
-        help="For b5 classification, [upmc_breast_clip_det_b5_period_n_lp for linear probe and  upmc_breast_clip_det_b5_period_n_ft for finetuning]. "
-             "For b2 classification, [upmc_breast_clip_det_b2_period_n_lp for linear probe and  upmc_breast_clip_det_b2_period_n_ft for finetuning].")
+        "--arch", default="breast_clip_det_b5_period_n_ft", type=str,
+        help="For b5 classification, [breast_clip_det_b5_period_n_lp for linear probe and  breast_clip_det_b5_period_n_ft for finetuning]. "
+             "For b2 classification, [breast_clip_det_b2_period_n_lp for linear probe and  breast_clip_det_b2_period_n_ft for finetuning].")
     parser.add_argument("--label", default="cancer", type=str,
                         help="cancer for RSNA or Mass, Suspicious_Calcification, density for VinDr")
     parser.add_argument("--detector-threshold", default=0.1, type=float)

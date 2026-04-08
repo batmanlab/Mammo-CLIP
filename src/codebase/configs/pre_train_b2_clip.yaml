@@ -1,7 +1,7 @@
 defaults:
   - _self_
   - data_train:
-      - upmc_wo_period
+      - img_text_wo_period
   - dataloader: dataloader_b5
   - tokenizer: clinical_bert
   - transform: clahe
@@ -34,4 +34,4 @@ base:
 
 hydra:
   run:
-    dir: /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/upmc_clip/b2_detector_period_${base.period}
+    dir: /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/outputs/img_text_clip/b2_detector_period_${base.period}

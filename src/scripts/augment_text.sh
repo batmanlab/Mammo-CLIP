@@ -17,5 +17,5 @@ conda activate breast_clip_rtx_6000
 
 python /restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/augment_text.py \
   --dataset-path="/restricted/projectnb/batmanlab/shawn24/PhD/Mammo-CLIP/src/codebase/data_csv" \
-  --csv-path="upmc_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
-  --dataset="upmc"
+  --csv-path="img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv" \
+  --dataset="img_text"
