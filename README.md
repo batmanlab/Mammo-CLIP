@@ -36,8 +36,11 @@
 ---
 
 ## 🔥🔥🔥 Major Update: Mammo-FM (Bigger and stronger Mammography FM) 👁️
-We upgraded by components of Mammo-CLIP and train it with a much larger dataset (140k patients) across 4 US institutions.
+
+We upgraded by components of Mammo-CLIP and train it with a much larger dataset (140k patients, 800K mammograms) across
+4 US institutions.
 Check out the following links for details
+
 - 📄 **Paper**: [ArXiv](https://arxiv.org/pdf/2512.00198)
 - 🌐 **Checkpoints and weights**: [Hugging Face](https://huggingface.co/batmanLab/Mammo-FM)
 - 💻 **Code on GitHub**: [batmanlab/Ladder](https://github.com/batmanlab/Mammo-FM)
@@ -67,7 +70,8 @@ All of this is achieved **without group annotations**.
 
 ---
 
-#### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g, `.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
+#### ⚠️ WARNING: Look for `/restricted/projectnb/batmanlab/shawn24/PhD` and replace it with your own path. E.g,
+`.src/codebase/breastclip/data/datasets/imagetext.py`, change the json path
 
 #### ⚠️ WARNING: There is a plethora of pre-processing settings available for RSNA and VinDr Mammo datasets. We recommend using the pre-processing discussed in the following sections. We are not responsible for any discrepancies in the results due to different pre-processing settings. If you use the VinDr png dataset uploaded in kaggle, it is fully pre-processed. Else you can use the pre-processing scripts provided in the following sections.
 
@@ -88,7 +92,9 @@ After going through the instruction, it is recommended to visit the following qu
 * [Issue-6](https://github.com/batmanlab/Mammo-CLIP/issues/6) for further clarification on the downstream tasks and
   corresponding datasets.
 * [Issue-13](https://github.com/batmanlab/Mammo-CLIP/issues/13) for setting up the baselines.
-* [Issue-9](https://github.com/batmanlab/Mammo-CLIP/issues/9) and [Issue-35](https://github.com/batmanlab/Mammo-CLIP/issues/35) for problems related to BioClinincalBert from Hugging
+* [Issue-9](https://github.com/batmanlab/Mammo-CLIP/issues/9)
+  and [Issue-35](https://github.com/batmanlab/Mammo-CLIP/issues/35) for problems related to BioClinincalBert from
+  Hugging
   Face.
 
 If we hear more queries, we may add a separate FAQs in the future.
@@ -178,7 +184,8 @@ python ./src/preprocessing/preprocess_image_to_png_vindr.py \
    used to generate the text for the image. The `HISTORY`, `FINDINGS` and `IMPRESSION` columns contains templated text
    due to privacy.
 
-3. Next run the following command to augment the text with `img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
+3. Next run the following command to augment the text with
+   `img_text_dicom_consolidated_final_folds_BIRADS_num_1_report.csv`
    file:
 
 ```bash
@@ -202,7 +209,8 @@ details.
 | 0     | patient_id | laterality ('R' or 'L') | List of all image_paths for patient_id-laterality combo | List of views for patient_id-laterality combo (only 'CC' and 'MLO' are used) | List of image paths for CC view for patient_id-laterality combo | List of image paths for MLO view for patient_id-laterality combo | List of [findings, impression] | List of [augmented findings, augmented impression] |
 
 5. The final sample csv file as the output of `step3` is
-   here: [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv). `clip_pretrain_100.csv`
+   here: [clip_pretrain_100.csv](https://github.com/batmanlab/Mammo-CLIP/blob/main/src/codebase/data_csv/clip_pretrain_100.csv).
+   `clip_pretrain_100.csv`
    is used for pretraining the image-text variant of Mammo-CLIP.
 
 ### Image-label dataset
@@ -526,7 +534,8 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net B2,
+* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net
+  B2,
   pretrained on img_text dataset. Similarly, `breast_clip_b5_vindr` for Efficient-Net B5 or `breast_clip_b2` for
   Efficient-Net B2,
   pretrained on img_text and VinDr datasets.
@@ -564,7 +573,8 @@ python ./src/codebase/train_detector.py \
 * `clip_chk_pt_path`: path to the checkpoint of the pre-trained Mammo-CLIP model
 * `dataset`: dataset name, e.g., `ViNDr`
 * `data_frac`: fraction of the dataset to use for training, e.g., `1.0`, `0.5` etc
-* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net B2,
+* `arch`: architecture of the model, e.g., `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for Efficient-Net
+  B2,
   pretrained on img_text dataset. Similarly, `breast_clip_b5` for Efficient-Net B5 or `breast_clip_b2` for
   Efficient-Net B2,
   pretrained on img_text and VinDr datasets.
@@ -634,14 +644,18 @@ isbn="978-3-031-72390-2"
 
 ## License and Copyright
 
-This project is licensed under the **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license.
+This project is licensed under the **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC
+BY-NC-SA 4.0)** license.
 
-You **may use, share, and adapt** this work **for non-commercial research and educational purposes only**, provided that you:
+You **may use, share, and adapt** this work **for non-commercial research and educational purposes only**, provided that
+you:
+
 - Give appropriate credit to the original authors.
 - Indicate if changes were made.
 - Distribute any derivative works under the **same license** (CC BY-NC-SA 4.0).
 
-**Commercial use, including model deployment, integration into for-profit products or services, or sale of derivatives, is strictly prohibited.**
+**Commercial use, including model deployment, integration into for-profit products or services, or sale of derivatives,
+is strictly prohibited.**
 
 Copyright © [Batman Lab](https://www.batman-lab.com/), 2024  
 License text: [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
