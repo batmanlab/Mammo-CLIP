@@ -43,7 +43,7 @@ Check out the following links for details
 
 - 📄 **Paper**: [ArXiv](https://arxiv.org/pdf/2512.00198)
 - 🌐 **Checkpoints and weights**: [Hugging Face](https://huggingface.co/batmanLab/Mammo-FM)
-- 💻 **Code on GitHub**: [batmanlab/Ladder](https://github.com/batmanlab/Mammo-FM)
+- 💻 **Code on GitHub**: [batmanlab/Mammo-FM](https://github.com/batmanlab/Mammo-FM)
 
 ## 🔥🔥🔥 Major Update: LADDER & Mammo‑CLIP for Bias Discovery & Mitigation 👁️
 
