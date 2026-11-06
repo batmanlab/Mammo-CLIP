@@ -396,7 +396,7 @@ def load_pretrained_weights(
     if (
             model_type == "breast_clip_b5" or
             model_type == "breast_clip_b2"):
-        chk_pt = torch.load(clip_chk_pt, map_location="cpu")["model"]
+        chk_pt = torch.load(clip_chk_pt, map_location="cpu", weights_only=True)["model"]
         state_dict = {}
         for k in chk_pt.keys():
             if k.startswith("image_encoder."):
